@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fcannizzaro.p2pl">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.projek.p2pl.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<activity android:name="com.fcannizzaro.com.projek.p2pl.MainActivity"></activity>-->
+        <activity android:name="com.projek.p2pl.StepActivity" />
+        <!--<activity android:name="com.fcannizzaro.com.projek.p2pl.TabClassicSample" />-->
+        <!--<activity android:name="com.fcannizzaro.com.projek.p2pl.TextSample" />-->
+        <!--<activity android:name="com.fcannizzaro.com.projek.p2pl.DotsSample" />-->
+        <!--<activity android:name="com.fcannizzaro.com.projek.p2pl.ProgressSample" />-->
+        <!--<activity-->
+            <!--android:name=".Main2Activity"-->
+            <!--&gt;</activity>-->
+    </application>
+
+</manifest>
