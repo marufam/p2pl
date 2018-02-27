@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
+import com.projek.p2pl.pemeriksaan.Page1;
 
 public class StepActivity extends TabStepper {
 

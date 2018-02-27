@@ -1,4 +1,4 @@
-package com.projek.p2pl;
+package com.projek.p2pl.pemeriksaan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +9,7 @@ import android.widget.Button;
 import com.projek.p2pl.R;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
-/**
- * @author Francesco Cannizzaro (fcannizzaro).
- */
+
 public class Page1 extends AbstractStep {
 
     private int i = 1;

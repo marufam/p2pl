@@ -36,6 +36,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.google.maps.android:android-maps-utils:0.4.+'
+    compile 'com.wefika:flowlayout:0.3.0'
     compile project(':library')
     compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
 }
