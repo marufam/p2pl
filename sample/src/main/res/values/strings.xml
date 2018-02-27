@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Material Stepper Sample</string>
+    <string name="app_name">P2TL</string>
     <string name="linear">LINEAR</string>
     <string name="tabs_stepper">Tabs Stepper</string>
     <string name="text_stepper">Text Stepper</string>
@@ -8,7 +8,7 @@
     <string name="non_linear">NON LINEAR</string>
     <string name="tabs_stepper_alternative">Tabs Stepper (Alternative)</string>
     <string name="tabs_stepper_classic">Tabs Stepper (Classic)</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main2">P2TL App</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
