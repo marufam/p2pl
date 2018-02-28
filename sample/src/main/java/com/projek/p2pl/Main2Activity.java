@@ -39,8 +39,6 @@ public class Main2Activity extends AppCompatActivity
         setSupportActionBar(toolbar);
         mFragmentManager = getSupportFragmentManager();
 
-        // tesg
-
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
