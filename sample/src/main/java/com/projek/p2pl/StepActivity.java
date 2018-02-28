@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
-import com.projek.p2pl.pemeriksaan.Page1;
+import com.projek.p2pl.pemeriksaan.Pelanggan;
 
 public class StepActivity extends TabStepper {
 
@@ -20,8 +20,8 @@ public class StepActivity extends TabStepper {
         setTitle("Isi Form");
         setAlternativeTab(true);
 
-        addStep(createFragment(new Page1()));
-        addStep(createFragment(new Page1()));
+        addStep(createFragment(new Pelanggan()));
+        addStep(createFragment(new Pelanggan()));
 
         super.onCreate(savedInstanceState);
     }
