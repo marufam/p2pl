@@ -18,15 +18,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme"
-        android:name="com.orm.SugarApp">
+        >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJpupVCuAmG__V8dg5gWY9Md3Mc8f3Ylg" />
-        <meta-data android:name="DATABASE" android:value="database_p2tl.db" />
-        <meta-data android:name="VERSION" android:value="2" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <!--<meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.projek.p2pl" />-->
-        <activity
+                <activity
             android:name="com.projek.p2pl.Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme"

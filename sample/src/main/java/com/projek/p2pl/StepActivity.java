@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
 import com.projek.p2pl.pemeriksaan.Pelanggan;
+import com.projek.p2pl.pemeriksaan.Petugas;
 
 public class StepActivity extends TabStepper {
 
@@ -21,7 +22,7 @@ public class StepActivity extends TabStepper {
         setAlternativeTab(true);
 
         addStep(createFragment(new Pelanggan()));
-        addStep(createFragment(new Pelanggan()));
+        addStep(createFragment(new Petugas()));
 
         super.onCreate(savedInstanceState);
     }

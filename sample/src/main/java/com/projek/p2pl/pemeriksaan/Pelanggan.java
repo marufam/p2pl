@@ -4,11 +4,9 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -16,7 +14,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,32 +26,10 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
-import com.projek.p2pl.DirectionsJSONParser;
-import com.projek.p2pl.MapFragment;
 import com.projek.p2pl.R;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -81,7 +56,7 @@ public class Pelanggan extends AbstractStep {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.page1, container, false);
+        final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
         mMapView = (MapView) rootView.findViewById(R.id.posisi);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
@@ -108,7 +83,7 @@ public class Pelanggan extends AbstractStep {
 
 //                googleMap.clear();
 
-                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -269,7 +244,7 @@ public class Pelanggan extends AbstractStep {
 
     @Override
     public String optional() {
-        return "Berita Acara Hasil Pemeriksaan";
+        return "Form Pelanggan";
     }
 
     @Override
