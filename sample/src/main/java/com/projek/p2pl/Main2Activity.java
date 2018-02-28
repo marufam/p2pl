@@ -33,13 +33,13 @@ public class Main2Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SugarDb db = new SugarDb(this);
-        db.onCreate(db.getDB());
 
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mFragmentManager = getSupportFragmentManager();
+
+        // tesg
 
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
 
