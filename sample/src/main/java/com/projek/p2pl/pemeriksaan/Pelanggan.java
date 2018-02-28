@@ -52,11 +52,23 @@ public class Pelanggan extends AbstractStep {
     //    ApiInterface mApiInterface;
     private LocationListener listener;
 
+    //
+    Button btn_foto;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
+
+        btn_foto = (Button) rootView.findViewById(R.id.btn_foto);
+        btn_foto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mStepper, "Hebat", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         mMapView = (MapView) rootView.findViewById(R.id.posisi);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
