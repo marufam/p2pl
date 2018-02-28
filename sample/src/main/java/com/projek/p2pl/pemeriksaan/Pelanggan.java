@@ -1,46 +1,46 @@
-package com.projek.p2pl;
+package com.projek.p2pl.pemeriksaan;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
-
-import com.projek.p2pl.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.projek.p2pl.R;
+import com.github.fcannizzaro.materialstepper.AbstractStep;
 
 import static android.content.Context.LOCATION_SERVICE;
 
 
-public class MapFragment extends Fragment {
+public class Pelanggan extends AbstractStep {
+
+    private int i = 1;
+    private Button button;
+    private final static String CLICK = "click";
+    private GoogleMap map;
+
     MapView mMapView;
     private GoogleMap googleMap;
     double myLat = 0, myLng = 0;
@@ -49,15 +49,15 @@ public class MapFragment extends Fragment {
     String mprovider;
     Circle mapCircle;
     private Marker myMarker;
-//    ApiInterface mApiInterface;
+    //    ApiInterface mApiInterface;
     private LocationListener listener;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.map_fragment, container, false);
-        mMapView = (MapView) rootView.findViewById(R.id.mapView);
+        final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
+        mMapView = (MapView) rootView.findViewById(R.id.posisi);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
 
@@ -82,22 +82,13 @@ public class MapFragment extends Fragment {
                 }
 
 //                googleMap.clear();
-                if (myLat > 0 && myLng > 0) {
 
-
-                    mapCircle = googleMap.addCircle(new CircleOptions()
-                            .center(new LatLng(myLat, myLng))
-                            .radius(300) //1km=+-10000
-                            .strokeColor(Color.argb(90, 255, 189, 31))
-                            .fillColor(Color.argb(60, 255, 189, 31))
-                            .strokeWidth((float) 2));
-                }
-
+//                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle) {
-
+//                prepareallmap();
             }
 
             @Override
@@ -118,8 +109,6 @@ public class MapFragment extends Fragment {
 
         return rootView;
     }
-
-
 
 
     public void prepareallmap() {
@@ -145,8 +134,6 @@ public class MapFragment extends Fragment {
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 //                }
 //                Toast.makeText(getContext(), ""+googleMap.getMyLocation().getLatitude(), Toast.LENGTH_SHORT).show();
-                CameraPosition PosisiTempat;
-
 
                 googleMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
                     @Override
@@ -155,83 +142,6 @@ public class MapFragment extends Fragment {
                         return false;
                     }
                 });
-                SharedPreferences pref = getContext().getSharedPreferences("spbu", 0); // 0 - for private mode
-
-//                mApiInterface = ApiClient.GetSpbu().create(ApiInterface.class);
-//                Call<Getspbu> getspbuCall = mApiInterface.getspbu();
-//                getspbuCall.enqueue(new Callback<Getspbu>() {
-//                    @Override
-//                    public void onResponse(Call<Getspbu> call, final Response<Getspbu> response) {
-//                        final List<Spbu> spbuList = response.body().getSpbu();
-////                        Log.d("Retrofit Get", "Jumlah data : " + String.valueOf(jadwalList.size()));
-//
-//                        for (int i = 0; i < response.body().getSpbu().size(); i++) {
-//                            String[] lnglat = spbuList.get(i).getLnglat().split(",");
-//                            final LatLng origin = new LatLng(myLat,myLng);
-//                            final String[] lat = response.body().getSpbu().get(i).getLnglat().split(",");
-////                            Toast.makeText(getContext(), "jarak tempuh "+spbu.getString("jarak_tempuh","0"), Toast.LENGTH_SHORT).show();
-//                            if(myLat!=0 && myLng!=0) {
-//                                String num = getDistance(myLat, myLng, Double.parseDouble(lat[0].toString()), Double.parseDouble(lat[1].toString()));
-////                                Toast.makeText(getContext(), "jarak marker "+num, Toast.LENGTH_SHORT).show();
-//                                if(Integer.parseInt(num)< Integer.parseInt(spbu.getString("jarak_tempuh","0"))) {
-//                                    //radius  hp ke spbu
-//                                    googleMap.addMarker(new MarkerOptions()
-//                                            .position(new LatLng(Double.parseDouble(lnglat[0].toString()), Double.parseDouble(lnglat[1].toString())))
-//                                            .title("Lokasi")
-//                                            .snippet(spbuList.get(i).getNama())
-//                                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)))
-//                                            .setTag(spbuList.get(i));
-//
-//                                    googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-//                                        @Override
-//                                        public boolean onMarkerClick(Marker marker) {
-//                                            final Spbu k = (Spbu) marker.getTag();
-//                                            String[] lat1 = k.getLnglat().split(",");
-//                                            LatLng dest = new LatLng(Double.parseDouble(lat1[0].toString()), Double.parseDouble(lat1[1].toString()));
-//
-//
-////                                    float[] results = new float[1];
-////                                    Location.distanceBetween(myLat,myLng,Double.parseDouble(lat[0].toString()), Double.parseDouble(lat[1].toString()), results);
-//                                            // Getting URL to the Google Directions API
-//                                            String url = getDirectionsUrl(origin, dest);
-//                                            DownloadTask downloadTask = new DownloadTask();
-//
-//                                            downloadTask.execute(url);
-//
-//                                            Snackbar snackbar = Snackbar.make(getView(), "Lokasi " + k.getNama(), Snackbar.LENGTH_SHORT)
-//                                                    .setActionTextColor(Color.parseColor("#FFAA00"))
-//                                                    .setAction("Lihat", new View.OnClickListener() {
-//
-//                                                        @Override
-//                                                        public void onClick(View v) {
-//                                                            Intent i = new Intent(getContext(), spbu_detail.class);
-//                                                            i.putExtra("id_spbu", k.getId_spbu());
-//                                                            i.putExtra("nama_spbu", k.getNama());
-//                                                            i.putExtra("latlng", k.getLnglat());
-//                                                            i.putExtra("buka", k.getBuka());
-//                                                            i.putExtra("tutup", k.getTutup());
-//                                                            i.putExtra("alamat", k.getAlamat());
-//                                                            startActivity(i);
-//                                                        }
-//                                                    });
-//                                            snackbar.show();
-//
-//                                            return false;
-//                                        }
-//                                    });
-//                                }
-//                            }
-//
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Getspbu> call, Throwable t) {
-//                        Toast.makeText(getContext(), "Check your connection (1)", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//
-//                });
 
             }
         });
@@ -301,4 +211,49 @@ public class MapFragment extends Fragment {
 
 
 
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putInt(CLICK, i);
+    }
+
+    @Override
+    public String name() {
+        return "Step " + getArguments().getInt("position", 0);
+    }
+
+    @Override
+    public boolean isOptional() {
+        return true;
+    }
+
+
+    @Override
+    public void onStepVisible() {
+    }
+
+    @Override
+    public void onNext() {
+        System.out.println("onNext");
+    }
+
+    @Override
+    public void onPrevious() {
+        System.out.println("onPrevious");
+    }
+
+    @Override
+    public String optional() {
+        return "Form Pelanggan";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return i > 1;
+    }
+
+    @Override
+    public String error() {
+        return "<b>You must click!</b> <small>this is the condition!</small>";
+    }
 }

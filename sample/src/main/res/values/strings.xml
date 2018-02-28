@@ -14,4 +14,52 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string-array name="sesuai">
+        <item>Sesuai</item>
+        <item>Tidak</item>
+    </string-array>
+
+    <string-array name="pelanggaran">
+        <item>Tidak Ditemukan</item>
+        <item>Ditemukan Pelanggaran</item>
+    </string-array>
+
+    <string-array name="papan">
+        <item>Pakai</item>
+        <item>Tidak</item>
+    </string-array>
+
+    <string-array name="ada2tidak">
+        <item>Ada</item>
+        <item>Tidak Ada</item>
+    </string-array>
+
+    <string-array name="jenis_pelanggaran">
+        <item>P1</item>
+        <item>P2</item>
+        <item>P3</item>
+        <item>P4</item>
+        <item>P5</item>
+        <item>P6</item>
+    </string-array>
+
+    <string-array name="merk">
+        <item>Melconida</item>
+    </string-array>
+
+    <string-array name="kondisi_visual">
+        <item>Baik</item>
+        <item>Tidak</item>
+    </string-array>
+
+    <string-array name="jenis">
+        <item>Plastik</item>
+        <item>Timah</item>
+    </string-array>
+
+
+    <string-array name="jenis2">
+        <item>Kayu</item>
+        <item>Metal</item>
+    </string-array>
 </resources>

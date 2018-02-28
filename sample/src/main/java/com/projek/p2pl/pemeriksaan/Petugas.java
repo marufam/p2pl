@@ -1,28 +1,31 @@
 package com.projek.p2pl.pemeriksaan;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.projek.p2pl.R;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
+import com.projek.p2pl.R;
 
+/**
+ * Created by amien on 28/02/18.
+ */
 
-public class Page1 extends AbstractStep {
-
+public class Petugas extends AbstractStep {
     private int i = 1;
     private Button button;
     private final static String CLICK = "click";
 
+    public Petugas() {
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.page1, container, false);
-
-
-        return v;
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.petugas, container, false);
+        return rootView;
     }
 
     @Override
@@ -58,7 +61,7 @@ public class Page1 extends AbstractStep {
 
     @Override
     public String optional() {
-        return "Berita Acara Hasil Pemeriksaan";
+        return "Form Petugas";
     }
 
     @Override
