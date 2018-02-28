@@ -1,10 +1,12 @@
 package com.projek.p2pl;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
 import com.projek.p2pl.pemeriksaan.Pelanggan;
+import com.projek.p2pl.pemeriksaan.Periksa;
 import com.projek.p2pl.pemeriksaan.Petugas;
 
 public class StepActivity extends TabStepper {
@@ -23,6 +25,7 @@ public class StepActivity extends TabStepper {
 
         addStep(createFragment(new Pelanggan()));
         addStep(createFragment(new Petugas()));
+        addStep(createFragment(new Periksa()));
 
         super.onCreate(savedInstanceState);
     }

@@ -33,7 +33,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.projek.p2pl.StepActivity" />
+        <activity
+            android:parentActivityName=".Main2Activity"
+            android:name="com.projek.p2pl.StepActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 
