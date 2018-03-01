@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,8 +21,13 @@ import android.widget.Toast;
 
 import com.orm.SugarDb;
 import com.projek.p2pl.R;
+import com.projek.p2pl.model.m_polri;
 
 import java.util.List;
+
+import io.realm.DynamicRealm;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,11 +36,35 @@ public class Main2Activity extends AppCompatActivity
 //    TextView email,username;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
+    private Realm mRealm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        SugarDb db = new SugarDb(this);
-//        db.onCreate(db.getDB());
+
+
+//        mRealm = Realm.getInstance(getApplicationContext());
+
+//        mRealm.beginTransaction();
+//        m_polri mypetugas = mRealm.createObject(m_polri.class);
+//        mypetugas.setId_polri(String.valueOf((int)System.currentTimeMillis()/1000));
+//        mypetugas.setJabatan(String.valueOf("aaaa"));
+//        mypetugas.setNama(String.valueOf("amien"));
+//        mypetugas.setNip(String.valueOf("1234"));
+//        mRealm.commitTransaction();
+
+
+//        mRealm.beginTransaction();
+//        RealmResults<m_polri> books = mRealm.allObjects(m_polri.class);
+//
+//        for (int i=0;i<books.size();i++){
+//            Log.d("Dataku",books.get(i).toString());
+//        }
+//        Log.d("jumlah", String.valueOf(books.size()));
+//        Log.d("Dataku",books.get(0).getNama());
+//        Log.d("Dataku",books.get(0).getJabatan());
+//        Log.d("Dataku",books.get(0).getNip());
+
 
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

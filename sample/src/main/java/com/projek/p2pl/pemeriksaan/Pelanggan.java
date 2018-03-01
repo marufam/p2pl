@@ -128,7 +128,6 @@ public class Pelanggan extends AbstractStep {
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
-                final SharedPreferences spbu = getContext().getSharedPreferences("p2tl", 0);
                 // For showing a move to my location button
                 if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
@@ -247,6 +246,7 @@ public class Pelanggan extends AbstractStep {
     @Override
     public void onNext() {
         System.out.println("onNext");
+        Toast.makeText(mStepper, "onNext", Toast.LENGTH_SHORT).show();
     }
 
     @Override
