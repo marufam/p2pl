@@ -23,8 +23,8 @@ public class StepActivity extends TabStepper {
         setTitle("Isi Form");
         setAlternativeTab(true);
 
-        addStep(createFragment(new Pelanggan()));
         addStep(createFragment(new Petugas()));
+        addStep(createFragment(new Pelanggan()));
         addStep(createFragment(new Periksa()));
 
         super.onCreate(savedInstanceState);
