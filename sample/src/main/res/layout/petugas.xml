@@ -53,6 +53,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="2.5">
                                         <EditText
+                                            android:id="@+id/nomorsurat"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:hint="Nomor Surat Tugas"/>
@@ -81,7 +82,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tanggal"/>
+                                    android:hint="Tanggal"
+                                    android:id="@+id/tanggalsurat"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -145,7 +147,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama"/>
+                                    android:hint="Nama"
+                                    android:id="@+id/nama"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -171,7 +174,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Induk"/>
+                                    android:hint="No Induk"
+                                    android:id="@+id/noinduk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -197,7 +201,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Jabatan"/>
+                                    android:hint="Jabatan"
+                                    android:id="@+id/jabatan"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -260,7 +265,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama"/>
+                                    android:hint="Nama"
+                                    android:id="@+id/nama_vendor"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -286,7 +292,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Induk"/>
+                                    android:hint="No Induk"
+                                    android:id="@+id/noinduk_vendor"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -312,7 +319,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Jabatan"/>
+                                    android:hint="Jabatan"
+                                    android:id="@+id/jabatan_vendor"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -375,7 +383,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nomor Surat"/>
+                                    android:hint="Nomor Surat"
+                                    android:id="@+id/nomor_surat_porli"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -401,7 +410,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tanggal"/>
+                                    android:hint="Tanggal"
+                                    android:id="@+id/tanggal"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -427,7 +437,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Petugas 1"/>
+                                    android:hint="Petugas 1"
+                                    android:id="@+id/petugas1"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -454,7 +465,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Petugas 2"/>
+                                    android:hint="Petugas 2"
+                                    android:id="@+id/petugas2"/>
                             </LinearLayout>
                         </LinearLayout>
 

@@ -460,6 +460,7 @@ public class Pelanggan extends AbstractStep {
 
 
     public  boolean isCameraPermissionGranted() {
+
         if (Build.VERSION.SDK_INT >= 23) {
             if (mStepper.checkSelfPermission(Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_GRANTED) {

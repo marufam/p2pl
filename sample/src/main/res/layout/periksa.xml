@@ -42,7 +42,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 >
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
@@ -82,6 +81,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/ada2tidak"
+                                    android:id="@+id/kwh_meter_1a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -110,6 +110,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/merk"
+                                    android:id="@+id/merk_1a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -137,7 +138,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tahun"/>
+                                    android:hint="Tahun"
+                                    android:id="@+id/tahun_1a"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -164,7 +166,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Putaran"/>
+                                    android:hint="Putaran"
+                                    android:id="@+id/putaran_1a"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -191,6 +194,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/kondisi_visual"
+                                    android:id="@+id/kondisi_visual_1a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -215,12 +219,10 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
                             >
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 >
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
@@ -256,7 +258,8 @@
                                     android:inputType="numberDecimal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Segel Terpasang"/>
+                                    android:hint="Segel Terpasang"
+                                    android:id="@+id/segel_terpasang_1b"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -283,6 +286,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/jenis"
+                                    android:id="@+id/jenis_1b"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -310,7 +314,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tahun"/>
+                                    android:hint="Tahun"
+                                    android:id="@+id/tahun_1b"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -336,7 +341,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Acuan"/>
+                                    android:hint="Acuan"
+                                    android:id="@+id/acuan_1b"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -363,6 +369,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/kondisi_visual"
+                                    android:id="@+id/kondisi_visual_1b"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -425,7 +432,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Kapasitas"/>
+                                    android:hint="Kapasitas"
+                                    android:id="@+id/kapasitas_2a"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -452,6 +460,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/merk"
+                                    android:id="@+id/merk_2a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -479,7 +488,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Segel Terpasang"/>
+                                    android:hint="Segel Terpasang"
+                                    android:id="@+id/segel_terpasang_2b"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -506,6 +516,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/jenis"
+                                    android:id="@+id/jenis_2b"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -534,7 +545,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Acuan"/>
+                                    android:hint="Acuan"
+                                    android:id="@+id/acuan_2b"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -561,7 +573,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tahun"/>
+                                    android:hint="Tahun"
+                                    android:id="@+id/tahun_2b"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -629,6 +642,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/papan"
+                                    android:id="@+id/papan_meter_3a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -657,6 +671,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/jenis2"
+                                    android:id="@+id/jenis_3a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -685,6 +700,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/kondisi_visual"
+                                    android:id="@+id/kondisi_visual_3a"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -714,7 +730,8 @@
                                     android:inputType="numberDecimal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Segel Terpasang"/>
+                                    android:hint="Segel Terpasang"
+                                    android:id="@+id/segel_terpasang_3a"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -740,6 +757,7 @@
                                 <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
+                                    android:id="@+id/jenis_3a2"
                                     android:entries="@array/jenis"
                                     >
                                 </Spinner>
@@ -768,7 +786,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Acuan"/>
+                                    android:hint="Acuan"
+                                    android:id="@+id/acuan_3a"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -795,7 +814,9 @@
                                     android:inputType="numberDecimal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tahun"/>
+                                    android:hint="Tahun"
+                                    android:id="@+id/tahun_3a"
+                                    />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -859,6 +880,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/sesuai"
+                                    android:id="@+id/sesuai"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -925,6 +947,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/pelanggaran"
+                                    android:id="@+id/hasil"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -953,6 +976,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:entries="@array/jenis_pelanggaran"
+                                    android:id="@+id/pelanggaran"
                                     >
                                 </Spinner>
                             </LinearLayout>
@@ -980,7 +1004,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Deskripsi"/>
+                                    android:hint="Deskripsi"
+                                    android:id="@+id/deskripsi_pelanggaran"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -1007,7 +1032,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tindakan"/>
+                                    android:hint="Tindakan"
+                                    android:id="@+id/tindakan"/>
                             </LinearLayout>
                         </LinearLayout>
 
