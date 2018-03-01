@@ -15,6 +15,8 @@ public class m_petugas extends RealmObject {
 
     private String nomorsurat;
 
+    private String tanggalsurat;
+
     private String nama;
 
     private String noinduk;
@@ -53,6 +55,14 @@ public class m_petugas extends RealmObject {
 
     public String getNomorsurat() {
         return nomorsurat;
+    }
+
+    public String getTanggalsurat() {
+        return tanggalsurat;
+    }
+
+    public void setTanggalsurat(String tanggalsurat) {
+        this.tanggalsurat = tanggalsurat;
     }
 
     public void setNomorsurat(String nomorsurat) {

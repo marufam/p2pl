@@ -137,9 +137,9 @@
                             android:layout_height="wrap_content"
                             android:text="Data Pelanggan"
                             android:layout_margin="3dp"/>
-                        <RadioGroup
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                        <!--<RadioGroup-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -148,6 +148,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Pelanggan"
+                                    android:checked="true"
                                     android:layout_margin="3dp"
                                     android:textColor="#717171"/>
                                 <RadioButton
@@ -157,7 +158,7 @@
                                     android:textColor="#717171"
                                     android:layout_margin="3dp"/>
                             </LinearLayout>
-                        </RadioGroup>
+                        <!--</RadioGroup>-->
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -195,6 +196,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:id="@+id/id_pelanggan"
                                     android:hint="Id Pelanggan"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -221,7 +223,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nama Pelanggan"/>
+                            android:hint="Nama Pelanggan"
+                            android:id="@+id/nama"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -247,7 +250,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Alamat Pelanggan"/>
+                            android:hint="Alamat Pelanggan"
+                            android:id="@+id/alamat"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -272,6 +276,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2.5">
                         <EditText
+                            android:id="@+id/no_gardu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="No Gardu / Trafo"/>
@@ -298,6 +303,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2.5">
                         <EditText
+                            android:id="@+id/tarif"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Tarif Daya Tersambung"/>
@@ -338,6 +344,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
                                 <EditText
+                                    android:id="@+id/nama_penghuni"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Nama Penghuni"/>
@@ -366,7 +373,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Alamat"/>
+                                    android:hint="Alamat"
+                                    android:id="@+id/alamat_penghuni"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -392,7 +400,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No. KTP"/>
+                                    android:hint="No. KTP"
+                                    android:id="@+id/noktp"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -434,7 +443,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama Saksi"/>
+                                    android:hint="Nama Saksi"
+                                    android:id="@+id/nama_saksi"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -458,6 +468,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
                                 <EditText
+                                    android:id="@+id/alamat_saksi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Alamat Saksi"/>
@@ -484,6 +495,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
                                 <EditText
+                                    android:id="@+id/nomor_identitas"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="No Identitas"/>
@@ -510,6 +522,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
                                 <EditText
+                                    android:id="@+id/pekerjaan_saksi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Pekerjaan"/>
@@ -519,155 +532,6 @@
 
                 </android.support.v7.widget.CardView>
 
-                <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Rayon"-->
-            <!--/>-->
-        <!--<android.support.design.widget.TextInputEditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Rayon"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--android:id="@+id/rayon"-->
-            <!--/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="No Surat"/>-->
-        <!--<android.support.design.widget.TextInputEditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="No Surat"-->
-            <!--android:id="@+id/nosurat"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Tanggal"/>-->
-
-        <!--<EditText-->
-            <!--android:id="@+id/tanggalsurat"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:ems="10"-->
-            <!--android:hint="Tanggal"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--android:inputType="date" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Petugas 1"/>-->
-        <!--<android.support.design.widget.TextInputEditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Petugas 1"-->
-            <!--android:id="@+id/petugas1"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Petugas 2"/>-->
-        <!--<android.support.design.widget.TextInputEditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Petugas 2"-->
-            <!--android:id="@+id/petugas2"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--/>-->
-
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="No Gardu / Trafo"/>-->
-            <!--<android.support.design.widget.TextInputEditText-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="No Gardu"-->
-                <!--android:id="@+id/nogardu"-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Nama / Alamat dalam Rekening"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Nama / Alamat dalam Rekening"-->
-                    <!--android:id="@+id/nama2"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="ID Pelanggan"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Id Pelanggan"-->
-                    <!--android:id="@+id/idpelanggan"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Tarif / Daya / Peruntukan"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Tarif / Daya / Peruntukan"-->
-                    <!--android:id="@+id/tarif"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Nama Saksi"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Nama Saksi"-->
-                    <!--android:id="@+id/namasaksi"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Alamat Saksi"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Alamat Saksi"-->
-                    <!--android:id="@+id/alamatsaksi"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="KTP Saksi"/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="No KTP Saksi"-->
-                    <!--android:id="@+id/ktpsaksi"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pekerjaan Saksi"-->
-                    <!--/>-->
-                <!--<android.support.design.widget.TextInputEditText-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="Pekerjaan saksi"-->
-                    <!--android:id="@+id/pekerjaansaksi"-->
-                    <!--android:layout_marginBottom="10dp"-->
-                    <!--/>-->
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

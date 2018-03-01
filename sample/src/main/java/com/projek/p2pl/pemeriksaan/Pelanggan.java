@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -44,6 +45,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -68,7 +72,20 @@ public class Pelanggan extends AbstractStep {
     //    ApiInterface mApiInterface;
     private LocationListener listener;
 
-    //
+    @Bind(R.id.id_pelanggan) EditText id_pelanggan;
+    @Bind(R.id.nama) EditText nama;
+    @Bind(R.id.alamat) EditText alamat;
+    @Bind(R.id.no_gardu) EditText no_gardu;
+    @Bind(R.id.tarif) EditText tarif;
+    @Bind(R.id.nama_penghuni) EditText nama_penghuni;
+    @Bind(R.id.alamat_penghuni) EditText alamat_penghuni;
+    @Bind(R.id.noktp) EditText noktp;
+    @Bind(R.id.nama_saksi) EditText nama_saksi;
+    @Bind(R.id.alamat_saksi) EditText alamat_saksi;
+    @Bind(R.id.nomor_identitas) EditText nomor_identitas;
+    @Bind(R.id.pekerjaan_saksi) EditText pekerjaan_saksi;
+
+
     Button btn_foto;
     ImageView img1, img2, img3, img4, img5, img6;
     private Uri fileUri;
@@ -146,9 +163,11 @@ public class Pelanggan extends AbstractStep {
             }
         };
         configure_button();
-
         isCameraPermissionGranted();
         isReadPermissionGranted();
+
+        ButterKnife.bind(this, rootView);
+
         return rootView;
     }
 
@@ -278,7 +297,7 @@ public class Pelanggan extends AbstractStep {
     @Override
     public void onNext() {
         System.out.println("onNext");
-        Toast.makeText(mStepper, "onNext", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mStepper, "onNext", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -293,6 +312,25 @@ public class Pelanggan extends AbstractStep {
 
     @Override
     public boolean nextIf() {
+        SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("id_pelanggan", id_pelanggan.getText().toString());
+        editor.putString("nama", nama.getText().toString());
+        editor.putString("alamat", alamat.getText().toString());
+        editor.putString("no_gardu", no_gardu.getText().toString());
+        editor.putString("tarif", tarif.getText().toString());
+        editor.putString("nama_penghuni", nama_penghuni.getText().toString());
+        editor.putString("alamat_penghuni", alamat_penghuni.getText().toString());
+        editor.putString("noktp", noktp.getText().toString());
+        editor.putString("nama_saksi", nama_saksi.getText().toString());
+        editor.putString("alamat_saksi", alamat_saksi.getText().toString());
+        editor.putString("nomor_identitas", nomor_identitas.getText().toString());
+        editor.putString("pekerjaan_saksi", pekerjaan_saksi.getText().toString());
+        editor.putString("foto", "foto1,foto,foto,foto1,foto,foto");
+        editor.putString("status","merah");
+        editor.putString("lat",String.valueOf(myLat));
+        editor.putString("lng",String.valueOf(myLng));
+        editor.commit();
         return i > 1;
     }
 
@@ -387,32 +425,6 @@ public class Pelanggan extends AbstractStep {
             Toast.makeText(mStepper, "Gagal mengambil gambar", Toast.LENGTH_SHORT).show();
         }
 
-//        }
-        // capture foto kedapatan
-//        else if (requestCode == CAMERA_CAPTURE_KEDAPATAN_REQUEST_CODE) {
-//            if (resultCode == RESULT_OK) {
-//
-//                // successfully captured the image
-//                fileKedapatan = fileUri;
-//
-//                Bitmap resized = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(fileUri.getPath()), 300, 300);
-//                img_kedapatan.setImageBitmap(resized);
-//
-//            } else if (resultCode == RESULT_CANCELED) {
-//
-//                // user cancelled Image capture
-//                Toast.makeText(getApplicationContext(),
-//                        "User cancelled image capture", Toast.LENGTH_SHORT)
-//                        .show();
-//
-//            } else {
-//                // failed to capture image
-//                Toast.makeText(getApplicationContext(),
-//                        "Sorry! Failed to capture image", Toast.LENGTH_SHORT)
-//                        .show();
-//            }
-
-//        }
     }
 
 
