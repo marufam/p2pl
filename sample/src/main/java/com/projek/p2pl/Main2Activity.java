@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,10 @@ import io.realm.RealmResults;
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     NavigationView mNavigationView;
+    private Boolean isFabOpen = false;
+    private FloatingActionButton fab,fab1,fab2;
+    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+
     private View navHeader;
 //    TextView email,username;
     FragmentManager mFragmentManager;
@@ -41,30 +47,6 @@ public class Main2Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-//        mRealm = Realm.getInstance(getApplicationContext());
-
-//        mRealm.beginTransaction();
-//        m_polri mypetugas = mRealm.createObject(m_polri.class);
-//        mypetugas.setId_polri(String.valueOf((int)System.currentTimeMillis()/1000));
-//        mypetugas.setJabatan(String.valueOf("aaaa"));
-//        mypetugas.setNama(String.valueOf("amien"));
-//        mypetugas.setNip(String.valueOf("1234"));
-//        mRealm.commitTransaction();
-
-
-//        mRealm.beginTransaction();
-//        RealmResults<m_polri> books = mRealm.allObjects(m_polri.class);
-//
-//        for (int i=0;i<books.size();i++){
-//            Log.d("Dataku",books.get(i).toString());
-//        }
-//        Log.d("jumlah", String.valueOf(books.size()));
-//        Log.d("Dataku",books.get(0).getNama());
-//        Log.d("Dataku",books.get(0).getJabatan());
-//        Log.d("Dataku",books.get(0).getNip());
-
 
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -124,25 +106,22 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.ic_home) {
             // Handle the camera action
-            Intent i = new Intent(getApplicationContext(),StepActivity.class);
-            startActivity(i);
-        } else if (id == R.id.nav_gallery) {
+//            Intent i = new Intent(getApplicationContext(),StepActivity.class);
+//            startActivity(i);
+        } else if (id == R.id.list_pemeriksaan) {
             Intent i = new Intent(getApplicationContext(),Pemeriksaan_activity.class);
             startActivity(i);
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        }else if (id == R.id.tambah_pemeriksaan) {
+            Intent i = new Intent(getApplicationContext(),StepActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

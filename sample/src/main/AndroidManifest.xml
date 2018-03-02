@@ -27,7 +27,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJpupVCuAmG__V8dg5gWY9Md3Mc8f3Ylg" />
                 <activity
-            android:name="com.projek.p2pl.Main2Activity"
+            android:name="com.projek.p2pl.SplashScreen"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme"
             >
@@ -44,6 +44,9 @@
         <activity
             android:parentActivityName=".Main2Activity"
             android:name=".Pemeriksaan_activity"/>
+
+        <activity
+            android:name=".Main2Activity"/>
     </application>
 
 </manifest>
