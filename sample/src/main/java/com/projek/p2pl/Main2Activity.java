@@ -129,7 +129,8 @@ public class Main2Activity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(),StepActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_gallery) {
-
+            Intent i = new Intent(getApplicationContext(),Pemeriksaan_activity.class);
+            startActivity(i);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

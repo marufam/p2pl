@@ -1,6 +1,7 @@
 package com.projek.p2pl.pemeriksaan;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -27,8 +28,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -54,7 +57,7 @@ import static android.app.Activity.RESULT_OK;
 import static android.content.Context.LOCATION_SERVICE;
 
 
-public class Pelanggan extends AbstractStep {
+public class Pelanggan extends AbstractStep  {
 
     private int i = 1;
     private Button button;
@@ -71,6 +74,8 @@ public class Pelanggan extends AbstractStep {
     private Marker myMarker;
     //    ApiInterface mApiInterface;
     private LocationListener listener;
+    @Bind(R.id.lokasi)
+    TextView lokasi;
 
     @Bind(R.id.id_pelanggan) EditText id_pelanggan;
     @Bind(R.id.nama) EditText nama;
@@ -94,12 +99,46 @@ public class Pelanggan extends AbstractStep {
 
     private static final String TAG = "Permission";
     public static final int MEDIA_TYPE_IMAGE = 1;
+    double latitude;
+    double longitude;
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
+        ButterKnife.bind(this, rootView);
+
+        LocationManager locManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+
+        boolean network_enabled = locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        Location location;
+
+        if (network_enabled) {
+
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return rootView;
+            }
+            location = locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if(location!=null){
+                myLng = location.getLongitude();
+                myLat = location.getLatitude();
+//                Toast.makeText(mStepper, "Location "+String.valueOf(longitude)+","+String.valueOf(latitude), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                lokasi.setText(String.valueOf(myLng)+","+String.valueOf(myLat));
+
+            }
+        }
 
         img1 = (ImageView) rootView.findViewById(R.id.img1);
         img2 = (ImageView) rootView.findViewById(R.id.img2);
@@ -118,8 +157,6 @@ public class Pelanggan extends AbstractStep {
         mMapView = (MapView) rootView.findViewById(R.id.posisi);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
-
-//        Toast.makeText(getContext(), "jarak tempuh saat ini : "+spbu.getString("jarak_tempuh",null), Toast.LENGTH_SHORT).show();
         prepareallmap();
         locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
         listener = new LocationListener() {
@@ -141,7 +178,7 @@ public class Pelanggan extends AbstractStep {
 
 //                googleMap.clear();
 
-//                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -166,7 +203,6 @@ public class Pelanggan extends AbstractStep {
         isCameraPermissionGranted();
         isReadPermissionGranted();
 
-        ButterKnife.bind(this, rootView);
 
         return rootView;
     }

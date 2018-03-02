@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.projek.p2pl">
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -40,7 +41,9 @@
             android:parentActivityName=".Main2Activity"
             android:name="com.projek.p2pl.StepActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-
+        <activity
+            android:parentActivityName=".Main2Activity"
+            android:name=".Pemeriksaan_activity"/>
     </application>
 
 </manifest>

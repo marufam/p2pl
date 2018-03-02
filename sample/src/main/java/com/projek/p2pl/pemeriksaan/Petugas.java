@@ -83,7 +83,7 @@ public class Petugas extends AbstractStep {
 
     @Override
     public void onStepVisible() {
-        Toast.makeText(mStepper, "visible", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mStepper, "visible", Toast.LENGTH_SHORT).show();
     }
 
     @Override

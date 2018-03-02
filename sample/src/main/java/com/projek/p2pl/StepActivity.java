@@ -1,7 +1,15 @@
 package com.projek.p2pl;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
@@ -12,6 +20,8 @@ import com.projek.p2pl.pemeriksaan.Petugas;
 public class StepActivity extends TabStepper {
 
     private int i = 1;
+    double latitude;
+    double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
