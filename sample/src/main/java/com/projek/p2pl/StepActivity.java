@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
+import com.projek.p2pl.pemeriksaan.BarangBukti;
 import com.projek.p2pl.pemeriksaan.Pelanggan;
 import com.projek.p2pl.pemeriksaan.Periksa;
 import com.projek.p2pl.pemeriksaan.Petugas;
@@ -36,6 +37,7 @@ public class StepActivity extends TabStepper {
         addStep(createFragment(new Petugas()));
         addStep(createFragment(new Pelanggan()));
         addStep(createFragment(new Periksa()));
+        addStep(createFragment(new BarangBukti()));
 
         super.onCreate(savedInstanceState);
     }
