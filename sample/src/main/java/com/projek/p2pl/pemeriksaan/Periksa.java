@@ -141,7 +141,7 @@ public class Periksa extends AbstractStep {
         editor.putString("sesuai",sesuai.getSelectedItem().toString());
         editor.putString("hasil",hasil.getSelectedItem().toString());
         editor.putString("pelanggaran",pelanggaran.getSelectedItem().toString());
-        editor.putString("deskripsi_pelanggan",deskripsi_pelanggaran.getText().toString());
+        editor.putString("deskripsi_pelanggaran",deskripsi_pelanggaran.getText().toString());
         editor.putString("tindakan",tindakan.getText().toString());
         editor.commit();
 

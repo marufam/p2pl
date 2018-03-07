@@ -127,9 +127,6 @@ public class BarangBukti extends AbstractStep {
     @Bind(R.id.pelindung_bb)
     EditText pelindungBb;
 
-    public BarangBukti() {
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.barangbukti, container, false);
