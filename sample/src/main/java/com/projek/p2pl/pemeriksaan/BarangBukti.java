@@ -225,6 +225,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setNopabrikBbKwh(nopabrikBbKwh.getText().toString());
         mybarangbukti.setFaktormeterBbKwh(faktormeterBbKwh.getText().toString());
         mybarangbukti.setUkuranxBbKwh(ukuranxBbKwh.getText().toString());
+        mybarangbukti.setUkuranyBbKwh(ukuranyBbKwh.getText().toString());
         mybarangbukti.setAmpereBbKwh(ampereBbKwh.getText().toString());
         mybarangbukti.setStandBbKWh(standBbKWh.getText().toString());
 
