@@ -1,12 +1,16 @@
 package com.projek.p2pl.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.projek.p2pl.DetailActivity;
 import com.projek.p2pl.R;
 import com.projek.p2pl.model.m_barangbukti;
 import com.projek.p2pl.model.m_pelanggan;
@@ -41,7 +45,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         final m_pelanggan model = items.get(i);
         final m_petugas model1 = mypetugas.get(i);
         final m_periksa model2 = myperiksa.get(i);
@@ -55,6 +59,32 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
         viewHolder.tdeskripsi.setText((deskripsi));
         viewHolder.ttindakan.setText((tindakan));
         viewHolder.tpetugas.setText((petugas));
+
+        viewHolder.syn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        viewHolder.detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(a, DetailActivity.class);
+                i.putExtra("id", model.getId().toString());
+                i.putExtra("nama", model.getNama().toString());
+                i.putExtra("alamat", model.getAlamat().toString());
+                i.putExtra("nogardu", model.getNo_gardu().toString());
+                i.putExtra("tarif", model.getTarif().toString());
+
+                i.putExtra("deskripsi", deskripsi.toString());
+                i.putExtra("tindakan", model2.getTindakan().toString());
+
+                i.putExtra("petugas", model1.getNama().toString());
+
+                v.getContext().startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -69,13 +99,15 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nama, tdeskripsi, tpetugas, ttindakan;
+        Button syn, detail;
         public ViewHolder(View itemView) {
             super(itemView);
             nama = (TextView) itemView.findViewById(R.id.nama);
             tdeskripsi = (TextView) itemView.findViewById(R.id.t_deskripsi);
             tpetugas = (TextView) itemView.findViewById(R.id.t_namapetugas);
             ttindakan = (TextView) itemView.findViewById(R.id.t_tindakan);
-
+            syn = (Button) itemView.findViewById(R.id.syn);
+            detail = (Button) itemView.findViewById(R.id.detail);
         }
     }
 }

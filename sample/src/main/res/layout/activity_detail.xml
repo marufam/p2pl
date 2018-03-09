@@ -11,8 +11,7 @@
         android:layout_gravity="center"
         card_view:cardUseCompatPadding="true"
         >
-        <!--card_view:cardCornerRadius="4dp"-->
-        <!--&gt;-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,6 +24,87 @@
                 android:textSize="20dp"
                 android:id="@+id/nama"
                 />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat Pelanggan "
+                        android:id="@+id/t_alamat"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Gardu"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Gardu "
+                        android:id="@+id/t_nogardu"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tarif"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tarif "
+                        android:id="@+id/t_tarif"/>
+                </LinearLayout>
+            </LinearLayout>
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -116,32 +196,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-                <LinearLayout
-                    android:layout_width="0dp"
+                android:orientation="vertical">
+                <Button
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <Button
-                        android:background="@color/cardview_dark_background"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syncronyse"
-                        android:id="@+id/syn"
-                        android:textColor="#FFF"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
+                    android:text="Print Dokumen 1"
+                    android:id="@+id/p_dokumenapa1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#FFF"/>
+                <Button
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <Button
-                        android:text="Detail"
-                        android:textColor="#FFF"
-                        android:id="@+id/detail"
-                        android:background="@color/colorPrimaryDark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                    android:text="Print Dokumen 2"
+                    android:id="@+id/p_dokumenapa2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#FFF"/>
+
             </LinearLayout>
         </LinearLayout>
 

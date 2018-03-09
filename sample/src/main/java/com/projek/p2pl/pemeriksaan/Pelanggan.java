@@ -175,10 +175,8 @@ public class Pelanggan extends AbstractStep  {
                 if (mapCircle != null) {
                     mapCircle.remove();
                 }
-
 //                googleMap.clear();
-
-                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mStepper, ""+myLat+","+myLng, Toast.LENGTH_SHORT).show();
             }
 
             @Override

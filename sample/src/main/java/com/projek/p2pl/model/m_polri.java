@@ -14,7 +14,6 @@ public class m_polri extends RealmObject {
 
     private String nama;
 
-
     private String nip;
 
     private String jabatan;

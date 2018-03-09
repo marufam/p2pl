@@ -99,6 +99,7 @@ public class Periksa extends AbstractStep {
     @Override
     public void onNext() {
         System.out.println("onNext");
+        Toast.makeText(mStepper, "next", Toast.LENGTH_SHORT).show();
     }
 
     @Override

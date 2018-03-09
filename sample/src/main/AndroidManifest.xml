@@ -14,24 +14,23 @@
     <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
     <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
 
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJpupVCuAmG__V8dg5gWY9Md3Mc8f3Ylg" />
-                <activity
-            android:name="com.projek.p2pl.SplashScreen"
+
+        <activity
+            android:name=".SplashScreen"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme"
-            >
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,15 +38,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".StepActivity"
             android:parentActivityName=".Main2Activity"
-            android:name="com.projek.p2pl.StepActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:parentActivityName=".Main2Activity"
-            android:name=".Pemeriksaan_activity"/>
-
+            android:name=".Pemeriksaan_activity"
+            android:parentActivityName=".Main2Activity" />
+        <activity android:name=".Main2Activity" />
         <activity
-            android:name=".Main2Activity"/>
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

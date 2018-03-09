@@ -62,4 +62,5 @@
         <item>Kayu</item>
         <item>Metal</item>
     </string-array>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>

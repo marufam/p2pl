@@ -11,26 +11,12 @@
         android:layout_gravity="center"
         card_view:cardUseCompatPadding="true"
         >
-        <!--card_view:cardCornerRadius="4dp"-->
-        <!--&gt;-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama Mu"
-                android:textSize="20dp"
-                android:id="@+id/nama"
-                />
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#CCC"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,17 +29,17 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pelanggaran"/>
+                        android:text="Nama Polri"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4">
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Deskripsi Pelanggaran Deskripsi Pelanggaran Deskripsi Pelanggaran Deskripsi Pelanggaran "
-                        android:id="@+id/t_deskripsi"/>
+                        android:id="@+id/namapolri"
+                        android:hint="Nama Polri"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -68,45 +54,45 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tindakan"/>
+                        android:text="NIP"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nip"
+                        android:hint="NIP"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tindakan "
-                        android:id="@+id/t_tindakan"/>
+                        android:text="Jabatan"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/jabatan"
+                        android:hint="Jabatan"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="6"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Petugas"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Petugas ... "
-                        android:id="@+id/t_namapetugas"/>
-                </LinearLayout>
-            </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -116,32 +102,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-                <LinearLayout
-                    android:layout_width="0dp"
+                android:orientation="vertical">
+                <Button
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <Button
-                        android:background="@color/cardview_dark_background"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syncronyse"
-                        android:id="@+id/syn"
-                        android:textColor="#FFF"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
+                    android:text="Simpan"
+                    android:id="@+id/simpan"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#FFF"/>
+                <Button
+                    android:background="@color/cardview_dark_background"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <Button
-                        android:text="Detail"
-                        android:textColor="#FFF"
-                        android:id="@+id/detail"
-                        android:background="@color/colorPrimaryDark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                    android:text="Cancel"
+                    android:id="@+id/cancel"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#FFF"/>
+
             </LinearLayout>
         </LinearLayout>
 
