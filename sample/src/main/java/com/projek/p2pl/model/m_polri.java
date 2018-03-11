@@ -18,6 +18,17 @@ public class m_polri extends RealmObject {
 
     private String jabatan;
 
+
+    public m_polri() {
+    }
+
+    public m_polri(String id_polri, String nama, String nip, String jabatan) {
+        this.id_polri = id_polri;
+        this.nama = nama;
+        this.nip = nip;
+        this.jabatan = jabatan;
+    }
+
     public String getId_polri() {
         return id_polri;
     }

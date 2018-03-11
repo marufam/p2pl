@@ -159,7 +159,9 @@ public class Petugas extends AbstractStep {
     public void loadspinner(){
         users.clear();
         users2.clear();
-//        users.add("--Pilih--");
+
+        users.add("--Tidak Ada--");
+        users2.add(new m_polri("1","-","-","-"));
         for (int i=0;i<mRealm.allObjects(m_polri.class).size(); i++){
             users.add(mRealm.allObjects(m_polri.class).get(i).getNama().toString());
             users2.add(mRealm.allObjects(m_polri.class).get(i));
