@@ -26,8 +26,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -89,7 +92,10 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.alamat_saksi) EditText alamat_saksi;
     @Bind(R.id.nomor_identitas) EditText nomor_identitas;
     @Bind(R.id.pekerjaan_saksi) EditText pekerjaan_saksi;
-
+    @Bind(R.id.rd_pelanggan) RadioButton rd_pelanggan;
+    @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
+//    @Bind(R.id.rdg_pelanggan)
+//    RadioGroup rdg_pelanggan;
 
     Button btn_foto;
     ImageView img1, img2, img3, img4, img5, img6;
@@ -103,13 +109,44 @@ public class Pelanggan extends AbstractStep  {
     double longitude;
 
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
         ButterKnife.bind(this, rootView);
+//        int selectedId = rdg_pelanggan.getCheckedRadioButtonId();
 
+        rd_pelanggan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    rd_nonpelanggan.setChecked(false);
+                    id_pelanggan.setEnabled(true);
+                    id_pelanggan.setText("");
+                }
+            }
+        });
+        rd_nonpelanggan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    rd_pelanggan.setChecked(false);
+                    id_pelanggan.setEnabled(false);
+                    id_pelanggan.setText("-");
+                }
+            }
+        });
+
+//
+//        if(rd_nonpelanggan.isChecked()){
+//            rd_pelanggan.setChecked(false);
+
+//        }else{
+//            rd_nonpelanggan.setChecked(true);
+//        }
         LocationManager locManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
 
         boolean network_enabled = locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
