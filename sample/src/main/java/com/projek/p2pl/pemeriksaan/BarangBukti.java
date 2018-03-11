@@ -348,12 +348,12 @@ public class BarangBukti extends AbstractStep {
         mypetugas.setTanggal_suratpolri(pemeriksaan.getString("tanggal_nsp", null));
 
         mypetugas.setPetugas1(pemeriksaan.getString("petugas1", null));
-        mypetugas.setPetugas1(pemeriksaan.getString("nippetugas1", null));
-        mypetugas.setPetugas1(pemeriksaan.getString("jabatanpetugas1", null));
+        mypetugas.setNippetugas1(pemeriksaan.getString("nippetugas1", null));
+        mypetugas.setJabatanpetugas1(pemeriksaan.getString("jabatanpetugas1", null));
 
         mypetugas.setPetugas2(pemeriksaan.getString("petugas2", null));
-        mypetugas.setPetugas2(pemeriksaan.getString("nippetugas2", null));
-        mypetugas.setPetugas2(pemeriksaan.getString("jabatanpetugas2", null));
+        mypetugas.setNippetugas2(pemeriksaan.getString("nippetugas2", null));
+        mypetugas.setJabatanpetugas2(pemeriksaan.getString("jabatanpetugas2", null));
         mRealm.commitTransaction();
     }
 
