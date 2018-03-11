@@ -233,8 +233,14 @@ public class Petugas extends AbstractStep {
             editor.putString("jabatanvendor", jabatanvendor.getText().toString());
             editor.putString("nomorsuratpolri", nomorsuratpolri.getText().toString());
             editor.putString("tanggal_nsp", tanggal.getText().toString());
+
             editor.putString("petugas1", petugas1.getSelectedItem().toString());
+        editor.putString("nippetugas1", petugas1.getSelectedItem().toString());
+        editor.putString("jabatanpetugas1", petugas1.getSelectedItem().toString());
+
             editor.putString("petugas2", petugas2.getSelectedItem().toString());
+        editor.putString("nippetugas2", petugas2.getSelectedItem().toString());
+        editor.putString("jabatanpetugas2", petugas2.getSelectedItem().toString());
             editor.commit();
 //        }
         return i > i;

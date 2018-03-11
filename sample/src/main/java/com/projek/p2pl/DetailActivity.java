@@ -83,6 +83,7 @@ public class DetailActivity extends AppCompatActivity {
         mRealm.beginTransaction();
         mRealm.commitTransaction();
 
+
         m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
         mRealm.beginTransaction();
         mRealm.commitTransaction();
@@ -94,6 +95,7 @@ public class DetailActivity extends AppCompatActivity {
         m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
         mRealm.beginTransaction();
         mRealm.commitTransaction();
+
 
 
 
@@ -115,6 +117,7 @@ public class DetailActivity extends AppCompatActivity {
     @OnClick(R.id.p_dokumenapa2)
     void onPDokumenapa2Click() {
         //TODO implement
+
         Toast.makeText(this, "Print Dokumen 2", Toast.LENGTH_SHORT).show();
     }
 

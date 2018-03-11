@@ -26,8 +26,14 @@ public class m_petugas extends RealmObject {
     private String jabatan_vendor;
     private String nomor_surat_porli;
     private String tanggal;
+
     private String petugas1;
+    private String nippetugas1;
+    private String jabatanpetugas1;
+
     private String petugas2;
+    private String nippetugas2;
+    private String jabatanpetugas2;
     public String getId() {
         return id;
     }
@@ -162,5 +168,37 @@ public class m_petugas extends RealmObject {
 
     public void setPetugas2(String petugas2) {
         this.petugas2 = petugas2;
+    }
+
+    public String getNippetugas1() {
+        return nippetugas1;
+    }
+
+    public void setNippetugas1(String nippetugas1) {
+        this.nippetugas1 = nippetugas1;
+    }
+
+    public String getJabatanpetugas1() {
+        return jabatanpetugas1;
+    }
+
+    public void setJabatanpetugas1(String jabatanpetugas1) {
+        this.jabatanpetugas1 = jabatanpetugas1;
+    }
+
+    public String getNippetugas2() {
+        return nippetugas2;
+    }
+
+    public void setNippetugas2(String nippetugas2) {
+        this.nippetugas2 = nippetugas2;
+    }
+
+    public String getJabatanpetugas2() {
+        return jabatanpetugas2;
+    }
+
+    public void setJabatanpetugas2(String jabatanpetugas2) {
+        this.jabatanpetugas2 = jabatanpetugas2;
     }
 }

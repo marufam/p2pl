@@ -346,8 +346,14 @@ public class BarangBukti extends AbstractStep {
         mypetugas.setJabatan_vendor(pemeriksaan.getString("jabatanvendor", null));
         mypetugas.setNomor_surat_porli(pemeriksaan.getString("nomorsuratpolri", null));
         mypetugas.setTanggal(pemeriksaan.getString("tanggal_nsp", null));
+
         mypetugas.setPetugas1(pemeriksaan.getString("petugas1", null));
+        mypetugas.setPetugas1(pemeriksaan.getString("nippetugas1", null));
+        mypetugas.setPetugas1(pemeriksaan.getString("jabatanpetugas1", null));
+
         mypetugas.setPetugas2(pemeriksaan.getString("petugas2", null));
+        mypetugas.setPetugas2(pemeriksaan.getString("nippetugas2", null));
+        mypetugas.setPetugas2(pemeriksaan.getString("jabatanpetugas2", null));
         mRealm.commitTransaction();
     }
 
