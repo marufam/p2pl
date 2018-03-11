@@ -422,7 +422,7 @@ public class Pelanggan extends AbstractStep  {
                 file1 = fileUri;
                 img1.setImageBitmap(resized);
             } else if(rCode == 200){
-                file1 = fileUri;
+                file2 = fileUri;
                 img2.setImageBitmap(resized);
             } else if(rCode == 300){
                 file3 = fileUri;

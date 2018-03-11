@@ -25,7 +25,7 @@ public class m_petugas extends RealmObject {
     private String noinduk_vendor;
     private String jabatan_vendor;
     private String nomor_surat_porli;
-    private String tanggal;
+    private String tanggal_suratpolri;
 
     private String petugas1;
     private String nippetugas1;
@@ -146,12 +146,12 @@ public class m_petugas extends RealmObject {
         this.nomor_surat_porli = nomor_surat_porli;
     }
 
-    public String getTanggal() {
-        return tanggal;
+    public String getTanggalSuratPolri() {
+        return tanggal_suratpolri;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
+    public void setTanggalSuratPolri(String tanggal) {
+        this.tanggal_suratpolri = tanggal;
     }
 
     public String getPetugas1() {
