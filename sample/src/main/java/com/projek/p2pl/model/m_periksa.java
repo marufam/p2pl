@@ -12,61 +12,33 @@ public class m_periksa extends RealmObject {
 
     @PrimaryKey
     private String id;
-
     private String kwh_meter_1a;
-
     private String merk_1a;
-
     private String tahun_1a;
-
     private String putaran_1a;
-
     private String kondisi_visual_1a;
-
     private String segel_terpasang_1b;
-
     private String jenis_1b;
-
     private String acuan_1b;
-
     private String tahun_1b;
-
     private String kondisi_visual_1b;
-
     private String kapasitas_2a;
-
     private String merk_2a;
-
     private String segel_terpasang_2b;
-
     private String jenis_2b;
-
     private String acuan_2b;
-
     private String tahun_2b;
-
     private String papan_meter_3a;
-
     private String jenis_3a;
-
     private String kondisi_visual_3a;
-
     private String segel_terpasang_3a;
-
     private String jenis_3a2;
-
     private String acuan_3a;
-
     private String tahun_3a;
-
     private String sesuai;
-
     private String hasil;
-
     private String pelanggaran;
-
     private String deskripsi_pelanggaran;
-
     private String tindakan;
 
     public String getId() {

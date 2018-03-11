@@ -12,39 +12,22 @@ public class m_petugas extends RealmObject {
 
     @PrimaryKey
     private String id;
-
     private String nomorsurat;
-
     private String tanggalsurat;
-
     private String nama;
-
     private String noinduk;
-
     private String jabatan;
-
     private String rayon;
-
     private String alamat;
-
     private String cabang;
-
     private String wilayah;
-
     private String nama_vendor;
-
     private String noinduk_vendor;
-
     private String jabatan_vendor;
-
     private String nomor_surat_porli;
-
     private String tanggal;
-
     private String petugas1;
-
     private String petugas2;
-
     public String getId() {
         return id;
     }

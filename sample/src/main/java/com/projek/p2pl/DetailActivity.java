@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.projek.p2pl.model.m_barangbukti;
 import com.projek.p2pl.model.m_pelanggan;
 import com.projek.p2pl.model.m_periksa;
 import com.projek.p2pl.model.m_petugas;
@@ -22,6 +23,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class DetailActivity extends AppCompatActivity {
@@ -43,7 +45,12 @@ public class DetailActivity extends AppCompatActivity {
     TextView tTindakan;
     @Bind(R.id.t_namapetugas)
     TextView tNamapetugas;
+    private Realm mRealm;
 
+    m_pelanggan m_pelanggan;
+    m_periksa m_periksa;
+    m_petugas m_petugas;
+    m_barangbukti m_barangbukti;
     String s_id, s_nama, s_alamat, s_nogardu, s_tarif, s_deskripsi, s_tindakan, s_namapetugas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+        mRealm = Realm.getInstance(getApplicationContext());
 
         Intent i = getIntent();
         s_id = i.getStringExtra("id");
@@ -70,6 +78,25 @@ public class DetailActivity extends AppCompatActivity {
         tDeskripsi.setText(s_deskripsi.toString());
         tTindakan.setText(s_tindakan.toString());
         tNamapetugas.setText(s_namapetugas.toString());
+
+        m_pelanggan = mRealm.where(m_pelanggan.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_periksa = mRealm.where(m_periksa.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+
+
     }
 
 

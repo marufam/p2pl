@@ -26,14 +26,14 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
     private RealmResults<m_pelanggan> items;
     private RealmResults<m_petugas> mypetugas;
     private RealmResults<m_periksa> myperiksa;
-//    private RealmResults<m_barangbukti>  mybarangbukti;
+    private RealmResults<m_barangbukti>  mybarangbukti;
     Context a;
 
-    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa,  Context a) {
+    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa, RealmResults<m_barangbukti> mybarangbukti,  Context a) {
         this.items = items;
         this.mypetugas = mypetugas;
         this.myperiksa = myperiksa;
-//        this.mybarangbukti = mybarangbukti;
+        this.mybarangbukti = mybarangbukti;
         items.addChangeListener(this);
         this.a = a;
     }
@@ -46,14 +46,15 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
-        final m_pelanggan model = items.get(i);
-        final m_petugas model1 = mypetugas.get(i);
-        final m_periksa model2 = myperiksa.get(i);
+        final m_pelanggan model_pelanggan = items.get(i);
+        final m_petugas model_petugas = mypetugas.get(i);
+        final m_periksa model_periksa = myperiksa.get(i);
+        final m_barangbukti model_barangbukti = mybarangbukti.get(i);
 
-        final String nama = model.getNama();
-        final String deskripsi = model2.getDeskripsi_pelanggaran();
-        final String petugas = model1.getNama();
-        final String tindakan = model2.getTindakan();
+        final String nama = model_pelanggan.getNama();
+        final String deskripsi = model_periksa.getDeskripsi_pelanggaran();
+        final String petugas = model_petugas.getNama();
+        final String tindakan = model_periksa.getTindakan();
 
         viewHolder.nama.setText(nama);
         viewHolder.tdeskripsi.setText((deskripsi));
@@ -71,16 +72,16 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(a, DetailActivity.class);
-                i.putExtra("id", model.getId().toString());
-                i.putExtra("nama", model.getNama().toString());
-                i.putExtra("alamat", model.getAlamat().toString());
-                i.putExtra("nogardu", model.getNo_gardu().toString());
-                i.putExtra("tarif", model.getTarif().toString());
-
+                i.putExtra("id", model_pelanggan.getId().toString());
+                i.putExtra("nama", model_pelanggan.getNama().toString());
+                i.putExtra("alamat", model_pelanggan.getAlamat().toString());
+                i.putExtra("nogardu", model_pelanggan.getNo_gardu().toString());
+                i.putExtra("tarif", model_pelanggan.getTarif().toString());
                 i.putExtra("deskripsi", deskripsi.toString());
-                i.putExtra("tindakan", model2.getTindakan().toString());
+                i.putExtra("tindakan", model_periksa.getTindakan().toString());
+                i.putExtra("petugas", model_petugas.getNama().toString());
 
-                i.putExtra("petugas", model1.getNama().toString());
+
 
                 v.getContext().startActivity(i);
             }

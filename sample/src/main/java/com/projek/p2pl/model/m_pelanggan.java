@@ -12,37 +12,21 @@ import io.realm.annotations.Required;
 public class m_pelanggan extends RealmObject {
     @PrimaryKey
     private String id;
-
     private String id_pelanggan;
-
     private String nama;
-
     private String alamat;
-
     private String no_gardu;
-
     private String tarif;
-
     private String nama_penghuni;
-
     private String alamat_penghuni;
-
     private String noktp_penghuni;
-
     private String nama_saksi;
-
     private String alamat_saksi;
-
     private String nomor_identitas;
-
     private String pekerjaan_saksi;
-
     private String foto;
-
     private String status;
-
     private Double lat;
-
     private Double lng;
 
     public String getId() {
