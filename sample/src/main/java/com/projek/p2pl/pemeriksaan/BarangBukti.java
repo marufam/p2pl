@@ -196,6 +196,7 @@ public class BarangBukti extends AbstractStep {
         insert_petugas();
         insert_pelanggan();
         insert_periksa();
+        insert_barangbukti();
 
         SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
         SharedPreferences.Editor myperiksa = pref.edit();
@@ -214,7 +215,6 @@ public class BarangBukti extends AbstractStep {
     public void insert_barangbukti(){
         SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode
         mRealm.beginTransaction();
-
         m_barangbukti mybarangbukti = mRealm.createObject(m_barangbukti.class);
         mybarangbukti.setId(pemeriksaan.getString("id",null));
         mybarangbukti.setMerkBbKwh(merkBbKwh.getText().toString());

@@ -29,11 +29,11 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
     private RealmResults<m_barangbukti>  mybarangbukti;
     Context a;
 
-    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa, RealmResults<m_barangbukti> mybarangbukti,  Context a) {
+    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa,  Context a) {
         this.items = items;
         this.mypetugas = mypetugas;
         this.myperiksa = myperiksa;
-        this.mybarangbukti = mybarangbukti;
+//        this.mybarangbukti = mybarangbukti;
         items.addChangeListener(this);
         this.a = a;
     }
@@ -49,7 +49,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
         final m_pelanggan model_pelanggan = items.get(i);
         final m_petugas model_petugas = mypetugas.get(i);
         final m_periksa model_periksa = myperiksa.get(i);
-        final m_barangbukti model_barangbukti = mybarangbukti.get(i);
+//        final m_barangbukti model_barangbukti = mybarangbukti.get(i);
 
         final String nama = model_pelanggan.getNama();
         final String deskripsi = model_periksa.getDeskripsi_pelanggaran();
@@ -80,8 +80,6 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                 i.putExtra("deskripsi", deskripsi.toString());
                 i.putExtra("tindakan", model_periksa.getTindakan().toString());
                 i.putExtra("petugas", model_petugas.getNama().toString());
-
-
 
                 v.getContext().startActivity(i);
             }

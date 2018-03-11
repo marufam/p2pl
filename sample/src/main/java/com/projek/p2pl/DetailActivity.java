@@ -83,7 +83,6 @@ public class DetailActivity extends AppCompatActivity {
         mRealm.beginTransaction();
         mRealm.commitTransaction();
 
-
         m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
         mRealm.beginTransaction();
         mRealm.commitTransaction();
@@ -96,9 +95,10 @@ public class DetailActivity extends AppCompatActivity {
         mRealm.beginTransaction();
         mRealm.commitTransaction();
 
-
-
-
+//        Toast.makeText(this, "Nama "+m_pelanggan.getNama().toString(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Nama "+m_petugas.getNama().toString(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Hasil "+m_periksa.getHasil().toString(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Gardu "+m_barangbukti.getGarduBb(), Toast.LENGTH_SHORT).show();
     }
 
 
