@@ -34,6 +34,7 @@ public class m_petugas extends RealmObject {
     private String petugas2;
     private String nippetugas2;
     private String jabatanpetugas2;
+
     public String getId() {
         return id;
     }
@@ -46,16 +47,16 @@ public class m_petugas extends RealmObject {
         return nomorsurat;
     }
 
+    public void setNomorsurat(String nomorsurat) {
+        this.nomorsurat = nomorsurat;
+    }
+
     public String getTanggalsurat() {
         return tanggalsurat;
     }
 
     public void setTanggalsurat(String tanggalsurat) {
         this.tanggalsurat = tanggalsurat;
-    }
-
-    public void setNomorsurat(String nomorsurat) {
-        this.nomorsurat = nomorsurat;
     }
 
     public String getNama() {
@@ -146,12 +147,12 @@ public class m_petugas extends RealmObject {
         this.nomor_surat_porli = nomor_surat_porli;
     }
 
-    public String getTanggalSuratPolri() {
+    public String getTanggal_suratpolri() {
         return tanggal_suratpolri;
     }
 
-    public void setTanggalSuratPolri(String tanggal) {
-        this.tanggal_suratpolri = tanggal;
+    public void setTanggal_suratpolri(String tanggal_suratpolri) {
+        this.tanggal_suratpolri = tanggal_suratpolri;
     }
 
     public String getPetugas1() {
@@ -160,14 +161,6 @@ public class m_petugas extends RealmObject {
 
     public void setPetugas1(String petugas1) {
         this.petugas1 = petugas1;
-    }
-
-    public String getPetugas2() {
-        return petugas2;
-    }
-
-    public void setPetugas2(String petugas2) {
-        this.petugas2 = petugas2;
     }
 
     public String getNippetugas1() {
@@ -184,6 +177,14 @@ public class m_petugas extends RealmObject {
 
     public void setJabatanpetugas1(String jabatanpetugas1) {
         this.jabatanpetugas1 = jabatanpetugas1;
+    }
+
+    public String getPetugas2() {
+        return petugas2;
+    }
+
+    public void setPetugas2(String petugas2) {
+        this.petugas2 = petugas2;
     }
 
     public String getNippetugas2() {

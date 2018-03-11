@@ -119,6 +119,8 @@ public class DetailActivity extends AppCompatActivity {
     @OnLongClick(R.id.p_dokumenapa1)
     boolean onPDokumenapa1LongClick() {
         //TODO implement
+        postData("http://10.3.141.1/print/digitalisasi_rest/index.php/api/RestPemeriksaan_2");
+        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -126,7 +128,7 @@ public class DetailActivity extends AppCompatActivity {
     void onPDokumenapa2Click() {
         //TODO implement
 
-//        Toast.makeText(this, "Print Dokumen 2", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Print Dokumen 2", Toast.LENGTH_SHORT).show();
     }
 
     @OnLongClick(R.id.p_dokumenapa2)
@@ -138,7 +140,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
-    private void postData(){
+    private void postData(final String url){
 //        final SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0);
         Thread t = new Thread(new Runnable() {
             @Override
@@ -153,7 +155,7 @@ public class DetailActivity extends AppCompatActivity {
 //                String content_type = getMimeType(file1.getPath());
 
                 OkHttpClient client = new OkHttpClient();
-                String url = "http://192.168.1.69:81/p2tl_service/petugas";
+//                String url = "http://192.168.1.69:81/p2tl_service/petugas";
 
                 RequestBody body = new MultipartBody.Builder()
                         .setType(MultipartBody.FORM)
@@ -172,7 +174,7 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("no_induk_vendor", m_petugas.getNoinduk_vendor() )
                         .addFormDataPart("jabatan_vendor", m_petugas.getJabatan_vendor() )
                         .addFormDataPart("nomor_surat_polri", m_petugas.getNomor_surat_porli() )
-                        .addFormDataPart("tanggal_suratpolri", m_petugas.getTanggalSuratPolri() )
+                        .addFormDataPart("tanggal_suratpolri", m_petugas.getTanggal_suratpolri() )
                         .addFormDataPart("nama_polri1", m_petugas.getPetugas1() )
                         .addFormDataPart("nip_polri1", m_petugas.getNippetugas1() )
                         .addFormDataPart("jabatan_polri1", m_petugas.getJabatanpetugas1() )
