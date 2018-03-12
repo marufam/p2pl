@@ -62,7 +62,7 @@ public class Periksa extends AbstractStep {
     @Bind(R.id.hasil) Spinner hasil;
     @Bind(R.id.pelanggaran) Spinner pelanggaran;
     @Bind(R.id.deskripsi_pelanggaran) EditText deskripsi_pelanggaran;
-    @Bind(R.id.tindakan) EditText tindakan;
+    @Bind(R.id.tindakan) Spinner tindakan;
 
 
     @Override
@@ -143,7 +143,7 @@ public class Periksa extends AbstractStep {
         editor.putString("hasil",hasil.getSelectedItem().toString());
         editor.putString("pelanggaran",pelanggaran.getSelectedItem().toString());
         editor.putString("deskripsi_pelanggaran",deskripsi_pelanggaran.getText().toString());
-        editor.putString("tindakan",tindakan.getText().toString());
+        editor.putString("tindakan",tindakan.getSelectedItem().toString());
         editor.commit();
 
         return i > 1;

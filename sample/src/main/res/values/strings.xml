@@ -15,26 +15,37 @@
 
     <string name="action_settings">Settings</string>
     <string-array name="sesuai">
+        <item>-</item>
         <item>Sesuai</item>
         <item>Tidak</item>
     </string-array>
 
     <string-array name="pelanggaran">
+        <item>-</item>
         <item>Tidak Ditemukan</item>
         <item>Ditemukan Pelanggaran</item>
     </string-array>
 
+    <string-array name="tindakan">
+        <item>-</item>
+        <item>Dipadamkan</item>
+        <item>Tidak dipadamkan</item>
+    </string-array>
+
     <string-array name="papan">
+        <item>-</item>
         <item>Pakai</item>
         <item>Tidak</item>
     </string-array>
 
     <string-array name="ada2tidak">
+        <item>-</item>
         <item>Ada</item>
         <item>Tidak Ada</item>
     </string-array>
 
     <string-array name="jenis_pelanggaran">
+        <item>-</item>
         <item>P1</item>
         <item>P2</item>
         <item>P3</item>
@@ -44,23 +55,78 @@
     </string-array>
 
     <string-array name="merk">
-        <item>Melconida</item>
+        <item>-</item>
+        <item>GLOMET</item>
+        <item>HEXING</item>
+        <item>SMART</item>
+        <item>MELCOINDA</item>
+        <item>ITRON</item>
+        <item>ACTARIS</item>
+        <item>STAR</item>
+        <item>HOLLEY</item>
+        <item>CANNET</item>
+        <item>SANXING</item>
+        <item>FUJI DHARMA</item>
+        <item>OSAKI</item>
+        <item>MECOINDA</item>
+        <item>METBELOSA</item>
+        <item>GANZ</item>
+        <item>ILATO</item>
+        <item>SIGMA</item>
+        <item>CONLOG</item>
+        <item>MEISYS</item>
+    </string-array>
+
+    <string-array name="type_meter">
+        <item>-</item>
+        <item>FA14AI1Z</item>
+        <item>MTS-125</item>
+        <item>SMI-800</item>
+        <item>SMI-810</item>
+        <item>SMI-200S</item>
+        <item>ACE 9000 BALI-1 V.2</item>
+        <item>DDSY1088</item>
+        <item>DDSY23S</item>
+        <item>GX-669</item>
+        <item>GX-600</item>
+        <item>EM512 TYPE 700</item>
+        <item>HXE-116 KP</item>
+        <item>P12A4</item>
+        <item>MF-93 F</item>
+        <item>MF-97 E</item>
     </string-array>
 
     <string-array name="kondisi_visual">
+        <item>-</item>
         <item>Baik</item>
         <item>Tidak</item>
     </string-array>
 
     <string-array name="jenis">
+        <item>-</item>
         <item>Plastik</item>
         <item>Timah</item>
     </string-array>
 
 
     <string-array name="jenis2">
+        <item>-</item>
         <item>Kayu</item>
         <item>Metal</item>
     </string-array>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>

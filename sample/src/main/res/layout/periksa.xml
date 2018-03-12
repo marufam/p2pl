@@ -45,8 +45,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="KWH Meter"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_header"
+                                    android:text="KWh Meter" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -54,7 +56,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -90,7 +92,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -119,7 +121,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -147,7 +149,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -155,7 +157,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Putaran"
+                                    android:text="Putaran (rpm)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -174,7 +176,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -217,7 +219,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -235,7 +237,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -246,7 +248,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Segel Terpasang"
+                                    android:text="Segel Terpasang (buah)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -266,7 +268,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -295,7 +297,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -322,7 +324,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -349,7 +351,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -401,8 +403,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Pembatas"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_header"
+                                    android:text="Pembatas" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -410,7 +414,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -421,7 +425,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Kapasitas"
+                                    android:text="Kapasitas (A)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -440,7 +444,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -469,7 +473,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -477,7 +481,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Segel Terpasang"
+                                    android:text="Segel Terpasang (buah)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -496,7 +500,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -526,7 +530,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -554,7 +558,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -595,7 +599,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -606,8 +610,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Papan Meter"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_header"
+                                    android:text="Papan Meter" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -615,7 +621,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -651,7 +657,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -680,7 +686,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -710,7 +716,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -718,7 +724,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Segel Terpasang"
+                                    android:text="Segel Terpasang (buah)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -738,7 +744,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -746,7 +752,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Jenis"
+                                    android:text="Jenis (segelterpasang)"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -767,7 +773,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -794,7 +800,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -836,7 +842,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -847,8 +853,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Pengawatan APP"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_header"
+                                    android:text="Pengawatan APP" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -856,7 +864,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -914,8 +922,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Kesimpulan Hasil Pemeriksaan"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_header"
+                                    android:text="Kesimpulan Hasil Pemeriksaan" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -923,7 +933,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp"
+                            android:layout_margin="@dimen/input_margin"
                             >
 
                             <LinearLayout
@@ -956,7 +966,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -985,7 +995,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -1013,7 +1023,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -1029,11 +1039,18 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <!--<EditText-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:hint="Tindakan"-->
+                                    <!--android:id="@+id/tindakan"/>-->
+                                <Spinner
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Tindakan"
-                                    android:id="@+id/tindakan"/>
+                                    android:layout_height="30dp"
+                                    android:id="@+id/tindakan"
+                                    android:entries="@array/tindakan"
+                                    >
+                                </Spinner>
                             </LinearLayout>
                         </LinearLayout>
 

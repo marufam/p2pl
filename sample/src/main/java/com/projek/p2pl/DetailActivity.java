@@ -89,35 +89,72 @@ public class DetailActivity extends AppCompatActivity {
 //        Toast.makeText(this, "Nama "+m_petugas.getNama().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Hasil "+m_periksa.getHasil().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Gardu "+m_barangbukti.getGarduBb(), Toast.LENGTH_SHORT).show();
+
+        Button pemeriksaan = (Button) findViewById(R.id.btnpemeriksaan);
+        Button penangguhan = (Button) findViewById(R.id.btnpenangguhan);
+        Button pengambilan = (Button) findViewById(R.id.btnpengambilan);
+        Button penitipan = (Button) findViewById(R.id.btnpenitipan);
+
+        pemeriksaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
+                Toast.makeText(DetailActivity.this, "Print Pemeriksaan", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        penangguhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
+                Toast.makeText(DetailActivity.this, "Print Penangguhan", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        pengambilan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
+                Toast.makeText(DetailActivity.this, "Print Pengambilan", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        penitipan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
+                Toast.makeText(DetailActivity.this, "Print Penitipan", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
-    @OnClick(R.id.p_dokumenapa1)
-    void onPDokumenapa1Click() {
-        //TODO implement
-        Toast.makeText(this, "Print Dokumen 1", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnLongClick(R.id.p_dokumenapa1)
-    boolean onPDokumenapa1LongClick() {
-        //TODO implement
-        postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
-        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
-        return true;
-    }
-
-    @OnClick(R.id.p_dokumenapa2)
-    void onPDokumenapa2Click() {
-        //TODO implement
-
-        Toast.makeText(this, "Print Dokumen 2", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnLongClick(R.id.p_dokumenapa2)
-    boolean onPDokumenapa2LongClick() {
-        //TODO implement
-        return true;
-    }
+//    @OnClick(R.id.btnpemeriksaan)
+//    void onPDokumenapa1Click() {
+//        //TODO implement
+//        postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
+//        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    @OnLongClick(R.id.btnpemeriksaan)
+//    boolean onPDokumenapa1LongClick() {
+//        //TODO implement
+//        return true;
+//    }
+//
+//    @OnClick(R.id.p_dokumenapa2)
+//    void onPDokumenapa2Click() {
+//        //TODO implement
+//
+//        Toast.makeText(this, "Print Dokumen 2", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    @OnLongClick(R.id.p_dokumenapa2)
+//    boolean onPDokumenapa2LongClick() {
+//        //TODO implement
+//        return true;
+//    }
 
 
 

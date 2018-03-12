@@ -32,10 +32,12 @@
                         android:orientation="vertical"
                         android:padding="10dp">
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Foto"
-                            android:layout_margin="3dp"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_header"
+                            android:text="Foto/Dokumentasi" />
                         <com.wefika.flowlayout.FlowLayout
                             xmlns:android="http://schemas.android.com/apk/res/android"
                             android:layout_width="match_parent"
@@ -45,37 +47,37 @@
                             <ImageView
                                 android:id="@+id/img1"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                             <ImageView
                                 android:id="@+id/img2"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                             <ImageView
                                 android:id="@+id/img3"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                             <ImageView
                                 android:id="@+id/img4"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                             <ImageView
                                 android:id="@+id/img5"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                             <ImageView
                                 android:id="@+id/img6"
                                 android:layout_width="100dp"
-                                android:layout_height="120dp"
+                                android:layout_height="100dp"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"/>
                         </com.wefika.flowlayout.FlowLayout>
@@ -104,10 +106,12 @@
                 android:orientation="vertical"
                 android:padding="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Posisi"
-                    android:layout_margin="3dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_header"
+                    android:text="Posisi" />
                 <com.google.android.gms.maps.MapView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
@@ -135,9 +139,11 @@
                         android:padding="10dp">
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Data Pelanggan"
-                            android:layout_margin="3dp"/>
+                            android:layout_height="30dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_header"
+                            android:text="Data Pelanggan" />
                         <RadioGroup
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -181,7 +187,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                    android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -208,7 +214,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
-                    android:layout_margin="3dp">
+                    android:layout_margin="@dimen/input_margin">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -235,7 +241,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
-                    android:layout_margin="3dp">
+                    android:layout_margin="@dimen/input_margin">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -263,7 +269,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
-                    android:layout_margin="3dp">
+                    android:layout_margin="@dimen/input_margin">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -290,7 +296,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
-                    android:layout_margin="3dp">
+                    android:layout_margin="@dimen/input_margin">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -327,11 +333,18 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_header"
+                            android:text="Penghuni" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -358,7 +371,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -385,7 +398,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -424,11 +437,18 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_header"
+                            android:text="Saksi" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -455,7 +475,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -482,7 +502,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -509,7 +529,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"

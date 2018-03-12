@@ -29,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
                 }else{
                     Toast.makeText(SplashScreen.this, "Internet Not Available", Toast.LENGTH_SHORT).show();
                 }
-                Intent mainIntent = new Intent(SplashScreen.this, Main2Activity.class);
+                Intent mainIntent = new Intent(SplashScreen.this, LoginActivity.class);
                         SplashScreen.this.startActivity(mainIntent);
                         SplashScreen.this.finish();
 

@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -15,75 +15,97 @@
             android:padding="10dp"
 
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp"
-                >
+                android:padding="10dp">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
                             android:layout_margin="3dp">
-                                    <LinearLayout
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1.5">
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="30dp"
-                                            android:text="Nomor Surat Tugas"
-                                            android:gravity="bottom"
-                                            />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="2.5">
-                                        <EditText
-                                            android:id="@+id/nomorsurat"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:hint="Nomor Surat Tugas"/>
-                                    </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_header"
+                                android:text="Surat Tugas" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Tanggal"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Nomor Surat Tugas" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nomorsurat"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tanggal"
-                                    android:id="@+id/tanggalsurat"/>
+                                    android:hint="Nomor Surat Tugas" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Tanggal Surat Tugas" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/tanggalsurat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tanggal Surat Tugas" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -95,38 +117,33 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
-
-                            <LinearLayout
+                            android:layout_margin="3dp">
+                            <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="P2TL PLN"
-                                    />
-                            </LinearLayout>
+                                android:layout_height="30dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_header"
+                                android:text="P2TL PLN" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -136,73 +153,82 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Nama"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Nama" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nama"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama"
-                                    android:id="@+id/nama"/>
+                                    android:hint="Nama" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No Induk"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="No Induk" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/noinduk"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Induk"
-                                    android:id="@+id/noinduk"/>
+                                    android:hint="No Induk" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Jabatan"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Jabatan" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/jabatan"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Jabatan"
-                                    android:id="@+id/jabatan"/>
+                                    android:hint="Jabatan" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -213,38 +239,33 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
-
-                            <LinearLayout
+                            android:layout_margin="3dp">
+                            <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="P2TL Vendor"
-                                    />
-                            </LinearLayout>
+                                android:layout_height="30dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_header"
+                                android:text="P2TL Vendor" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -254,73 +275,82 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Nama"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Nama" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nama_vendor"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama"
-                                    android:id="@+id/nama_vendor"/>
+                                    android:hint="Nama" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No Induk"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="No Induk" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/noinduk_vendor"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Induk"
-                                    android:id="@+id/noinduk_vendor"/>
+                                    android:hint="No Induk" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Jabatan"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Jabatan" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/jabatan_vendor"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Jabatan"
-                                    android:id="@+id/jabatan_vendor"/>
+                                    android:hint="Jabatan" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -331,38 +361,34 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="@dimen/input_margin">
 
-                            <LinearLayout
+                            <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Anggota POLRI"
-                                    />
-                            </LinearLayout>
+                                android:layout_height="30dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_header"
+                                android:text="Anggota POLRI" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -372,277 +398,309 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Nomor Surat Tugas"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Nomor Surat Tugas" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nomor_surat_porli"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nomor Surat"
-                                    android:id="@+id/nomor_surat_porli"/>
+                                    android:hint="Nomor Surat" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Tanggal"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Tanggal" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/tanggal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tanggal"
-                                    android:id="@+id/tanggal"/>
+                                    android:hint="Tanggal" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#CCC"
+                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"/>
+                            android:background="#CCC" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="@dimen/input_margin">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
+                                android:layout_height="wrap_content">
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Petugas 1"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:text="Petugas 1" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Petugas 1"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Petugas 1" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <Spinner
+                                    android:id="@+id/petugas1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Petugas 1"
-                                    android:id="@+id/petugas1"/>
+                                    android:hint="Petugas 1" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="NIP Petugas 1"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="NIP Petugas 1" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nippetugas1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
-                                    android:hint="NIP Petugas 1"
-                                    android:id="@+id/nippetugas1"/>
+                                    android:hint="NIP Petugas 1" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Jabatan Petugas 1"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Jabatan Petugas 1" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/jabatanpetugas1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
-                                    android:hint="Jabatan Petugas 1"
-                                    android:id="@+id/jabatanpetugas1"/>
+                                    android:hint="Jabatan Petugas 1" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#CCC"
+                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"/>
+                            android:background="#CCC" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="3dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
+                                android:layout_height="wrap_content">
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Petugas 2"
-                                    />
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold"
+                                    android:text="Petugas 2" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Petugas 2"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Petugas 2" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <Spinner
+                                    android:id="@+id/petugas2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Petugas 2"
-                                    android:id="@+id/petugas2"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="NIP Petugas 2"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:enabled="false"
-                                    android:hint="NIP Petugas 2"
-                                    android:id="@+id/nippetugas2"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Jabatan Petugas 2"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:enabled="false"
-                                    android:hint="Jabatan Petugas 2"
-                                    android:id="@+id/jabatanpetugas2"/>
+                                    android:hint="Petugas 2" />
                             </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="3dp">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="NIP Petugas 2" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/nippetugas2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="false"
+                                    android:hint="NIP Petugas 2" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Jabatan Petugas 2" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/jabatanpetugas2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="false"
+                                    android:hint="Jabatan Petugas 2" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <Button
+                                android:id="@+id/tambah_polri"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:padding="10dp"
-                                android:id="@+id/tambah_polri"
                                 android:layout_margin="3dp"
                                 android:background="@color/colorPrimaryDark"
-                                android:textColor="#FFF"
-                                android:text="Tambah PORLI"/>
+                                android:padding="10dp"
+                                android:text="Tambah PORLI"
+                                android:textColor="#FFF" />
                         </LinearLayout>
 
                     </LinearLayout>

@@ -272,6 +272,7 @@ public class BarangBukti extends AbstractStep {
 
     public void insert_periksa() {
         SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode
+        String hasil = "s";
         mRealm.beginTransaction();
         m_periksa myperiksa = mRealm.createObject(m_periksa.class);
         myperiksa.setId(pemeriksaan.getString("id",null));
