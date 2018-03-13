@@ -203,6 +203,17 @@ public class BarangBukti extends AbstractStep {
         myperiksa.clear();
 
         getActivity().finish();
+//        Log.d("Pemeriksaan","kwh meter 1a : " + pemeriksaan.getString("kwh_meter_1a",null));
+//        Log.d("Pemeriksaan","kondisi visual 1a : " + pemeriksaan.getString("kondisi_visual_1a",null));
+//        Log.d("Pemeriksaan","jenis 1b : " + pemeriksaan.getString("jenis_1b",null));
+//        Log.d("Pemeriksaan","kondisi visual 1b : " + pemeriksaan.getString("kondisi_visual_1b",null));
+//        Log.d("Pemeriksaan","jenis 2b : " + pemeriksaan.getString("jenis_2b",null));
+//        Log.d("Pemeriksaan","papan meter 3a : " + pemeriksaan.getString("papan_meter_3a",null));
+//        Log.d("Pemeriksaan","jenis 3a : " + pemeriksaan.getString("jenis_3a",null));
+//        Log.d("Pemeriksaan","kondisi visual 3a : " + pemeriksaan.getString("kondisi_visual_3a",null));
+//        Log.d("Pemeriksaan","jenis 3a2 : " + pemeriksaan.getString("jenis_3a2",null));
+//        Log.d("Pemeriksaan","sesuai 4a : " + pemeriksaan.getString("sesuai",null));
+//        Log.d("Pemeriksaan","hasil : " + pemeriksaan.getString("hasil",null));
 
         return i > i;
     }

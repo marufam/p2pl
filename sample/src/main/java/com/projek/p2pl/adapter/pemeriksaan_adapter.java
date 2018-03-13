@@ -3,6 +3,7 @@ package com.projek.p2pl.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +30,11 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
     private RealmResults<m_barangbukti>  mybarangbukti;
     Context a;
 
-    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa,  Context a) {
+    public pemeriksaan_adapter(RealmResults<m_pelanggan> items, RealmResults<m_petugas> mypetugas, RealmResults<m_periksa> myperiksa, RealmResults<m_barangbukti> mybarangbukti,  Context a) {
         this.items = items;
         this.mypetugas = mypetugas;
         this.myperiksa = myperiksa;
-//        this.mybarangbukti = mybarangbukti;
+        this.mybarangbukti = mybarangbukti;
         items.addChangeListener(this);
         this.a = a;
     }
@@ -49,7 +50,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
         final m_pelanggan model_pelanggan = items.get(i);
         final m_petugas model_petugas = mypetugas.get(i);
         final m_periksa model_periksa = myperiksa.get(i);
-//        final m_barangbukti model_barangbukti = mybarangbukti.get(i);
+        final m_barangbukti model_barangbukti = mybarangbukti.get(i);
 
         final String nama = model_pelanggan.getNama();
         final String deskripsi = model_periksa.getDeskripsi_pelanggaran();
@@ -65,6 +66,15 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
             @Override
             public void onClick(View v) {
                 Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
+                Log.d("P2TL - ID(Pel)",model_pelanggan.getId_pelanggan());
+                Log.d("P2TL - Pelanggan",model_pelanggan.getNama());
+                Log.d("P2TL - Alamat Pel",model_pelanggan.getAlamat());
+                Log.d("P2TL - No.Gardu Pel",model_pelanggan.getNo_gardu());
+                Log.d("P2TL - ID(Pet)",model_petugas.getId());
+                Log.d("P2TL - ID(Per)",model_periksa.getId());
+                Log.d("P2TL - periksa",model_periksa.getMerk_1a());
+                Log.d("P2TL - ID(Ba)",model_barangbukti.getId());
+                Log.d("P2TL - barangbukti",model_barangbukti.getAmpereBbKwh());
             }
         });
 

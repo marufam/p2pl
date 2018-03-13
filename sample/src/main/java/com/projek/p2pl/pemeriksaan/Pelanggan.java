@@ -48,12 +48,16 @@ import com.projek.p2pl.R;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -234,9 +238,12 @@ public class Pelanggan extends AbstractStep  {
                 startActivity(i);
             }
         };
+
         configure_button();
         isCameraPermissionGranted();
         isReadPermissionGranted();
+
+        getPel();
 
 
         return rootView;
@@ -579,5 +586,25 @@ public class Pelanggan extends AbstractStep  {
             Log.v(TAG,"Read Permission is granted");
             return true;
         }
+    }
+
+    public void getPel(){
+        OkHttpClient client = new OkHttpClient();
+        // code request code here
+
+        Request request = new Request.Builder()
+                .url("https://smartconnect.plnjateng.co.id/mappro/app/function/web_service.php?API=11223344&idpel=524010845932")
+                .get()
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            String jsonData = response.body().string();
+
+            Log.d("tesa", jsonData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        return response.body().string();
     }
 }

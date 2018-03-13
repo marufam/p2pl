@@ -114,6 +114,18 @@ public class Periksa extends AbstractStep {
 
     @Override
     public boolean nextIf() {
+//        Log.d("Pemeriksaan","kwh meter 1a : " + kwh_meter_1a.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","kondisi visual 1a : " + kondisi_visual_1a.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","jenis 1b : " + jenis_1b.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","kondisi visual 1b : " + kondisi_visual_1b.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","jenis 2b : " + jenis_2b.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","papan meter 3a : " + papan_meter_3a.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","jenis 3a : " + jenis_3a.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","kondisi visual 3a : " + kondisi_visual_3a.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","jenis 3a2 : " + jenis_3a2.getSelectedItem().toString());
+//        Log.d("Pemeriksaan","sesuai 4a : " + sesuai.getSelectedItem().toString());
+
+
         SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("kwh_meter_1a",kwh_meter_1a.getSelectedItem().toString());

@@ -42,7 +42,7 @@ public class Pemeriksaan_activity extends AppCompatActivity {
 //        Toast.makeText(this, "ukuran : "+mRealm.allObjects(m_barangbukti.class).size(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "ukuran : "+mRealm.allObjects(m_periksa.class).size(), Toast.LENGTH_SHORT).show();
 
-        mAdapter = new pemeriksaan_adapter(mRealm.allObjects(m_pelanggan.class),mRealm.allObjects(m_petugas.class),mRealm.allObjects(m_periksa.class),getApplicationContext());
+        mAdapter = new pemeriksaan_adapter(mRealm.allObjects(m_pelanggan.class),mRealm.allObjects(m_petugas.class),mRealm.allObjects(m_periksa.class),mRealm.allObjects(m_barangbukti.class),getApplicationContext());
         mAdapter.notifyDataSetChanged();
         mRecycleview.setAdapter(mAdapter);
         Log.d("isi",mRealm.allObjects(m_pelanggan.class).toString());
