@@ -32,6 +32,14 @@
         <item>Tidak dipadamkan</item>
     </string-array>
 
+    <string-array name="peruntukan">
+        <item>-</item>
+        <item>Rumah Tangga</item>
+        <item>Bisnis</item>
+        <item>Sosial</item>
+        <item>Publik</item>
+    </string-array>
+
     <string-array name="papan">
         <item>-</item>
         <item>Pakai</item>

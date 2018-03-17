@@ -47,6 +47,10 @@ import com.projek.p2pl.Config;
 import com.projek.p2pl.R;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -100,6 +104,7 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
 //    @Bind(R.id.rdg_pelanggan)
 //    RadioGroup rdg_pelanggan;
+    @Bind(R.id.btn_pelanggan) Button btn_pelanggan;
 
     Button btn_foto;
     ImageView img1, img2, img3, img4, img5, img6;
@@ -243,7 +248,14 @@ public class Pelanggan extends AbstractStep  {
         isCameraPermissionGranted();
         isReadPermissionGranted();
 
-        getPel();
+
+        // cek id pelanggan
+        btn_pelanggan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPel(id_pelanggan.getText().toString());
+            }
+        });
 
 
         return rootView;
@@ -588,23 +600,62 @@ public class Pelanggan extends AbstractStep  {
         }
     }
 
-    public void getPel(){
-        OkHttpClient client = new OkHttpClient();
-        // code request code here
+    public void getPel(final String idpel){
+        new Thread(new Runnable() {
 
-        Request request = new Request.Builder()
-                .url("https://smartconnect.plnjateng.co.id/mappro/app/function/web_service.php?API=11223344&idpel=524010845932")
-                .get()
-                .build();
+            @Override
+            public void run() {
+                Toast.makeText(mStepper, idpel, Toast.LENGTH_SHORT).show();
+                Log.d("tew", "https://smartconnect.plnjateng.co.id/mappro/app/function/web_service.php?API=11223344&idpel=" + idpel);
+                OkHttpClient client = new OkHttpClient();
+                // code request code here
 
-        try {
-            Response response = client.newCall(request).execute();
-            String jsonData = response.body().string();
+                Request request = new Request.Builder()
+                        .url("https://smartconnect.plnjateng.co.id/mappro/app/function/web_service.php?API=11223344&idpel=" + idpel)
+                        .get()
+                        .build();
 
-            Log.d("tesa", jsonData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+                try {
+                    Response response = client.newCall(request).execute();
+                    String result = response.body().string();
+
+                    JSONObject jsonObject = new JSONObject(result);
+                    JSONArray jsonArray = jsonObject.getJSONArray("p2tl");
+                    JSONObject data = jsonArray.getJSONObject(0);
+
+                    final String namapel = data.isNull("nama") ? "-" : data.getString("nama") ;
+                    final String alamatpel = data.isNull("alamat") ? "-" : data.getString("alamat") ;
+                    final String no_gardupel = data.isNull("kdgardu") ? "-" : data.getString("kdgardu") ;
+                    final String tarifpel = data.isNull("tarif") ? "-" : data.getString("tarif") ;
+
+                    Log.d("tesa2", jsonObject.toString());
+                    Log.d("tesa3", jsonArray.toString());
+                    Log.d("tesa4", data.toString());
+                    Log.d("tesa5", data.getString("result"));
+//                    Log.d("tesa6", nama_pel);
+
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            nama.setText(namapel);
+                            alamat.setText(alamatpel);
+                            no_gardu.setText(no_gardupel);
+                            tarif.setText(tarifpel);
+                        }
+                    });
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 //        return response.body().string();
+            }
+        }).start();
+
     }
+
 }

@@ -2,12 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -15,410 +14,503 @@
             android:padding="10dp"
 
             >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
-                >
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/text_header"
-                            android:text="Foto/Dokumentasi" />
-                        <com.wefika.flowlayout.FlowLayout
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="start|top|center_horizontal"
-                            android:layout_gravity="center">
-                            <ImageView
-                                android:id="@+id/img1"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                            <ImageView
-                                android:id="@+id/img2"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                            <ImageView
-                                android:id="@+id/img3"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                            <ImageView
-                                android:id="@+id/img4"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                            <ImageView
-                                android:id="@+id/img5"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                            <ImageView
-                                android:id="@+id/img6"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="3dp"
-                                android:background="@color/colorPrimaryDark"/>
-                        </com.wefika.flowlayout.FlowLayout>
-                       <Button
-                           android:id="@+id/btn_foto"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:padding="10dp"
-                           android:background="@color/colorPrimaryDark"
-                           android:layout_margin="5dp"
-                           android:text="Ambil Foto"
-                           android:textColor="#FFF"/>
-                    </LinearLayout>
 
-                </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="10dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/text_header"
-                    android:text="Posisi" />
-                <com.google.android.gms.maps.MapView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:id="@+id/posisi"
-                    ></com.google.android.gms.maps.MapView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0 , 0"
-                    android:id="@+id/lokasi"
-                    android:gravity="center_horizontal"
-                    android:layout_margin="3dp"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
+                            android:text="Foto/Dokumentasi"
                             android:textColor="@color/colorPrimaryDark"
-                            android:textStyle="bold"
                             android:textSize="@dimen/text_header"
-                            android:text="Data Pelanggan" />
-                        <RadioGroup
+                            android:textStyle="bold" />
+
+                        <com.wefika.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="start|top|center_horizontal">
+
+                            <ImageView
+                                android:id="@+id/img1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+
+                            <ImageView
+                                android:id="@+id/img2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+
+                            <ImageView
+                                android:id="@+id/img3"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+
+                            <ImageView
+                                android:id="@+id/img4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+
+                            <ImageView
+                                android:id="@+id/img5"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+
+                            <ImageView
+                                android:id="@+id/img6"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="3dp"
+                                android:background="@color/colorPrimaryDark" />
+                        </com.wefika.flowlayout.FlowLayout>
+
+                        <Button
+                            android:id="@+id/btn_foto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            android:text="Ambil Foto"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Posisi"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/text_header"
+                            android:textStyle="bold" />
+
+                        <com.google.android.gms.maps.MapView
+                            android:id="@+id/posisi"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"></com.google.android.gms.maps.MapView>
+
+                        <TextView
+                            android:id="@+id/lokasi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/rdg_pelanggan">
+                            android:layout_margin="3dp"
+                            android:gravity="center_horizontal"
+                            android:text="0 , 0" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Data Pelanggan"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/text_header"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdg_pelanggan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
+
                                 <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Pelanggan"
                                     android:id="@+id/rd_pelanggan"
-                                    android:checked="true"
-                                    android:layout_margin="3dp"
-                                    android:textColor="#717171"/>
-                                <RadioButton
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Non Pelanggan"
+                                    android:layout_margin="3dp"
+                                    android:checked="true"
+                                    android:text="Pelanggan"
+                                    android:textColor="#717171" />
+
+                                <RadioButton
                                     android:id="@+id/rd_nonpelanggan"
-                                    android:textColor="#717171"
-                                    android:layout_margin="3dp"/>
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="Non Pelanggan"
+                                    android:textColor="#717171" />
                             </LinearLayout>
                         </RadioGroup>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
-                <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
-                    android:layout_margin="@dimen/input_margin">
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Id Pelanggan"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/id_pelanggan"
-                                    android:hint="Id Pelanggan"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_margin="@dimen/input_margin">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:text="Nama Pelanggan"
-                            android:gravity="bottom"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.5">
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Nama Pelanggan"
-                            android:id="@+id/nama"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_margin="@dimen/input_margin">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:text="Alamat"
-                            android:gravity="bottom"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.5">
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Alamat Pelanggan"
-                            android:id="@+id/alamat"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_margin="@dimen/input_margin">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:text="No Gardu / Trafo"
-                            android:gravity="bottom"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.5">
-                        <EditText
-                            android:id="@+id/no_gardu"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="No Gardu / Trafo"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_margin="@dimen/input_margin">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:text="Tarif Daya Tersambung"
-                            android:gravity="bottom"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.5">
-                        <EditText
-                            android:id="@+id/tarif"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Tarif Daya Tersambung"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/text_header"
-                            android:text="Penghuni" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="5">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Nama Penghuni"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Id Pelanggan" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/id_pelanggan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Id Pelanggan" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <Button
+                                    android:id="@+id/btn_pelanggan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cek" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Nama Pelanggan" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/nama"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nama Pelanggan" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Alamat" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/alamat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Alamat Pelanggan" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="No Gardu / Trafo" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/no_gardu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="No Gardu / Trafo" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Tarif Daya Tersambung" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/tarif"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tarif Daya Tersambung" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Peruntukan" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/peruntukan"
+                                    android:entries="@array/peruntukan"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Penghuni"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/text_header"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Nama Penghuni" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
                                 <EditText
                                     android:id="@+id/nama_penghuni"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama Penghuni"/>
+                                    android:hint="Nama Penghuni" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Alamat"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Alamat" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/alamat_penghuni"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Alamat"
-                                    android:id="@+id/alamat_penghuni"/>
+                                    android:hint="Alamat" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No. KTP"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="No. KTP" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/noktp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No. KTP"
-                                    android:id="@+id/noktp"/>
+                                    android:hint="No. KTP" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -430,126 +522,144 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
+                            android:text="Saksi"
                             android:textColor="@color/colorPrimaryDark"
-                            android:textStyle="bold"
                             android:textSize="@dimen/text_header"
-                            android:text="Saksi" />
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Nama Saksi"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Nama Saksi" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nama_saksi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Nama Saksi"
-                                    android:id="@+id/nama_saksi"/>
+                                    android:hint="Nama Saksi" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Alamat Saksi"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Alamat Saksi" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
                                     android:id="@+id/alamat_saksi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Alamat Saksi"/>
+                                    android:hint="Alamat Saksi" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No Identitas"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="No Identitas" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
                                     android:id="@+id/nomor_identitas"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Identitas"/>
+                                    android:hint="No Identitas" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Pekerjaan"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Pekerjaan" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
                                     android:id="@+id/pekerjaan_saksi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Pekerjaan"/>
+                                    android:hint="Pekerjaan" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
