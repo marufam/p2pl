@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -93,18 +94,20 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.alamat) EditText alamat;
     @Bind(R.id.no_gardu) EditText no_gardu;
     @Bind(R.id.tarif) EditText tarif;
+    @Bind(R.id.peruntukan) Spinner peruntukan;
     @Bind(R.id.nama_penghuni) EditText nama_penghuni;
     @Bind(R.id.alamat_penghuni) EditText alamat_penghuni;
-    @Bind(R.id.noktp) EditText noktp;
-    @Bind(R.id.nama_saksi) EditText nama_saksi;
-    @Bind(R.id.alamat_saksi) EditText alamat_saksi;
     @Bind(R.id.nomor_identitas) EditText nomor_identitas;
-    @Bind(R.id.pekerjaan_saksi) EditText pekerjaan_saksi;
+    @Bind(R.id.pekerjaan_penghuni) EditText pekerjaan_penghuni;
     @Bind(R.id.rd_pelanggan) RadioButton rd_pelanggan;
     @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
 //    @Bind(R.id.rdg_pelanggan)
 //    RadioGroup rdg_pelanggan;
     @Bind(R.id.btn_pelanggan) Button btn_pelanggan;
+    @Bind(R.id.noktp_saksi1) EditText noktp_saksi1;
+    @Bind(R.id.nama_saksi1) EditText nama_saksi1;
+    @Bind(R.id.noktp_saksi2) EditText noktp_saksi2;
+    @Bind(R.id.nama_saksi2) EditText nama_saksi2;
 
     Button btn_foto;
     ImageView img1, img2, img3, img4, img5, img6;
@@ -409,13 +412,16 @@ public class Pelanggan extends AbstractStep  {
         editor.putString("alamat", alamat.getText().toString());
         editor.putString("no_gardu", no_gardu.getText().toString());
         editor.putString("tarif", tarif.getText().toString());
+        editor.putString("peruntukan", peruntukan.getSelectedItem().toString());
         editor.putString("nama_penghuni", nama_penghuni.getText().toString());
         editor.putString("alamat_penghuni", alamat_penghuni.getText().toString());
-        editor.putString("noktp", noktp.getText().toString());
-        editor.putString("nama_saksi", nama_saksi.getText().toString());
-        editor.putString("alamat_saksi", alamat_saksi.getText().toString());
         editor.putString("nomor_identitas", nomor_identitas.getText().toString());
-        editor.putString("pekerjaan_saksi", pekerjaan_saksi.getText().toString());
+        editor.putString("pekerjaan_penghuni", pekerjaan_penghuni.getText().toString());
+        editor.putString("noktp_saksi1", noktp_saksi1.getText().toString());
+        editor.putString("nama_saksi1", nama_saksi1.getText().toString());
+        editor.putString("noktp_saksi2", noktp_saksi2.getText().toString());
+        editor.putString("nama_saksi2", nama_saksi2.getText().toString());
+
         editor.putString("foto", "foto1,foto,foto,foto1,foto,foto");
         editor.putString("status","merah");
         editor.putString("lat",String.valueOf(myLat));

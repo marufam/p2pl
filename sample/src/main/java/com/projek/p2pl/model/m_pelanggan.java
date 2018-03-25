@@ -17,13 +17,16 @@ public class m_pelanggan extends RealmObject {
     private String alamat;
     private String no_gardu;
     private String tarif;
+    private String peruntukan;
     private String nama_penghuni;
     private String alamat_penghuni;
-    private String noktp_penghuni;
-    private String nama_saksi;
-    private String alamat_saksi;
     private String nomor_identitas;
-    private String pekerjaan_saksi;
+    private String pekerjaan_penghuni;
+    private String terdaftar; // true false
+    private String nama_saksi1;
+    private String noktp_saksi1;
+    private String nama_saksi2;
+    private String noktp_saksi2;
     private String foto;
     private String status;
     private Double lat;
@@ -93,30 +96,6 @@ public class m_pelanggan extends RealmObject {
         this.alamat_penghuni = alamat_penghuni;
     }
 
-    public String getNoktp_penghuni() {
-        return noktp_penghuni;
-    }
-
-    public void setNoktp_penghuni(String noktp_penghuni) {
-        this.noktp_penghuni = noktp_penghuni;
-    }
-
-    public String getNama_saksi() {
-        return nama_saksi;
-    }
-
-    public void setNama_saksi(String nama_saksi) {
-        this.nama_saksi = nama_saksi;
-    }
-
-    public String getAlamat_saksi() {
-        return alamat_saksi;
-    }
-
-    public void setAlamat_saksi(String alamat_saksi) {
-        this.alamat_saksi = alamat_saksi;
-    }
-
     public String getNomor_identitas() {
         return nomor_identitas;
     }
@@ -125,12 +104,44 @@ public class m_pelanggan extends RealmObject {
         this.nomor_identitas = nomor_identitas;
     }
 
-    public String getPekerjaan_saksi() {
-        return pekerjaan_saksi;
+    public String getPekerjaan_penghuni() {
+        return pekerjaan_penghuni;
     }
 
-    public void setPekerjaan_saksi(String pekerjaan_saksi) {
-        this.pekerjaan_saksi = pekerjaan_saksi;
+    public void setPekerjaan_penghuni(String pekerjaan_penghuni) {
+        this.pekerjaan_penghuni = pekerjaan_penghuni;
+    }
+
+    public String getNama_saksi1() {
+        return nama_saksi1;
+    }
+
+    public void setNama_saksi1(String nama_saksi1) {
+        this.nama_saksi1 = nama_saksi1;
+    }
+
+    public String getNoktp_saksi1() {
+        return noktp_saksi1;
+    }
+
+    public void setNoktp_saksi1(String noktp_saksi1) {
+        this.noktp_saksi1 = noktp_saksi1;
+    }
+
+    public String getNama_saksi2() {
+        return nama_saksi2;
+    }
+
+    public void setNama_saksi2(String nama_saksi2) {
+        this.nama_saksi2 = nama_saksi2;
+    }
+
+    public String getNoktp_saksi2() {
+        return noktp_saksi2;
+    }
+
+    public void setNoktp_saksi2(String noktp_saksi2) {
+        this.noktp_saksi2 = noktp_saksi2;
     }
 
     public String getFoto() {
@@ -163,5 +174,21 @@ public class m_pelanggan extends RealmObject {
 
     public void setLng(Double lng) {
         this.lng = lng;
+    }
+
+    public String getTerdaftar() {
+        return terdaftar;
+    }
+
+    public void setTerdaftar(String terdaftar) {
+        this.terdaftar = terdaftar;
+    }
+
+    public String getPeruntukan() {
+        return peruntukan;
+    }
+
+    public void setPeruntukan(String peruntukan) {
+        this.peruntukan = peruntukan;
     }
 }

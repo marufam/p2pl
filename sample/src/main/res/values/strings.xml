@@ -54,12 +54,10 @@
 
     <string-array name="jenis_pelanggaran">
         <item>-</item>
-        <item>P1</item>
-        <item>P2</item>
-        <item>P3</item>
-        <item>P4</item>
-        <item>P5</item>
-        <item>P6</item>
+        <item>(P I) Mempengaruhi batasdata tetapi tidak mempengaruhi pengukuran energi </item>
+        <item>(P II) Mempengaruhi pengukuran energi tetapi tidak mempengaruhi batas data </item>
+        <item>(P III) Mempengaruhi batas daya dan mempengaruhi pengukuran energi </item>
+        <item>(P IV) Pelanggaran yang dilakukan oleh Bukan Pelanggan yang menggunakan tenaga listrik tanpa alas hak yang sah </item>
     </string-array>
 
     <string-array name="merk">

@@ -329,12 +329,12 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setTarif(pemeriksaan.getString("tarif",null));
         mypelanggan.setNama_penghuni(pemeriksaan.getString("nama_penghuni",null));
         mypelanggan.setAlamat_penghuni(pemeriksaan.getString("alamat_penghuni",null));
-        mypelanggan.setNoktp_penghuni(pemeriksaan.getString("noktp",null));
-        mypelanggan.setId_pelanggan(pemeriksaan.getString("id_pelanggan",null));
-        mypelanggan.setNama_saksi(pemeriksaan.getString("nama_saksi",null));
-        mypelanggan.setAlamat_saksi(pemeriksaan.getString("alamat_saksi",null));
         mypelanggan.setNomor_identitas(pemeriksaan.getString("nomor_identitas",null));
-        mypelanggan.setPekerjaan_saksi(pemeriksaan.getString("pekerjaan_saksi",null));
+        mypelanggan.setPekerjaan_penghuni(pemeriksaan.getString("pekerjaan_penghuni",null));
+        mypelanggan.setNoktp_saksi1(pemeriksaan.getString("noktp_saksi1",null));
+        mypelanggan.setNama_saksi1(pemeriksaan.getString("nama_saksi1",null));
+        mypelanggan.setNoktp_saksi2(pemeriksaan.getString("noktp_saksi2",null));
+        mypelanggan.setNama_saksi2(pemeriksaan.getString("nama_saksi2",null));
         mypelanggan.setFoto(pemeriksaan.getString("foto",null));
         mypelanggan.setStatus(pemeriksaan.getString("status",null));
         mypelanggan.setLat(Double.parseDouble(pemeriksaan.getString("lat",null)));
