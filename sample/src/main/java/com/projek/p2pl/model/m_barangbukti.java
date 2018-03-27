@@ -23,7 +23,7 @@ public class m_barangbukti extends RealmObject {
     private String merkBbKvarh;
     private String taripBbKvarh;
     private String nopabrikBbKvarh;
-    private String tahunBbKvarh;
+    private String tahunBbKvarh; //
     private String faktormeterBbKvarh;
     private String ukuranxBbKvarh;
     private String ukuranyBbKvarh;
@@ -33,7 +33,7 @@ public class m_barangbukti extends RealmObject {
     private String merkBbKva;
     private String taripBbKva;
     private String nopabrikBbKva;
-    private String tahunBbKva;
+    private String tahunBbKva; //
     private String faktormeterBbKva;
     private String ukuranxBbKva;
     private String ukuranyBbKva;

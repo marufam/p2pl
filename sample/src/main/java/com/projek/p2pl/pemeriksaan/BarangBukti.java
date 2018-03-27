@@ -35,6 +35,7 @@ public class BarangBukti extends AbstractStep {
     @Bind(R.id.merk_bb_kwh) EditText merkBbKwh;
     @Bind(R.id.tarip_bb_kwh) EditText taripBbKwh;
     @Bind(R.id.nopabrik_bb_kwh)   EditText nopabrikBbKwh;
+    @Bind(R.id.tahun_bb_kwh)   EditText tahunBbKwh;
     @Bind(R.id.faktormeter_bb_kwh)    EditText faktormeterBbKwh;
     @Bind(R.id.ukuranx_bb_kwh)    EditText ukuranxBbKwh;
     @Bind(R.id.ukurany_bb_kwh)    EditText ukuranyBbKwh;
@@ -44,6 +45,7 @@ public class BarangBukti extends AbstractStep {
     @Bind(R.id.merk_bb_kvarh)    EditText merkBbKvarh;
     @Bind(R.id.tarip_bb_kvarh)    EditText taripBbKvarh;
     @Bind(R.id.nopabrik_bb_kvarh)    EditText nopabrikBbKvarh;
+    @Bind(R.id.tahun_bb_kVarh)    EditText tahunBbKvarh;
     @Bind(R.id.faktormeter_bb_kvarh)    EditText faktormeterBbKvarh;
     @Bind(R.id.ukuranx_bb_kvarh)    EditText ukuranxBbKvarh;
     @Bind(R.id.ukurany_bb_kvarh)    EditText ukuranyBbKvarh;
@@ -53,6 +55,7 @@ public class BarangBukti extends AbstractStep {
     @Bind(R.id.merk_bb_kva)    EditText merkBbKva;
     @Bind(R.id.tarip_bb_kva)    EditText taripBbKva;
     @Bind(R.id.nopabrik_bb_kva)    EditText nopabrikBbKva;
+    @Bind(R.id.tahun_bb_kVa)    EditText tahunBbKva;
     @Bind(R.id.faktormeter_bb_kva)    EditText faktormeterBbKva;
     @Bind(R.id.ukuranx_bb_kva)    EditText ukuranxBbKva;
     @Bind(R.id.ukurany_bb_kva)    EditText ukuranyBbKva;
@@ -193,6 +196,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKwh(merkBbKwh.getText().toString());
         mybarangbukti.setTaripBbKwh(taripBbKwh.getText().toString());
         mybarangbukti.setNopabrikBbKwh(nopabrikBbKwh.getText().toString());
+        mybarangbukti.setTahunBbKwh(tahunBbKwh.getText().toString());
         mybarangbukti.setFaktormeterBbKwh(faktormeterBbKwh.getText().toString());
         mybarangbukti.setUkuranxBbKwh(ukuranxBbKwh.getText().toString());
         mybarangbukti.setUkuranyBbKwh(ukuranyBbKwh.getText().toString());
@@ -202,6 +206,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKvarh(merkBbKvarh.getText().toString());
         mybarangbukti.setTaripBbKvarh(taripBbKvarh.getText().toString());
         mybarangbukti.setNopabrikBbKvarh(nopabrikBbKvarh.getText().toString());
+        mybarangbukti.setTahunBbKvarh(tahunBbKvarh.getText().toString());
         mybarangbukti.setFaktormeterBbKvarh(faktormeterBbKvarh.getText().toString());
         mybarangbukti.setUkuranxBbKvarh(merkBbKvarh.getText().toString());
         mybarangbukti.setUkuranyBbKvarh(ukuranyBbKvarh.getText().toString());
@@ -211,6 +216,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKva(merkBbKva.getText().toString());
         mybarangbukti.setTaripBbKva(taripBbKva.getText().toString());
         mybarangbukti.setNopabrikBbKva(nopabrikBbKva.getText().toString());
+        mybarangbukti.setTahunBbKva(tahunBbKva.getText().toString());
         mybarangbukti.setFaktormeterBbKva(faktormeterBbKva.getText().toString());
         mybarangbukti.setUkuranxBbKva(ukuranxBbKva.getText().toString());
         mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getText().toString());
