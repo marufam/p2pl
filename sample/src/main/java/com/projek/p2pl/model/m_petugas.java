@@ -17,13 +17,16 @@ public class m_petugas extends RealmObject {
     private String nama;
     private String noinduk;
     private String jabatan;
+
     private String rayon;
     private String alamat;
     private String cabang;
     private String wilayah;
+
     private String nama_vendor;
     private String noinduk_vendor;
     private String jabatan_vendor;
+
     private String nomor_surat_porli;
     private String tanggal_suratpolri;
 
