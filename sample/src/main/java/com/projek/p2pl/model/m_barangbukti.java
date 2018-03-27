@@ -10,101 +10,62 @@ import io.realm.annotations.PrimaryKey;
 public class m_barangbukti extends RealmObject {
     @PrimaryKey
     private String id;
-
     private String merkBbKwh;
-
     private String taripBbKwh;
-
     private String nopabrikBbKwh;
-
     private String faktormeterBbKwh;
-
     private String ukuranxBbKwh;
-
     private String ukuranyBbKwh;
-
     private String ampereBbKwh;
-
     private String standBbKWh;
 
     private String merkBbKvarh;
-
     private String taripBbKvarh;
-
     private String nopabrikBbKvarh;
-
     private String faktormeterBbKvarh;
-
     private String ukuranxBbKvarh;
-
     private String ukuranyBbKvarh;
-
     private String ampereBbKvarh;
-
     private String standBbKvarh;
 
     private String merkBbKva;
-
     private String taripBbKva;
-
     private String nopabrikBbKva;
-
     private String faktormeterBbKva;
-
     private String ukuranxBbKva;
-
     private String ukuranyBbKva;
-
     private String ampereBbKva;
 
-    private String lol;
-
-    private String taripBbPembatas;
-
+    private String namaBbPembatas;
+    private String tipeukuranBbPembatas;
     private String ukuranxBbPembatas;
-
     private String ukuranyBbPembatas;
 
     private String merkBbTrafo;
-
     private String nopabrikBbTrafo;
-
     private String ratioBbTrafo;
 
-    private String lol2;
-
+    private String jeniskabelBbKabel;
     private String diameterxBbKabel;
-
     private String diameteryBbKabel;
-
     private String panjangBbKabel;
 
     private String merkBbKontaktor;
-
     private String nopabrikBbKontaktor;
-
     private String fasaBbTrafo;
 
     private String jenisBbFuse;
-
     private String merkBbFuse;
-
     private String nopabrikBbFuse;
 
     private String ukuranBbGembok;
 
     private String garduBb;
-
     private String kotakappBb;
-
     private String pengukurBb;
-
     private String pembatasBb;
-
     private String bantupengukuranBb;
-
     private String pelindungBb;
-
 
     public String getId() {
         return id;
@@ -298,20 +259,20 @@ public class m_barangbukti extends RealmObject {
         this.ampereBbKva = ampereBbKva;
     }
 
-    public String getLol() {
-        return lol;
+    public String getNamaBbPembatas() {
+        return namaBbPembatas;
     }
 
-    public void setLol(String lol) {
-        this.lol = lol;
+    public void setNamaBbPembatas(String namaBbPembatas) {
+        this.namaBbPembatas = namaBbPembatas;
     }
 
-    public String getTaripBbPembatas() {
-        return taripBbPembatas;
+    public String getTipeukuranBbPembatas() {
+        return tipeukuranBbPembatas;
     }
 
-    public void setTaripBbPembatas(String taripBbPembatas) {
-        this.taripBbPembatas = taripBbPembatas;
+    public void setTipeukuranBbPembatas(String tipeukuranBbPembatas) {
+        this.tipeukuranBbPembatas = tipeukuranBbPembatas;
     }
 
     public String getUkuranxBbPembatas() {
@@ -354,12 +315,12 @@ public class m_barangbukti extends RealmObject {
         this.ratioBbTrafo = ratioBbTrafo;
     }
 
-    public String getLol2() {
-        return lol2;
+    public String getJeniskabelBbKabel() {
+        return jeniskabelBbKabel;
     }
 
-    public void setLol2(String lol2) {
-        this.lol2 = lol2;
+    public void setJeniskabelBbKabel(String jeniskabelBbKabel) {
+        this.jeniskabelBbKabel = jeniskabelBbKabel;
     }
 
     public String getDiameterxBbKabel() {
