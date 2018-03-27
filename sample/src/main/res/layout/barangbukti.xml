@@ -778,8 +778,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
-                                    android:id="@+id/lol"/>
+                                    android:hint="Nama Alat"
+                                    android:id="@+id/nama_bb_pembatas"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -806,7 +806,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Type ukuran"
-                                    android:id="@+id/tarip_bb_pembatas"/>
+                                    android:id="@+id/tipeukuran_bb_pembatas"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1030,8 +1030,8 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
-                                    android:id="@+id/lol2"/>
+                                    android:hint="Jenis Kabel"
+                                    android:id="@+id/jeniskabel_bb_kabel"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1172,7 +1172,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
+                                    android:hint="Type Kontraktor"
                                     android:id="@+id/merk_bb_kontaktor"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -1292,7 +1292,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
+                                    android:hint="Jenis Fuse"
                                     android:id="@+id/jenis_bb_fuse"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -1322,7 +1322,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
+                                    android:hint="Merk Fuse"
                                     android:id="@+id/merk_bb_fuse"/>
                             </LinearLayout>
                         </LinearLayout>

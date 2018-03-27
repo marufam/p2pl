@@ -59,6 +59,7 @@ public class Periksa extends AbstractStep {
     @Bind(R.id.tahun_3a) EditText tahun_3a;
 
     @Bind(R.id.sesuai) Spinner sesuai;
+
     @Bind(R.id.hasil) Spinner hasil;
     @Bind(R.id.pelanggaran) Spinner pelanggaran;
     @Bind(R.id.deskripsi_pelanggaran) EditText deskripsi_pelanggaran;
@@ -133,17 +134,20 @@ public class Periksa extends AbstractStep {
         editor.putString("tahun_1a",tahun_1a.getText().toString());
         editor.putString("putaran_1a",putaran_1a.getText().toString());
         editor.putString("kondisi_visual_1a",kondisi_visual_1a.getSelectedItem().toString());
+
         editor.putString("segel_terpasang_1b",segel_terpasang_1b.getText().toString());
         editor.putString("jenis_1b",jenis_1b.getSelectedItem().toString());
         editor.putString("acuan_1b",acuan_1b.getText().toString());
         editor.putString("tahun_1b",tahun_1b.getText().toString());
         editor.putString("kondisi_visual_1b",kondisi_visual_1b.getSelectedItem().toString());
+
         editor.putString("kapasitas_2a",kapasitas_2a.getText().toString());
         editor.putString("merk_2a",merk_2a.getSelectedItem().toString());
         editor.putString("segel_terpasang_2b",segel_terpasang_2b.getText().toString());
         editor.putString("jenis_2b",jenis_2b.getSelectedItem().toString());
         editor.putString("acuan_2b",acuan_2b.getText().toString());
         editor.putString("tahun_2b",tahun_2b.getText().toString());
+
         editor.putString("papan_meter_3a",papan_meter_3a.getSelectedItem().toString());
         editor.putString("jenis_3a",jenis_3a.getSelectedItem().toString());
         editor.putString("kondisi_visual_3a",kondisi_visual_3a.getSelectedItem().toString());
@@ -151,7 +155,9 @@ public class Periksa extends AbstractStep {
         editor.putString("jenis_3a2",jenis_3a2.getSelectedItem().toString());
         editor.putString("acuan_3a",acuan_3a.getText().toString());
         editor.putString("tahun_3a",tahun_3a.getText().toString());
+
         editor.putString("sesuai",sesuai.getSelectedItem().toString());
+
         editor.putString("hasil",hasil.getSelectedItem().toString());
         editor.putString("pelanggaran",pelanggaran.getSelectedItem().toString());
         editor.putString("deskripsi_pelanggaran",deskripsi_pelanggaran.getText().toString());

@@ -95,15 +95,18 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.no_gardu) EditText no_gardu;
     @Bind(R.id.tarif) EditText tarif;
     @Bind(R.id.peruntukan) Spinner peruntukan;
+
     @Bind(R.id.nama_penghuni) EditText nama_penghuni;
     @Bind(R.id.alamat_penghuni) EditText alamat_penghuni;
     @Bind(R.id.nomor_identitas) EditText nomor_identitas;
     @Bind(R.id.pekerjaan_penghuni) EditText pekerjaan_penghuni;
+
     @Bind(R.id.rd_pelanggan) RadioButton rd_pelanggan;
     @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
 //    @Bind(R.id.rdg_pelanggan)
 //    RadioGroup rdg_pelanggan;
     @Bind(R.id.btn_pelanggan) Button btn_pelanggan;
+
     @Bind(R.id.noktp_saksi1) EditText noktp_saksi1;
     @Bind(R.id.nama_saksi1) EditText nama_saksi1;
     @Bind(R.id.noktp_saksi2) EditText noktp_saksi2;
@@ -169,12 +172,6 @@ public class Pelanggan extends AbstractStep  {
 
             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
                 return rootView;
             }
             location = locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -413,15 +410,17 @@ public class Pelanggan extends AbstractStep  {
         editor.putString("no_gardu", no_gardu.getText().toString());
         editor.putString("tarif", tarif.getText().toString());
         editor.putString("peruntukan", peruntukan.getSelectedItem().toString());
+
         editor.putString("nama_penghuni", nama_penghuni.getText().toString());
         editor.putString("alamat_penghuni", alamat_penghuni.getText().toString());
         editor.putString("nomor_identitas", nomor_identitas.getText().toString());
         editor.putString("pekerjaan_penghuni", pekerjaan_penghuni.getText().toString());
+
         editor.putString("noktp_saksi1", noktp_saksi1.getText().toString());
         editor.putString("nama_saksi1", nama_saksi1.getText().toString());
         editor.putString("noktp_saksi2", noktp_saksi2.getText().toString());
         editor.putString("nama_saksi2", nama_saksi2.getText().toString());
-
+//        Toast.makeText(mStepper, ""+file1.getPath().toString(), Toast.LENGTH_SHORT).show();
         editor.putString("foto", "foto1,foto,foto,foto1,foto,foto");
         editor.putString("status","merah");
         editor.putString("lat",String.valueOf(myLat));

@@ -46,11 +46,14 @@ public class Petugas extends AbstractStep {
     @Bind(R.id.nama) EditText nama;
     @Bind(R.id.noinduk) EditText noinduk;
     @Bind(R.id.jabatan) EditText jabatan;
+
     @Bind(R.id.nama_vendor) EditText namavendor;
     @Bind(R.id.noinduk_vendor) EditText noindukvendor;
     @Bind(R.id.jabatan_vendor) EditText jabatanvendor;
+
     @Bind(R.id.nomor_surat_porli) EditText nomorsuratpolri;
     @Bind(R.id.tanggal) EditText tanggal;
+
     @Bind(R.id.petugas1) Spinner petugas1;
     @Bind(R.id.petugas2) Spinner petugas2;
 
@@ -227,12 +230,15 @@ public class Petugas extends AbstractStep {
             editor.putString("id", id.toString());
             editor.putString("nomorsurat", nomorsurat.getText().toString());
             editor.putString("tanggalsurat", tanggalsurat.getText().toString());
+
             editor.putString("nama_petugas", nama.getText().toString());
             editor.putString("noinduk_petugas", noinduk.getText().toString());
             editor.putString("jabatan_petugas", jabatan.getText().toString());
+
             editor.putString("namavendor", namavendor.getText().toString());
             editor.putString("noindukvendor", noindukvendor.getText().toString());
             editor.putString("jabatanvendor", jabatanvendor.getText().toString());
+
             editor.putString("nomorsuratpolri", nomorsuratpolri.getText().toString());
             editor.putString("tanggal_nsp", tanggal.getText().toString());
 

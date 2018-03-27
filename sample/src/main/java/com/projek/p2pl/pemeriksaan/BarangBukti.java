@@ -32,100 +32,62 @@ public class BarangBukti extends AbstractStep {
     private int i = 1;
     private Realm mRealm;
 
-    @Bind(R.id.merk_bb_kwh)
-    EditText merkBbKwh;
-    @Bind(R.id.tarip_bb_kwh)
-    EditText taripBbKwh;
-    @Bind(R.id.nopabrik_bb_kwh)
-    EditText nopabrikBbKwh;
-    @Bind(R.id.faktormeter_bb_kwh)
-    EditText faktormeterBbKwh;
-    @Bind(R.id.ukuranx_bb_kwh)
-    EditText ukuranxBbKwh;
-    @Bind(R.id.ukurany_bb_kwh)
-    EditText ukuranyBbKwh;
-    @Bind(R.id.ampere_bb_kwh)
-    EditText ampereBbKwh;
-    @Bind(R.id.stand_bb_kWh)
-    EditText standBbKWh;
-    @Bind(R.id.merk_bb_kvarh)
-    EditText merkBbKvarh;
-    @Bind(R.id.tarip_bb_kvarh)
-    EditText taripBbKvarh;
-    @Bind(R.id.nopabrik_bb_kvarh)
-    EditText nopabrikBbKvarh;
-    @Bind(R.id.faktormeter_bb_kvarh)
-    EditText faktormeterBbKvarh;
-    @Bind(R.id.ukuranx_bb_kvarh)
-    EditText ukuranxBbKvarh;
-    @Bind(R.id.ukurany_bb_kvarh)
-    EditText ukuranyBbKvarh;
-    @Bind(R.id.ampere_bb_kvarh)
-    EditText ampereBbKvarh;
-    @Bind(R.id.stand_bb_kvarh)
-    EditText standBbKvarh;
-    @Bind(R.id.merk_bb_kva)
-    EditText merkBbKva;
-    @Bind(R.id.tarip_bb_kva)
-    EditText taripBbKva;
-    @Bind(R.id.nopabrik_bb_kva)
-    EditText nopabrikBbKva;
-    @Bind(R.id.faktormeter_bb_kva)
-    EditText faktormeterBbKva;
-    @Bind(R.id.ukuranx_bb_kva)
-    EditText ukuranxBbKva;
-    @Bind(R.id.ukurany_bb_kva)
-    EditText ukuranyBbKva;
-    @Bind(R.id.ampere_bb_kva)
-    EditText ampereBbKva;
-    @Bind(R.id.lol)
-    EditText lol;
-    @Bind(R.id.tarip_bb_pembatas)
-    EditText taripBbPembatas;
-    @Bind(R.id.ukuranx_bb_pembatas)
-    EditText ukuranxBbPembatas;
-    @Bind(R.id.ukurany_bb_pembatas)
-    EditText ukuranyBbPembatas;
-    @Bind(R.id.merk_bb_trafo)
-    EditText merkBbTrafo;
-    @Bind(R.id.nopabrik_bb_trafo)
-    EditText nopabrikBbTrafo;
-    @Bind(R.id.ratio_bb_trafo)
-    EditText ratioBbTrafo;
-    @Bind(R.id.lol2)
-    EditText lol2;
-    @Bind(R.id.diameterx_bb_kabel)
-    EditText diameterxBbKabel;
-    @Bind(R.id.diametery_bb_kabel)
-    EditText diameteryBbKabel;
-    @Bind(R.id.panjang_bb_kabel)
-    EditText panjangBbKabel;
-    @Bind(R.id.merk_bb_kontaktor)
-    EditText merkBbKontaktor;
-    @Bind(R.id.nopabrik_bb_kontaktor)
-    EditText nopabrikBbKontaktor;
-    @Bind(R.id.fasa_bb_trafo)
-    EditText fasaBbTrafo;
-    @Bind(R.id.jenis_bb_fuse)
-    EditText jenisBbFuse;
-    @Bind(R.id.merk_bb_fuse)
-    EditText merkBbFuse;
-    @Bind(R.id.nopabrik_bb_fuse)
-    EditText nopabrikBbFuse;
-    @Bind(R.id.ukuran_bb_gembok)
-    EditText ukuranBbGembok;
-    @Bind(R.id.gardu_bb)
-    EditText garduBb;
-    @Bind(R.id.kotakapp_bb)
-    EditText kotakappBb;
-    @Bind(R.id.pengukur_bb)
-    EditText pengukurBb;
-    @Bind(R.id.pembatas_bb)
-    EditText pembatasBb;
-    @Bind(R.id.bantupengukuran_bb)
-    EditText bantupengukuranBb;
-    @Bind(R.id.pelindung_bb)
-    EditText pelindungBb;
+    @Bind(R.id.merk_bb_kwh) EditText merkBbKwh;
+    @Bind(R.id.tarip_bb_kwh) EditText taripBbKwh;
+    @Bind(R.id.nopabrik_bb_kwh)   EditText nopabrikBbKwh;
+    @Bind(R.id.faktormeter_bb_kwh)    EditText faktormeterBbKwh;
+    @Bind(R.id.ukuranx_bb_kwh)    EditText ukuranxBbKwh;
+    @Bind(R.id.ukurany_bb_kwh)    EditText ukuranyBbKwh;
+    @Bind(R.id.ampere_bb_kwh)    EditText ampereBbKwh;
+    @Bind(R.id.stand_bb_kWh)    EditText standBbKWh;
+
+    @Bind(R.id.merk_bb_kvarh)    EditText merkBbKvarh;
+    @Bind(R.id.tarip_bb_kvarh)    EditText taripBbKvarh;
+    @Bind(R.id.nopabrik_bb_kvarh)    EditText nopabrikBbKvarh;
+    @Bind(R.id.faktormeter_bb_kvarh)    EditText faktormeterBbKvarh;
+    @Bind(R.id.ukuranx_bb_kvarh)    EditText ukuranxBbKvarh;
+    @Bind(R.id.ukurany_bb_kvarh)    EditText ukuranyBbKvarh;
+    @Bind(R.id.ampere_bb_kvarh)    EditText ampereBbKvarh;
+    @Bind(R.id.stand_bb_kvarh)    EditText standBbKvarh;
+
+    @Bind(R.id.merk_bb_kva)    EditText merkBbKva;
+    @Bind(R.id.tarip_bb_kva)    EditText taripBbKva;
+    @Bind(R.id.nopabrik_bb_kva)    EditText nopabrikBbKva;
+    @Bind(R.id.faktormeter_bb_kva)    EditText faktormeterBbKva;
+    @Bind(R.id.ukuranx_bb_kva)    EditText ukuranxBbKva;
+    @Bind(R.id.ukurany_bb_kva)    EditText ukuranyBbKva;
+    @Bind(R.id.ampere_bb_kva)    EditText ampereBbKva;
+
+    @Bind(R.id.nama_bb_pembatas)    EditText namaBbPembatas;
+    @Bind(R.id.tipeukuran_bb_pembatas)    EditText tipeukuranBbPembatas;
+    @Bind(R.id.ukuranx_bb_pembatas)    EditText ukuranxBbPembatas;
+    @Bind(R.id.ukurany_bb_pembatas)    EditText ukuranyBbPembatas;
+
+    @Bind(R.id.merk_bb_trafo)    EditText merkBbTrafo;
+    @Bind(R.id.nopabrik_bb_trafo)    EditText nopabrikBbTrafo;
+    @Bind(R.id.ratio_bb_trafo)    EditText ratioBbTrafo;
+
+    @Bind(R.id.jeniskabel_bb_kabel)    EditText jeniskabelBbKabel;
+    @Bind(R.id.diameterx_bb_kabel)    EditText diameterxBbKabel;
+    @Bind(R.id.diametery_bb_kabel)    EditText diameteryBbKabel;
+    @Bind(R.id.panjang_bb_kabel)    EditText panjangBbKabel;
+
+    @Bind(R.id.merk_bb_kontaktor)    EditText merkBbKontaktor;
+    @Bind(R.id.nopabrik_bb_kontaktor)    EditText nopabrikBbKontaktor;
+    @Bind(R.id.fasa_bb_trafo)    EditText fasaBbTrafo;
+
+    @Bind(R.id.jenis_bb_fuse)    EditText jenisBbFuse;
+    @Bind(R.id.merk_bb_fuse)    EditText merkBbFuse;
+    @Bind(R.id.nopabrik_bb_fuse)    EditText nopabrikBbFuse;
+
+    @Bind(R.id.ukuran_bb_gembok)    EditText ukuranBbGembok;
+
+    @Bind(R.id.gardu_bb)    EditText garduBb;
+    @Bind(R.id.kotakapp_bb)    EditText kotakappBb;
+    @Bind(R.id.pengukur_bb)    EditText pengukurBb;
+    @Bind(R.id.pembatas_bb)    EditText pembatasBb;
+    @Bind(R.id.bantupengukuran_bb)    EditText bantupengukuranBb;
+    @Bind(R.id.pelindung_bb)    EditText pelindungBb;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -254,14 +216,16 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getText().toString());
         mybarangbukti.setAmpereBbKva(ampereBbKva.getText().toString());
 
-        mybarangbukti.setLol(lol.getText().toString());
-        mybarangbukti.setTaripBbPembatas(taripBbPembatas.getText().toString());
+        mybarangbukti.setLol(namaBbPembatas.getText().toString());
+        mybarangbukti.setTaripBbPembatas(tipeukuranBbPembatas.getText().toString());
         mybarangbukti.setUkuranxBbPembatas(ukuranxBbPembatas.getText().toString());
         mybarangbukti.setUkuranyBbPembatas(ukuranyBbPembatas.getText().toString());
+
         mybarangbukti.setMerkBbTrafo(merkBbTrafo.getText().toString());
         mybarangbukti.setNopabrikBbTrafo(nopabrikBbTrafo.getText().toString());
         mybarangbukti.setRatioBbTrafo(ratioBbTrafo.getText().toString());
-        mybarangbukti.setLol2(lol2.getText().toString());
+
+        mybarangbukti.setLol2(jeniskabelBbKabel.getText().toString());
         mybarangbukti.setDiameterxBbKabel(diameterxBbKabel.getText().toString());
         mybarangbukti.setDiameteryBbKabel(diameteryBbKabel.getText().toString());
         mybarangbukti.setPanjangBbKabel(panjangBbKabel.getText().toString());

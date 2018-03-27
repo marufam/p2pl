@@ -53,9 +53,12 @@ public class DetailActivity extends AppCompatActivity {
     TextView tTindakan;
     @Bind(R.id.t_namapetugas)
     TextView tNamapetugas;
-//    private Realm mRealm;
+    private Realm mRealm;
 
-
+    m_pelanggan m_pelanggan;
+    m_periksa m_periksa;
+    m_petugas m_petugas;
+    m_barangbukti m_barangbukti;
     String s_id, s_nama, s_alamat, s_nogardu, s_tarif, s_deskripsi, s_tindakan, s_namapetugas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
-//        mRealm = Realm.getInstance(getApplicationContext());
+        mRealm = Realm.getInstance(getApplicationContext());
 
         Intent i = getIntent();
         s_id = i.getStringExtra("id");
@@ -84,62 +87,40 @@ public class DetailActivity extends AppCompatActivity {
         tTindakan.setText(s_tindakan.toString());
         tNamapetugas.setText(s_namapetugas.toString());
 
+        m_pelanggan = mRealm.where(m_pelanggan.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_periksa = mRealm.where(m_periksa.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
+
+        m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
+        mRealm.beginTransaction();
+        mRealm.commitTransaction();
 
 //        Toast.makeText(this, "Nama "+m_pelanggan.getNama().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Nama "+m_petugas.getNama().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Hasil "+m_periksa.getHasil().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Gardu "+m_barangbukti.getGarduBb(), Toast.LENGTH_SHORT).show();
-
-        Button pemeriksaan = (Button) findViewById(R.id.btnpemeriksaan);
-        Button penangguhan = (Button) findViewById(R.id.btnpenangguhan);
-        Button pengambilan = (Button) findViewById(R.id.btnpengambilan);
-        Button penitipan = (Button) findViewById(R.id.btnpenitipan);
-
-        pemeriksaan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postData("http://10.3.141.1/digitalisasi_rest/index.php/api/RestPemeriksaan");
-                Toast.makeText(DetailActivity.this, "Print Pemeriksaan", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        penangguhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postData("http://10.3.141.1/digitalisasi_rest/index.php/api/RestPenangguhan");
-                Toast.makeText(DetailActivity.this, "Print Penangguhan", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        pengambilan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postData("http://10.3.141.1/digitalisasi_rest/index.php/api/RestPengambilanBB");
-                Toast.makeText(DetailActivity.this, "Print Pengambilan", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        penitipan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postData("http://10.3.141.1/digitalisasi_rest/index.php/api/RestPenitipanBB");
-                Toast.makeText(DetailActivity.this, "Print Penitipan", Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
 
-//    @OnClick(R.id.btnpemeriksaan)
+//    @OnClick(R.id.p_dokumenapa1)
 //    void onPDokumenapa1Click() {
 //        //TODO implement
-//        postData("http://10.3.141.1/digitalisasi_rest/index.php/RestPemeriksaan_2");
-//        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Print Dokumen 1", Toast.LENGTH_SHORT).show();
 //    }
 //
-//    @OnLongClick(R.id.btnpemeriksaan)
+//    @OnLongClick(R.id.p_dokumenapa1)
 //    boolean onPDokumenapa1LongClick() {
 //        //TODO implement
+//        postData("http://10.3.141.1/print/digitalisasi_rest/index.php/api/RestPemeriksaan_2");
+//        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
 //        return true;
 //    }
 //
@@ -164,28 +145,6 @@ public class DetailActivity extends AppCompatActivity {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                Realm mRealm;
-                mRealm = Realm.getInstance(getApplicationContext());
-                m_pelanggan m_pelanggan;
-                m_periksa m_periksa;
-                m_petugas m_petugas;
-                m_barangbukti m_barangbukti;
-
-                m_pelanggan = mRealm.where(m_pelanggan.class).equalTo("id", s_id).findFirst();
-                mRealm.beginTransaction();
-                mRealm.commitTransaction();
-
-                m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
-                mRealm.beginTransaction();
-                mRealm.commitTransaction();
-
-                m_periksa = mRealm.where(m_periksa.class).equalTo("id", s_id).findFirst();
-                mRealm.beginTransaction();
-                mRealm.commitTransaction();
-
-                m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
-                mRealm.beginTransaction();
-                mRealm.commitTransaction();
 //                File file1 = new File(pemeriksaan.getString("file1",null));
 //                File file2 = new File(pemeriksaan.getString("file2",null));
 //                File file3 = new File(pemeriksaan.getString("file3",null));
@@ -212,16 +171,16 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("no_induk", m_petugas.getNoinduk() )
                         .addFormDataPart("jabatan", m_petugas.getJabatan() )
                         .addFormDataPart("nama_vendor", m_petugas.getNama_vendor() )
-                        .addFormDataPart("noinduk_vendor", m_petugas.getNoinduk_vendor() )  //---------------
+                        .addFormDataPart("no_induk_vendor", m_petugas.getNoinduk_vendor() )
                         .addFormDataPart("jabatan_vendor", m_petugas.getJabatan_vendor() )
                         .addFormDataPart("nomor_surat_polri", m_petugas.getNomor_surat_porli() )
                         .addFormDataPart("tanggal_suratpolri", m_petugas.getTanggal_suratpolri() )
                         .addFormDataPart("nama_polri1", m_petugas.getPetugas1() )
-                        .addFormDataPart("nip_polri1", m_petugas.getNippetugas1().toString() )  //--------
-                        .addFormDataPart("jabatan_polri1", m_petugas.getJabatanpetugas1() ) //--------
+                        .addFormDataPart("nip_polri1", m_petugas.getNippetugas1() )
+                        .addFormDataPart("jabatan_polri1", m_petugas.getJabatanpetugas1() )
                         .addFormDataPart("nama_polri2", m_petugas.getPetugas2() )
-                        .addFormDataPart("nip_polri2", m_petugas.getNippetugas2().toString() )  //---------
-                        .addFormDataPart("jabatan_polri2", m_petugas.getJabatanpetugas2() ) //---------
+                        .addFormDataPart("nip_polri2", m_petugas.getNippetugas2() )
+                        .addFormDataPart("jabatan_polri2", m_petugas.getJabatanpetugas2() )
                         // pelanggan
                         .addFormDataPart("terdaftar", "Ya" )
                         .addFormDataPart("id_pelanggan", m_pelanggan.getId_pelanggan() )
@@ -229,15 +188,14 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("alamat_pelanggan", m_pelanggan.getAlamat() )
                         .addFormDataPart("no_gardu", m_pelanggan.getNo_gardu() )
                         .addFormDataPart("tarif", m_pelanggan.getTarif() )
-                        .addFormDataPart("peruntukan", m_pelanggan.getPeruntukan() )
+                        .addFormDataPart("peruntukan", "untuk" )
                         .addFormDataPart("nama_penghuni", m_pelanggan.getNama_penghuni() )
                         .addFormDataPart("alamat_penghuni", m_pelanggan.getAlamat_penghuni() )
+//                        .addFormDataPart("noktp_penghuni", m_pelanggan.getNoktp_penghuni() )
+//                        .addFormDataPart("nama_saksi", m_pelanggan.getNama_saksi() )
+//                        .addFormDataPart("alamat_saksi", m_pelanggan.getAlamat_saksi() )
                         .addFormDataPart("nomor_identitas", m_pelanggan.getNomor_identitas() )
-                        .addFormDataPart("pekerjaan_penghuni", m_pelanggan.getPekerjaan_penghuni() )
-                        .addFormDataPart("nama_saksi1", m_pelanggan.getNama_saksi1() )
-                        .addFormDataPart("noktp_saksi1", m_pelanggan.getNoktp_saksi1() )
-                        .addFormDataPart("nama_saksi2", m_pelanggan.getNama_saksi1() )
-                        .addFormDataPart("noktp_saksi2", m_pelanggan.getNoktp_saksi1() )
+//                        .addFormDataPart("pekerjaan_saksi", m_pelanggan.getPekerjaan_saksi() )
                         .addFormDataPart("foto", "" )
                         .addFormDataPart("status", m_pelanggan.getStatus() )
                         .addFormDataPart("lat", m_pelanggan.getLat().toString() )
@@ -247,12 +205,12 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("merk_1a", m_periksa.getMerk_1a() )
                         .addFormDataPart("tahun_1a", m_periksa.getTahun_1a() )
                         .addFormDataPart("putaran_1a", m_periksa.getPutaran_1a() )
-                        .addFormDataPart("kondisi_visual_1a", m_periksa.getKondisi_visual_1a() )    //---------------
+                        .addFormDataPart("kondisi_visual_1a", m_periksa.getKondisi_visual_1a() )
                         .addFormDataPart("segel_terpasang_1b", m_periksa.getSegel_terpasang_1b() )
                         .addFormDataPart("jenis_1b", m_periksa.getJenis_1b() )
                         .addFormDataPart("acuan_1b", m_periksa.getAcuan_1b() )
                         .addFormDataPart("tahun_1b", m_periksa.getTahun_1b() )
-                        .addFormDataPart("kondisi_visual_1b", m_periksa.getKondisi_visual_1b() )    //---------------
+                        .addFormDataPart("kondisi_visual_1b", m_periksa.getKondisi_visual_1b() )
                         .addFormDataPart("kapasitas_2a", m_periksa.getKapasitas_2a() )
                         .addFormDataPart("merk_2a", m_periksa.getMerk_2a() )
                         .addFormDataPart("segel_terpasang_2b", m_periksa.getSegel_terpasang_2b() )
@@ -260,13 +218,13 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("acuan_2b", m_periksa.getAcuan_2b() )
                         .addFormDataPart("tahun_2b", m_periksa.getTahun_2b() )
                         .addFormDataPart("papan_meter_3a", m_periksa.getPapan_meter_3a() )
-                        .addFormDataPart("jenis_3a", m_periksa.getJenis_3a() )  //----------------
+                        .addFormDataPart("jenis_3a", m_periksa.getJenis_3a() )
                         .addFormDataPart("kondisi_visual_3a", m_periksa.getKondisi_visual_3a() )
                         .addFormDataPart("segel_terpasang_3a", m_periksa.getSegel_terpasang_3a() )
                         .addFormDataPart("jenis_3a2", m_periksa.getJenis_3a2() )
                         .addFormDataPart("acuan_3a", m_periksa.getAcuan_3a() )
                         .addFormDataPart("tahun_3a", m_periksa.getTahun_3a() )
-                        .addFormDataPart("sesuai", m_periksa.getSesuai() )  //---------------
+                        .addFormDataPart("sesuai", m_periksa.getSesuai() )
                         .addFormDataPart("hasil", m_periksa.getHasil() )
                         .addFormDataPart("pelanggaran", m_periksa.getPelanggaran() )
                         .addFormDataPart("deskripsi_pelanggaran", m_periksa.getDeskripsi_pelanggaran() )
