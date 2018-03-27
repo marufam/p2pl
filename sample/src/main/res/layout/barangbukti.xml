@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -69,7 +69,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/Merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -77,11 +77,41 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/type_bb_kwh"
+                                    android:entries="@array/type_meter"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Merk"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Pilih merk"
-                                    android:id="@+id/merk_bb_kwh"/>
+                                    android:id="@+id/merk_bb_kwh"
+                                    android:entries="@array/merk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -142,37 +172,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Tahun"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Tahun"
-                                    android:id="@+id/tahun_bb_kwh"/>
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
                             android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -217,22 +216,21 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_weight="2.5">
-                                <EditText
+
+                                <Spinner
+                                    android:id="@+id/ukuranx_bb_kwh"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="p"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukuranx_bb_kwh"/>
+                                    android:entries="@array/ukuranx"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="X"/>
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/ukurany_bb_kwh"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="l"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukurany_bb_kwh"/>
+                                    android:entries="@array/ukurany"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -342,7 +340,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/Merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -350,11 +348,41 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/type_bb_kvarh"
+                                    android:entries="@array/type_meter"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Merk"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Pilih merk"
-                                    android:id="@+id/merk_bb_kvarh"/>
+                                    android:id="@+id/merk_bb_kvarh"
+                                    android:entries="@array/merk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -415,37 +443,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Tahun"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Tahun"
-                                    android:id="@+id/tahun_bb_kVarh"/>
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
                             android:layout_margin="@dimen/input_margin">
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -490,22 +487,21 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_weight="2.5">
-                                <EditText
+
+                                <Spinner
+                                    android:id="@+id/ukuranx_bb_kvarh"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="p"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukuranx_bb_kvarh"/>
+                                    android:entries="@array/ukuranx"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="X"/>
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/ukurany_bb_kvarh"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="l"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukurany_bb_kvarh"/>
+                                    android:entries="@array/ukurany"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -573,33 +569,34 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:padding="10dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            >
+                            android:layout_margin="3dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                >
+                                android:layout_height="wrap_content">
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
+                                    android:text="Meter kVA Max"
                                     android:textColor="@color/colorPrimaryDark"
-                                    android:textStyle="bold"
                                     android:textSize="@dimen/text_header"
-                                    android:text="Meter kVA Max" />
+                                    android:textStyle="bold" />
                             </LinearLayout>
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -616,7 +613,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/Merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -624,65 +621,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Pilih merk"
-                                    android:id="@+id/merk_bb_kva"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-                                <TextView
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Tarip tunggal/ganda"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Tarip tunggal/ganda"
-                                    android:id="@+id/tarip_bb_kva"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.5">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="No.Pabrik/Tahun"
-                                    android:gravity="bottom"
-                                    />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2.5">
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/Tahun"
-                                    android:id="@+id/nopabrik_bb_kva"/>
+                                    android:id="@+id/type_bb_kva"
+                                    android:entries="@array/type_meter"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -700,7 +643,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Tahun"
+                                    android:text="Merk"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -708,105 +651,177 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Tahun"
-                                    android:id="@+id/tahun_bb_kVa"/>
+                                    android:id="@+id/merk_bb_kva"
+                                    android:entries="@array/merk"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Tarip tunggal/ganda" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/tarip_bb_kva"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tarip tunggal/ganda" />
                             </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Faktor Meter"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="No.Pabrik/Tahun" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/nopabrik_bb_kva"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Faktor Meter"
-                                    android:id="@+id/faktormeter_bb_kva"/>
+                                    android:hint="No.Pabrik/Tahun" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Ukuran (in)"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Faktor Meter" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/faktormeter_bb_kva"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Faktor Meter" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Ukuran (in)" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/ukuranx_bb_kva"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="p"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukuranx_bb_kva"/>
+                                    android:entries="@array/ukuranx"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="X"/>
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/ukurany_bb_kva"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="l"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukurany_bb_kva"/>
+                                    android:entries="@array/ukurany"/>
+
+
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:weightSum="4"
-                            android:layout_margin="@dimen/input_margin">
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Ampere.Constanta"
                                     android:gravity="bottom"
-                                    />
+                                    android:text="Ampere.Constanta" />
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
+
                                 <EditText
+                                    android:id="@+id/ampere_bb_kva"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Ampere.Constanta"
-                                    android:id="@+id/ampere_bb_kva"/>
+                                    android:hint="Ampere.Constanta" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -868,11 +883,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <AutoCompleteTextView
+                                    android:id="@+id/nama_bb_pembatas"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Nama Alat"
-                                    android:id="@+id/nama_bb_pembatas"/>
+                                    android:layout_height="wrap_content" />
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -899,7 +913,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Type ukuran"
-                                    android:id="@+id/tipeukuran_bb_pembatas"/>
+                                    android:id="@+id/tarip_bb_pembatas"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -923,22 +937,20 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/ukuranx_bb_pembatas"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="p"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukuranx_bb_pembatas"/>
+                                    android:entries="@array/ukuranx"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="X"/>
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/ukurany_bb_pembatas"
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="l"
-                                    android:textAlignment="center"
-                                    android:id="@+id/ukurany_bb_pembatas"/>
+                                    android:entries="@array/ukurany"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -992,7 +1004,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1000,11 +1012,41 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/type_bb_trafo"
+                                    android:entries="@array/type_meter"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Merk"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Bingung"
-                                    android:id="@+id/merk_bb_trafo"/>
+                                    android:id="@+id/merk_bb_trafo"
+                                    android:entries="@array/merk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1120,11 +1162,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <AutoCompleteTextView
+                                    android:id="@+id/jenis_bb_kabel"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Jenis Kabel"
-                                    android:id="@+id/jeniskabel_bb_kabel"/>
+                                    android:layout_height="wrap_content" />
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1254,7 +1295,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1262,11 +1303,41 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Type Kontraktor"
-                                    android:id="@+id/merk_bb_kontaktor"/>
+                                    android:layout_height="30dp"
+                                    android:id="@+id/type_bb_kontaktor"
+                                    android:entries="@array/type_meter"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Merk"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/merk_bb_kontaktor"
+                                    android:entries="@array/merk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1316,11 +1387,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
+                                    android:id="@+id/fasa_bb_trafo"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="1 fasa / 3 fasa"
-                                    android:id="@+id/fasa_bb_trafo"/>
+                                    android:entries="@array/fasa"
+                                    />
+                                <!--<EditText-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:hint="1 fasa / 3 fasa"-->
+                                    <!--android:id="@+id/fasa_bb_trafo"/>-->
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -1385,7 +1462,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Jenis Fuse"
+                                    android:hint="Jenis"
                                     android:id="@+id/jenis_bb_fuse"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -1404,7 +1481,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Type/merk"
+                                    android:text="Type"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1412,11 +1489,41 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Merk Fuse"
-                                    android:id="@+id/merk_bb_fuse"/>
+                                    android:layout_height="30dp"
+                                    android:id="@+id/type_bb_fuse"
+                                    android:entries="@array/type_meter"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Merk"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/merk_bb_fuse"
+                                    android:entries="@array/merk"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -1505,10 +1612,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2.5">
-                                <EditText
+                                <Spinner
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Ukuran"
+                                    android:entries="@array/ukuran_gembok"
                                     android:id="@+id/ukuran_bb_gembok"/>
                             </LinearLayout>
                         </LinearLayout>

@@ -320,7 +320,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:gravity="bottom"
-                                    android:text="No Gardu / Trafo" />
+                                    android:text="No Gardu" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -332,7 +332,38 @@
                                     android:id="@+id/no_gardu"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No Gardu / Trafo" />
+                                    android:hint="No Gardu" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Trafo" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/trafo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Trafo" />
                             </LinearLayout>
                         </LinearLayout>
 

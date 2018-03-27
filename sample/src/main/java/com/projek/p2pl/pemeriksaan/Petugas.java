@@ -41,7 +41,8 @@ import io.realm.RealmResults;
 
 public class Petugas extends AbstractStep {
 
-    @Bind(R.id.nomorsurat) EditText nomorsurat;
+    @Bind(R.id.nomorsurat) EditText nosurat;        // nomor surat dengan format
+    @Bind(R.id.nomorsurat) EditText nomorsurat;     // nomor surat tugas
     @Bind(R.id.tanggalsurat) EditText tanggalsurat;
     @Bind(R.id.nama) EditText nama;
     @Bind(R.id.noinduk) EditText noinduk;

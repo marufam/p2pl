@@ -1,6 +1,7 @@
 package com.projek.p2pl.pemeriksaan;
 
 import android.content.SharedPreferences;
+import android.opengl.EGLExt;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -8,7 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
@@ -32,69 +36,129 @@ public class BarangBukti extends AbstractStep {
     private int i = 1;
     private Realm mRealm;
 
-    @Bind(R.id.merk_bb_kwh) EditText merkBbKwh;
-    @Bind(R.id.tarip_bb_kwh) EditText taripBbKwh;
-    @Bind(R.id.nopabrik_bb_kwh)   EditText nopabrikBbKwh;
-    @Bind(R.id.tahun_bb_kwh)   EditText tahunBbKwh;
-    @Bind(R.id.faktormeter_bb_kwh)    EditText faktormeterBbKwh;
-    @Bind(R.id.ukuranx_bb_kwh)    EditText ukuranxBbKwh;
-    @Bind(R.id.ukurany_bb_kwh)    EditText ukuranyBbKwh;
-    @Bind(R.id.ampere_bb_kwh)    EditText ampereBbKwh;
-    @Bind(R.id.stand_bb_kWh)    EditText standBbKWh;
+    @Bind(R.id.merk_bb_kwh)
+    Spinner merkBbKwh;
+    @Bind(R.id.type_bb_kwh)
+    Spinner typeBbKwh;
+    @Bind(R.id.tarip_bb_kwh)
+    EditText taripBbKwh;
+    @Bind(R.id.nopabrik_bb_kwh)
+    EditText nopabrikBbKwh;
+    @Bind(R.id.faktormeter_bb_kwh)
+    EditText faktormeterBbKwh;
+    @Bind(R.id.ukuranx_bb_kwh)
+    Spinner ukuranxBbKwh;
+    @Bind(R.id.ukurany_bb_kwh)
+    Spinner ukuranyBbKwh;
+    @Bind(R.id.ampere_bb_kwh)
+    EditText ampereBbKwh;
+    @Bind(R.id.stand_bb_kWh)
+    EditText standBbKWh;
 
-    @Bind(R.id.merk_bb_kvarh)    EditText merkBbKvarh;
-    @Bind(R.id.tarip_bb_kvarh)    EditText taripBbKvarh;
-    @Bind(R.id.nopabrik_bb_kvarh)    EditText nopabrikBbKvarh;
-    @Bind(R.id.tahun_bb_kVarh)    EditText tahunBbKvarh;
-    @Bind(R.id.faktormeter_bb_kvarh)    EditText faktormeterBbKvarh;
-    @Bind(R.id.ukuranx_bb_kvarh)    EditText ukuranxBbKvarh;
-    @Bind(R.id.ukurany_bb_kvarh)    EditText ukuranyBbKvarh;
-    @Bind(R.id.ampere_bb_kvarh)    EditText ampereBbKvarh;
-    @Bind(R.id.stand_bb_kvarh)    EditText standBbKvarh;
+    @Bind(R.id.merk_bb_kvarh)
+    Spinner merkBbKvarh;
+    @Bind(R.id.type_bb_kvarh)
+    Spinner typeBbKvarh;
+    @Bind(R.id.tarip_bb_kvarh)
+    EditText taripBbKvarh;
+    @Bind(R.id.nopabrik_bb_kvarh)
+    EditText nopabrikBbKvarh;
+    @Bind(R.id.faktormeter_bb_kvarh)
+    EditText faktormeterBbKvarh;
+    @Bind(R.id.ukuranx_bb_kvarh)
+    Spinner ukuranxBbKvarh;
+    @Bind(R.id.ukurany_bb_kvarh)
+    Spinner ukuranyBbKvarh;
+    @Bind(R.id.ampere_bb_kvarh)
+    EditText ampereBbKvarh;
+    @Bind(R.id.stand_bb_kvarh)
+    EditText standBbKvarh;
 
-    @Bind(R.id.merk_bb_kva)    EditText merkBbKva;
-    @Bind(R.id.tarip_bb_kva)    EditText taripBbKva;
-    @Bind(R.id.nopabrik_bb_kva)    EditText nopabrikBbKva;
-    @Bind(R.id.tahun_bb_kVa)    EditText tahunBbKva;
-    @Bind(R.id.faktormeter_bb_kva)    EditText faktormeterBbKva;
-    @Bind(R.id.ukuranx_bb_kva)    EditText ukuranxBbKva;
-    @Bind(R.id.ukurany_bb_kva)    EditText ukuranyBbKva;
-    @Bind(R.id.ampere_bb_kva)    EditText ampereBbKva;
+    @Bind(R.id.merk_bb_kva)
+    Spinner merkBbKva;
+    @Bind(R.id.type_bb_kva)
+    Spinner typeBbKva;
+    @Bind(R.id.tarip_bb_kva)
+    EditText taripBbKva;
+    @Bind(R.id.nopabrik_bb_kva)
+    EditText nopabrikBbKva;
+    @Bind(R.id.faktormeter_bb_kva)
+    EditText faktormeterBbKva;
+    @Bind(R.id.ukuranx_bb_kva)
+    Spinner ukuranxBbKva;
+    @Bind(R.id.ukurany_bb_kva)
+    Spinner ukuranyBbKva;
+    @Bind(R.id.ampere_bb_kva)
+    EditText ampereBbKva;
 
-    @Bind(R.id.nama_bb_pembatas)    EditText namaBbPembatas;
-    @Bind(R.id.tipeukuran_bb_pembatas)    EditText tipeukuranBbPembatas;
-    @Bind(R.id.ukuranx_bb_pembatas)    EditText ukuranxBbPembatas;
-    @Bind(R.id.ukurany_bb_pembatas)    EditText ukuranyBbPembatas;
+    AutoCompleteTextView nama_bb_pembatas;
+    @Bind(R.id.tarip_bb_pembatas)
+    EditText taripBbPembatas;
+    @Bind(R.id.ukuranx_bb_pembatas)
+    Spinner ukuranxBbPembatas;
+    @Bind(R.id.ukurany_bb_pembatas)
+    Spinner ukuranyBbPembatas;
+    @Bind(R.id.merk_bb_trafo)
+    Spinner merkBbTrafo;
+    @Bind(R.id.nopabrik_bb_trafo)
+    EditText nopabrikBbTrafo;
+    @Bind(R.id.ratio_bb_trafo)
+    EditText ratioBbTrafo;
 
-    @Bind(R.id.merk_bb_trafo)    EditText merkBbTrafo;
-    @Bind(R.id.nopabrik_bb_trafo)    EditText nopabrikBbTrafo;
-    @Bind(R.id.ratio_bb_trafo)    EditText ratioBbTrafo;
-
-    @Bind(R.id.jeniskabel_bb_kabel)    EditText jeniskabelBbKabel;
-    @Bind(R.id.diameterx_bb_kabel)    EditText diameterxBbKabel;
-    @Bind(R.id.diametery_bb_kabel)    EditText diameteryBbKabel;
-    @Bind(R.id.panjang_bb_kabel)    EditText panjangBbKabel;
-
-    @Bind(R.id.merk_bb_kontaktor)    EditText merkBbKontaktor;
-    @Bind(R.id.nopabrik_bb_kontaktor)    EditText nopabrikBbKontaktor;
-    @Bind(R.id.fasa_bb_trafo)    EditText fasaBbTrafo;
-
-    @Bind(R.id.jenis_bb_fuse)    EditText jenisBbFuse;
-    @Bind(R.id.merk_bb_fuse)    EditText merkBbFuse;
-    @Bind(R.id.nopabrik_bb_fuse)    EditText nopabrikBbFuse;
-
-    @Bind(R.id.ukuran_bb_gembok)    EditText ukuranBbGembok;
-
-    @Bind(R.id.gardu_bb)    EditText garduBb;
-    @Bind(R.id.kotakapp_bb)    EditText kotakappBb;
-    @Bind(R.id.pengukur_bb)    EditText pengukurBb;
-    @Bind(R.id.pembatas_bb)    EditText pembatasBb;
-    @Bind(R.id.bantupengukuran_bb)    EditText bantupengukuranBb;
-    @Bind(R.id.pelindung_bb)    EditText pelindungBb;
+    AutoCompleteTextView jenis_bb_kabel;
+    @Bind(R.id.diameterx_bb_kabel)
+    EditText diameterxBbKabel;
+    @Bind(R.id.diametery_bb_kabel)
+    EditText diameteryBbKabel;
+    @Bind(R.id.panjang_bb_kabel)
+    EditText panjangBbKabel;
+    @Bind(R.id.merk_bb_kontaktor)
+    Spinner merkBbKontaktor;
+    @Bind(R.id.nopabrik_bb_kontaktor)
+    EditText nopabrikBbKontaktor;
+    @Bind(R.id.fasa_bb_trafo)
+    Spinner fasaBbTrafo;
+    @Bind(R.id.jenis_bb_fuse)
+    EditText jenisBbFuse;
+    @Bind(R.id.merk_bb_fuse)
+    Spinner merkBbFuse;
+    @Bind(R.id.nopabrik_bb_fuse)
+    EditText nopabrikBbFuse;
+    @Bind(R.id.ukuran_bb_gembok)
+    Spinner ukuranBbGembok;
+    @Bind(R.id.gardu_bb)
+    EditText garduBb;
+    @Bind(R.id.kotakapp_bb)
+    EditText kotakappBb;
+    @Bind(R.id.pengukur_bb)
+    EditText pengukurBb;
+    @Bind(R.id.pembatas_bb)
+    EditText pembatasBb;
+    @Bind(R.id.bantupengukuran_bb)
+    EditText bantupengukuranBb;
+    @Bind(R.id.pelindung_bb)
+    EditText pelindungBb;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.barangbukti, container, false);
+
+        String[] nama_alat_pembatas = new String[] {
+                "MCB", "MCCB", "NFB", "NH Fuse", "FCO"
+        };
+        ArrayAdapter<String> alat_pembatas_adapter = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_dropdown_item_1line, nama_alat_pembatas);
+        nama_bb_pembatas = (AutoCompleteTextView)rootView.findViewById(R.id.nama_bb_pembatas);
+        nama_bb_pembatas.setAdapter(alat_pembatas_adapter);
+
+        String[] kabel_sadapan = new String[] {
+                "NYM", "NYY", "NGA", "Kabel Tanah"
+        };
+        ArrayAdapter<String> kabel_sadapan_adapter = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_dropdown_item_1line, kabel_sadapan);
+        jenis_bb_kabel = (AutoCompleteTextView)rootView.findViewById(R.id.jenis_bb_kabel);
+        jenis_bb_kabel.setAdapter(kabel_sadapan_adapter);
+
+
+
         return rootView;
     }
 
@@ -155,6 +219,7 @@ public class BarangBukti extends AbstractStep {
 
     @Override
     public boolean nextIf() {
+        /*
         SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode
         Toast.makeText(mStepper, "Complete", Toast.LENGTH_SHORT).show();
         Log.d("preference coba",pemeriksaan.getAll().toString());
@@ -168,6 +233,7 @@ public class BarangBukti extends AbstractStep {
         myperiksa.clear();
 
         getActivity().finish();
+        */
 //        Log.d("Pemeriksaan","kwh meter 1a : " + pemeriksaan.getString("kwh_meter_1a",null));
 //        Log.d("Pemeriksaan","kondisi visual 1a : " + pemeriksaan.getString("kondisi_visual_1a",null));
 //        Log.d("Pemeriksaan","jenis 1b : " + pemeriksaan.getString("jenis_1b",null));
@@ -193,55 +259,51 @@ public class BarangBukti extends AbstractStep {
         mRealm.beginTransaction();
         m_barangbukti mybarangbukti = mRealm.createObject(m_barangbukti.class);
         mybarangbukti.setId(pemeriksaan.getString("id",null));
-        mybarangbukti.setMerkBbKwh(merkBbKwh.getText().toString());
-        mybarangbukti.setTaripBbKwh(taripBbKwh.getText().toString());
+        mybarangbukti.setMerkBbKwh(merkBbKwh.getSelectedItem().toString());
+        mybarangbukti.setTaripBbKwh (taripBbKwh.getText().toString());
         mybarangbukti.setNopabrikBbKwh(nopabrikBbKwh.getText().toString());
-        mybarangbukti.setTahunBbKwh(tahunBbKwh.getText().toString());
         mybarangbukti.setFaktormeterBbKwh(faktormeterBbKwh.getText().toString());
-        mybarangbukti.setUkuranxBbKwh(ukuranxBbKwh.getText().toString());
-        mybarangbukti.setUkuranyBbKwh(ukuranyBbKwh.getText().toString());
+        mybarangbukti.setUkuranxBbKwh(ukuranxBbKwh.getSelectedItem().toString());
+        mybarangbukti.setUkuranyBbKwh(ukuranyBbKwh.getSelectedItem().toString());
         mybarangbukti.setAmpereBbKwh(ampereBbKwh.getText().toString());
         mybarangbukti.setStandBbKWh(standBbKWh.getText().toString());
 
-        mybarangbukti.setMerkBbKvarh(merkBbKvarh.getText().toString());
+        mybarangbukti.setMerkBbKvarh(merkBbKvarh.getSelectedItem().toString());
         mybarangbukti.setTaripBbKvarh(taripBbKvarh.getText().toString());
         mybarangbukti.setNopabrikBbKvarh(nopabrikBbKvarh.getText().toString());
-        mybarangbukti.setTahunBbKvarh(tahunBbKvarh.getText().toString());
         mybarangbukti.setFaktormeterBbKvarh(faktormeterBbKvarh.getText().toString());
-        mybarangbukti.setUkuranxBbKvarh(merkBbKvarh.getText().toString());
-        mybarangbukti.setUkuranyBbKvarh(ukuranyBbKvarh.getText().toString());
+//        mybarangbukti.setUkuranxBbKvarh(merkBbKvarh.getText().toString());
+        mybarangbukti.setUkuranyBbKvarh(ukuranyBbKvarh.getSelectedItem().toString());
         mybarangbukti.setAmpereBbKvarh(ampereBbKvarh.getText().toString());
         mybarangbukti.setStandBbKvarh(standBbKvarh.getText().toString());
 
-        mybarangbukti.setMerkBbKva(merkBbKva.getText().toString());
+        mybarangbukti.setMerkBbKva(merkBbKva.getSelectedItem().toString());
         mybarangbukti.setTaripBbKva(taripBbKva.getText().toString());
         mybarangbukti.setNopabrikBbKva(nopabrikBbKva.getText().toString());
-        mybarangbukti.setTahunBbKva(tahunBbKva.getText().toString());
         mybarangbukti.setFaktormeterBbKva(faktormeterBbKva.getText().toString());
-        mybarangbukti.setUkuranxBbKva(ukuranxBbKva.getText().toString());
-        mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getText().toString());
+        mybarangbukti.setUkuranxBbKva(ukuranxBbKva.getSelectedItem().toString());
+        mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getSelectedItem().toString());
         mybarangbukti.setAmpereBbKva(ampereBbKva.getText().toString());
 
-        mybarangbukti.setNamaBbPembatas(namaBbPembatas.getText().toString());
-        mybarangbukti.setTipeukuranBbPembatas(tipeukuranBbPembatas.getText().toString());
-        mybarangbukti.setUkuranxBbPembatas(ukuranxBbPembatas.getText().toString());
-        mybarangbukti.setUkuranyBbPembatas(ukuranyBbPembatas.getText().toString());
-
-        mybarangbukti.setMerkBbTrafo(merkBbTrafo.getText().toString());
+//        mybarangbukti.setLol(nama_bb_pembatas.getText().toString());
+//        mybarangbukti.setTarip(taripBbPembatas.getText().toString());
+        mybarangbukti.setUkuranxBbPembatas(ukuranxBbPembatas.getSelectedItem().toString());
+        mybarangbukti.setUkuranyBbPembatas(ukuranyBbPembatas.getSelectedItem().toString());
+        mybarangbukti.setMerkBbTrafo(merkBbTrafo.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbTrafo(nopabrikBbTrafo.getText().toString());
         mybarangbukti.setRatioBbTrafo(ratioBbTrafo.getText().toString());
 
-        mybarangbukti.setJeniskabelBbKabel(jeniskabelBbKabel.getText().toString());
+//        mybarangbukti.setLol2(lol2.getText().toString());
         mybarangbukti.setDiameterxBbKabel(diameterxBbKabel.getText().toString());
         mybarangbukti.setDiameteryBbKabel(diameteryBbKabel.getText().toString());
         mybarangbukti.setPanjangBbKabel(panjangBbKabel.getText().toString());
-        mybarangbukti.setMerkBbKontaktor(merkBbKontaktor.getText().toString());
+        mybarangbukti.setMerkBbKontaktor(merkBbKontaktor.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbKontaktor(nopabrikBbKontaktor.getText().toString());
-        mybarangbukti.setFasaBbTrafo(fasaBbTrafo.getText().toString());
+        mybarangbukti.setFasaBbTrafo(fasaBbTrafo.getSelectedItem().toString());
         mybarangbukti.setJenisBbFuse(jenisBbFuse.getText().toString());
-        mybarangbukti.setMerkBbFuse(merkBbFuse.getText().toString());
+        mybarangbukti.setMerkBbFuse(merkBbFuse.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbFuse(nopabrikBbFuse.getText().toString());
-        mybarangbukti.setUkuranBbGembok(ukuranBbGembok.getText().toString());
+        mybarangbukti.setUkuranBbGembok(ukuranBbGembok.getSelectedItem().toString());
         mybarangbukti.setGarduBb(garduBb.getText().toString());
         mybarangbukti.setKotakappBb(kotakappBb.getText().toString());
         mybarangbukti.setPengukurBb(pengukurBb.getText().toString());
@@ -296,14 +358,12 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setNama(pemeriksaan.getString("nama",null));
         mypelanggan.setAlamat(pemeriksaan.getString("alamat",null));
         mypelanggan.setNo_gardu(pemeriksaan.getString("no_gardu",null));
+        mypelanggan.setTrafo(pemeriksaan.getString("trafo",null));
         mypelanggan.setTarif(pemeriksaan.getString("tarif",null));
         mypelanggan.setNama_penghuni(pemeriksaan.getString("nama_penghuni",null));
         mypelanggan.setAlamat_penghuni(pemeriksaan.getString("alamat_penghuni",null));
         mypelanggan.setNomor_identitas(pemeriksaan.getString("nomor_identitas",null));
         mypelanggan.setPekerjaan_penghuni(pemeriksaan.getString("pekerjaan_penghuni",null));
-
-        mypelanggan.setTerdaftar(pemeriksaan.getString("terdaftar",null));
-
         mypelanggan.setNoktp_saksi1(pemeriksaan.getString("noktp_saksi1",null));
         mypelanggan.setNama_saksi1(pemeriksaan.getString("nama_saksi1",null));
         mypelanggan.setNoktp_saksi2(pemeriksaan.getString("noktp_saksi2",null));

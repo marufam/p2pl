@@ -26,6 +26,19 @@
         <item>Ditemukan Pelanggaran</item>
     </string-array>
 
+    <string-array name="fasa">
+        <item>-</item>
+        <item>1 fasa</item>
+        <item>3 fasa</item>
+    </string-array>
+
+    <string-array name="ukuran_gembok">
+        <item>-</item>
+        <item>Sesuai</item>
+        <item>Lebih Kecil</item>
+        <item>Sedang</item>
+    </string-array>
+
     <string-array name="tindakan">
         <item>-</item>
         <item>Dipadamkan</item>
@@ -120,6 +133,29 @@
         <item>Kayu</item>
         <item>Metal</item>
     </string-array>
+
+    <string-array name="ukuranx">
+        <item>-</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="ukurany">
+        <item>-</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>10</item>
+        <item>16</item>
+        <item>20</item>
+        <item>25</item>
+        <item>35</item>
+        <item>50</item>
+        <item>63</item>
+        <item>80</item>
+        <item>100</item>
+    </string-array>
+
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_login">Sign in</string>
 

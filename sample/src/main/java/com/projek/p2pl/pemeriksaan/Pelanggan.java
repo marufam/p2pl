@@ -93,6 +93,7 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.nama) EditText nama;
     @Bind(R.id.alamat) EditText alamat;
     @Bind(R.id.no_gardu) EditText no_gardu;
+    @Bind(R.id.trafo) EditText trafo;
     @Bind(R.id.tarif) EditText tarif;
     @Bind(R.id.peruntukan) Spinner peruntukan;
 
@@ -411,6 +412,7 @@ public class Pelanggan extends AbstractStep  {
         editor.putString("nama", nama.getText().toString());
         editor.putString("alamat", alamat.getText().toString());
         editor.putString("no_gardu", no_gardu.getText().toString());
+        editor.putString("trafo", trafo.getText().toString());
         editor.putString("tarif", tarif.getText().toString());
         editor.putString("peruntukan", peruntukan.getSelectedItem().toString());
 

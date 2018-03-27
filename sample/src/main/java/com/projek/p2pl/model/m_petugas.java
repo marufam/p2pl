@@ -12,8 +12,9 @@ public class m_petugas extends RealmObject {
 
     @PrimaryKey
     private String id;
-    private String nomorsurat;
-    private String tanggalsurat;
+    private String nosurat;     // nomor surat dengan format : 001/P2TL/RYN_PDN/TAHUN
+    private String nomorsurat;  // nomor surat tugas
+    private String tanggalsurat;    // tanggal surat tugas
     private String nama;
     private String noinduk;
     private String jabatan;
@@ -37,6 +38,14 @@ public class m_petugas extends RealmObject {
     private String petugas2;
     private String nippetugas2;
     private String jabatanpetugas2;
+
+    public String getNosurat() {
+        return nosurat;
+    }
+
+    public void setNosurat(String nosurat) {
+        this.nosurat = nosurat;
+    }
 
     public String getId() {
         return id;
