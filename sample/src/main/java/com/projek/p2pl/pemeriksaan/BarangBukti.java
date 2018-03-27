@@ -295,6 +295,9 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setAlamat_penghuni(pemeriksaan.getString("alamat_penghuni",null));
         mypelanggan.setNomor_identitas(pemeriksaan.getString("nomor_identitas",null));
         mypelanggan.setPekerjaan_penghuni(pemeriksaan.getString("pekerjaan_penghuni",null));
+
+        mypelanggan.setTerdaftar(pemeriksaan.getString("terdaftar",null));
+
         mypelanggan.setNoktp_saksi1(pemeriksaan.getString("noktp_saksi1",null));
         mypelanggan.setNama_saksi1(pemeriksaan.getString("nama_saksi1",null));
         mypelanggan.setNoktp_saksi2(pemeriksaan.getString("noktp_saksi2",null));

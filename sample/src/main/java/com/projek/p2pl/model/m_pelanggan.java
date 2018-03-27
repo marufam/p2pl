@@ -18,19 +18,24 @@ public class m_pelanggan extends RealmObject {
     private String no_gardu;
     private String tarif;
     private String peruntukan;
+
     private String nama_penghuni;
     private String alamat_penghuni;
     private String nomor_identitas;
     private String pekerjaan_penghuni;
+
     private String terdaftar; // true false
+
     private String nama_saksi1;
     private String noktp_saksi1;
     private String nama_saksi2;
     private String noktp_saksi2;
+
     private String foto;
     private String status;
     private Double lat;
     private Double lng;
+
 
     public String getId() {
         return id;

@@ -122,6 +122,7 @@ public class Pelanggan extends AbstractStep  {
     public static final int MEDIA_TYPE_IMAGE = 1;
     double latitude;
     double longitude;
+    String terdaftar;
 
 
 
@@ -141,6 +142,7 @@ public class Pelanggan extends AbstractStep  {
                     rd_nonpelanggan.setChecked(false);
                     id_pelanggan.setEnabled(true);
                     id_pelanggan.setText("");
+                    terdaftar = "1";
                 }
             }
         });
@@ -151,6 +153,7 @@ public class Pelanggan extends AbstractStep  {
                     rd_pelanggan.setChecked(false);
                     id_pelanggan.setEnabled(false);
                     id_pelanggan.setText("-");
+                    terdaftar = "0";
                 }
             }
         });
@@ -415,6 +418,8 @@ public class Pelanggan extends AbstractStep  {
         editor.putString("alamat_penghuni", alamat_penghuni.getText().toString());
         editor.putString("nomor_identitas", nomor_identitas.getText().toString());
         editor.putString("pekerjaan_penghuni", pekerjaan_penghuni.getText().toString());
+
+        editor.putString("terdaftar", terdaftar.toString());
 
         editor.putString("noktp_saksi1", noktp_saksi1.getText().toString());
         editor.putString("nama_saksi1", nama_saksi1.getText().toString());
