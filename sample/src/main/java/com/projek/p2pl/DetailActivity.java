@@ -53,12 +53,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView tTindakan;
     @Bind(R.id.t_namapetugas)
     TextView tNamapetugas;
-    private Realm mRealm;
 
-    m_pelanggan m_pelanggan;
-    m_periksa m_periksa;
-    m_petugas m_petugas;
-    m_barangbukti m_barangbukti;
     String s_id, s_nama, s_alamat, s_nogardu, s_tarif, s_deskripsi, s_tindakan, s_namapetugas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +62,7 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
-        mRealm = Realm.getInstance(getApplicationContext());
+
 
         Intent i = getIntent();
         s_id = i.getStringExtra("id");
@@ -87,21 +82,7 @@ public class DetailActivity extends AppCompatActivity {
         tTindakan.setText(s_tindakan.toString());
         tNamapetugas.setText(s_namapetugas.toString());
 
-        m_pelanggan = mRealm.where(m_pelanggan.class).equalTo("id", s_id).findFirst();
-        mRealm.beginTransaction();
-        mRealm.commitTransaction();
 
-        m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
-        mRealm.beginTransaction();
-        mRealm.commitTransaction();
-
-        m_periksa = mRealm.where(m_periksa.class).equalTo("id", s_id).findFirst();
-        mRealm.beginTransaction();
-        mRealm.commitTransaction();
-
-        m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
-        mRealm.beginTransaction();
-        mRealm.commitTransaction();
 
 //        Toast.makeText(this, "Nama "+m_pelanggan.getNama().toString(), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Nama "+m_petugas.getNama().toString(), Toast.LENGTH_SHORT).show();
@@ -110,19 +91,21 @@ public class DetailActivity extends AppCompatActivity {
     }
 
 
-//    @OnClick(R.id.p_dokumenapa1)
-//    void onPDokumenapa1Click() {
-//        //TODO implement
-//        Toast.makeText(this, "Print Dokumen 1", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @OnLongClick(R.id.p_dokumenapa1)
-//    boolean onPDokumenapa1LongClick() {
-//        //TODO implement
-//        postData("http://10.3.141.1/print/digitalisasi_rest/index.php/api/RestPemeriksaan_2");
-//        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
-//        return true;
-//    }
+    @OnClick(R.id.btnpemeriksaan)
+    void onPDokumenapa1Click() {
+        //TODO implement
+        postData("http://10.3.141.1/print/digitalisasi_rest/index.php/api/RestPemeriksaan_2");
+        Toast.makeText(this, "Print Dokumen pemeriksaan", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    @OnLongClick(R.id.btnpemeriksaan)
+    boolean onPDokumenapa1LongClick() {
+        //TODO implement
+        Toast.makeText(this, "Print Dokumen 1", Toast.LENGTH_SHORT).show();
+        return true;
+    }
 //
 //    @OnClick(R.id.p_dokumenapa2)
 //    void onPDokumenapa2Click() {
@@ -145,6 +128,29 @@ public class DetailActivity extends AppCompatActivity {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
+                Realm mRealm;
+                mRealm = Realm.getInstance(getApplicationContext());
+                m_pelanggan m_pelanggan;
+                m_periksa m_periksa;
+                m_petugas m_petugas;
+                m_barangbukti m_barangbukti;
+
+                m_pelanggan = mRealm.where(m_pelanggan.class).equalTo("id", s_id).findFirst();
+                mRealm.beginTransaction();
+                mRealm.commitTransaction();
+
+                m_petugas = mRealm.where(m_petugas.class).equalTo("id", s_id).findFirst();
+                mRealm.beginTransaction();
+                mRealm.commitTransaction();
+
+                m_periksa = mRealm.where(m_periksa.class).equalTo("id", s_id).findFirst();
+                mRealm.beginTransaction();
+                mRealm.commitTransaction();
+
+                m_barangbukti = mRealm.where(m_barangbukti.class).equalTo("id", s_id).findFirst();
+                mRealm.beginTransaction();
+                mRealm.commitTransaction();
+
 //                File file1 = new File(pemeriksaan.getString("file1",null));
 //                File file2 = new File(pemeriksaan.getString("file2",null));
 //                File file3 = new File(pemeriksaan.getString("file3",null));
@@ -181,6 +187,7 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("nama_polri2", m_petugas.getPetugas2() )
                         .addFormDataPart("nip_polri2", m_petugas.getNippetugas2() )
                         .addFormDataPart("jabatan_polri2", m_petugas.getJabatanpetugas2() )
+
                         // pelanggan
                         .addFormDataPart("terdaftar", "Ya" )
                         .addFormDataPart("id_pelanggan", m_pelanggan.getId_pelanggan() )
@@ -195,11 +202,18 @@ public class DetailActivity extends AppCompatActivity {
 //                        .addFormDataPart("nama_saksi", m_pelanggan.getNama_saksi() )
 //                        .addFormDataPart("alamat_saksi", m_pelanggan.getAlamat_saksi() )
                         .addFormDataPart("nomor_identitas", m_pelanggan.getNomor_identitas() )
-//                        .addFormDataPart("pekerjaan_saksi", m_pelanggan.getPekerjaan_saksi() )
+                        .addFormDataPart("pekerjaan_penghuni", m_pelanggan.getPekerjaan_penghuni() )
+
+                        .addFormDataPart("nama_saksi1", m_pelanggan.getPekerjaan_penghuni() )
+                        .addFormDataPart("noktp_saksi1", m_pelanggan.getPekerjaan_penghuni() )
+                        .addFormDataPart("nama_saksi2", m_pelanggan.getPekerjaan_penghuni() )
+                        .addFormDataPart("noktp_saksi2", m_pelanggan.getPekerjaan_penghuni() )
+
                         .addFormDataPart("foto", "" )
                         .addFormDataPart("status", m_pelanggan.getStatus() )
                         .addFormDataPart("lat", m_pelanggan.getLat().toString() )
                         .addFormDataPart("long", m_pelanggan.getLng().toString() )
+
                         // periksa
                         .addFormDataPart("kwh_meter_1a", m_periksa.getKwh_meter_1a() )
                         .addFormDataPart("merk_1a", m_periksa.getMerk_1a() )
@@ -229,46 +243,56 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("pelanggaran", m_periksa.getPelanggaran() )
                         .addFormDataPart("deskripsi_pelanggaran", m_periksa.getDeskripsi_pelanggaran() )
                         .addFormDataPart("tindakan", m_periksa.getTindakan() )
+
                         // barang bukti
                         .addFormDataPart("type_kwh", m_barangbukti.getMerkBbKwh() )
                         .addFormDataPart("tarif_kwh", m_barangbukti.getTaripBbKwh() )
                         .addFormDataPart("no_pabrik_kwh", m_barangbukti.getNopabrikBbKwh() )
-                        .addFormDataPart("tahun_kwh", "durung" )
+                        .addFormDataPart("tahun_kwh", m_barangbukti.getTahunBbKwh() ) ////////////
                         .addFormDataPart("faktor_meter_kwh", m_barangbukti.getFaktormeterBbKwh() )
                         .addFormDataPart("ukuran_kwh", m_barangbukti.getUkuranxBbKwh().toString() + "x" + m_barangbukti.getUkuranyBbKwh().toString() )
                         .addFormDataPart("constanta_kwh", m_barangbukti.getAmpereBbKwh() )
                         .addFormDataPart("stand_meter_kwh", m_barangbukti.getStandBbKWh() )
+
                         .addFormDataPart("type_kvarh", m_barangbukti.getMerkBbKvarh() )
                         .addFormDataPart("tarif_kvarh", m_barangbukti.getTaripBbKvarh() )
                         .addFormDataPart("no_pabrik_kvarh", m_barangbukti.getNopabrikBbKvarh() )
-                        .addFormDataPart("tahun_kvarh", "durung" )
+                        .addFormDataPart("tahun_kvarh", m_barangbukti.getTahunBbKvarh() ) //////////////
                         .addFormDataPart("faktor_meter_kvarh", m_barangbukti.getFaktormeterBbKvarh() )
                         .addFormDataPart("ukuran_kvarh", m_barangbukti.getUkuranxBbKvarh().toString() + "x" + m_barangbukti.getUkuranyBbKvarh().toString() )
                         .addFormDataPart("constanta_kvarh", m_barangbukti.getAmpereBbKvarh() )
                         .addFormDataPart("stand_meter_kvarh", m_barangbukti.getStandBbKvarh() )
+
                         .addFormDataPart("type_kva", m_barangbukti.getMerkBbKva() )
                         .addFormDataPart("tarif_kva", m_barangbukti.getTaripBbKva() )
                         .addFormDataPart("no_pabrik_kva", m_barangbukti.getNopabrikBbKva() )
-                        .addFormDataPart("tahun_kva", "durung" )
+                        .addFormDataPart("tahun_kva", m_barangbukti.getTahunBbKva() ) ///////////////
                         .addFormDataPart("faktor_meter_kva", m_barangbukti.getFaktormeterBbKva() )
                         .addFormDataPart("ukuran_kva", m_barangbukti.getUkuranxBbKva().toString() + "x" + m_barangbukti.getUkuranyBbKva().toString() )
                         .addFormDataPart("constanta_kva", m_barangbukti.getAmpereBbKva() )
-                        .addFormDataPart("nama_pembatas", "durung" )
-                        .addFormDataPart("type_ukuran_pembatas", "durung" )
+
+                        .addFormDataPart("nama_pembatas", m_barangbukti.getNamaBbPembatas() )
+                        .addFormDataPart("type_ukuran_pembatas", m_barangbukti.getTipeukuranBbPembatas() )
                         .addFormDataPart("ukuran_pembatas", m_barangbukti.getUkuranxBbPembatas().toString() + "x" + m_barangbukti.getUkuranxBbPembatas().toString() )
+
                         .addFormDataPart("type_trafo", m_barangbukti.getMerkBbTrafo() )
                         .addFormDataPart("no_pabrik_trafo", m_barangbukti.getNopabrikBbTrafo() )
                         .addFormDataPart("ratio_trafo", m_barangbukti.getRatioBbTrafo() )
-                        .addFormDataPart("jenis_kabel_sadapan", "durung" )
+
+                        .addFormDataPart("jenis_kabel_sadapan", m_barangbukti.getJeniskabelBbKabel() ) ////////////
                         .addFormDataPart("diameter_sadapan", m_barangbukti.getDiameterxBbKabel().toString() + "x" +  m_barangbukti.getDiameteryBbKabel().toString())
                         .addFormDataPart("panjang_sadapan", m_barangbukti.getPanjangBbKabel() )
+
                         .addFormDataPart("tipe_kontaktor", m_barangbukti.getMerkBbKontaktor() )
                         .addFormDataPart("no_pabrik_kontaktor", m_barangbukti.getNopabrikBbKontaktor() )
                         .addFormDataPart("fasa_kontaktor", m_barangbukti.getFasaBbTrafo() )
+
                         .addFormDataPart("jenis_fuse", m_barangbukti.getJenisBbFuse() )
                         .addFormDataPart("type_fuse", m_barangbukti.getMerkBbFuse() )
                         .addFormDataPart("no_pabrik_fuse", m_barangbukti.getNopabrikBbFuse() )
+
                         .addFormDataPart("ukuran_gembok", m_barangbukti.getUkuranBbGembok() )
+
                         .addFormDataPart("segel_gardu", m_barangbukti.getGarduBb() )
                         .addFormDataPart("segel_kontak", m_barangbukti.getKotakappBb() )
                         .addFormDataPart("segel_pengukur", m_barangbukti.getPengukurBb() )

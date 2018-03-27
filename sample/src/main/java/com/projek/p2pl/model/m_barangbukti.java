@@ -14,6 +14,7 @@ public class m_barangbukti extends RealmObject {
     private String taripBbKwh;
     private String nopabrikBbKwh;
     private String faktormeterBbKwh;
+    private String tahunBbKwh; //
     private String ukuranxBbKwh;
     private String ukuranyBbKwh;
     private String ampereBbKwh;
@@ -22,6 +23,7 @@ public class m_barangbukti extends RealmObject {
     private String merkBbKvarh;
     private String taripBbKvarh;
     private String nopabrikBbKvarh;
+    private String tahunBbKvarh;
     private String faktormeterBbKvarh;
     private String ukuranxBbKvarh;
     private String ukuranyBbKvarh;
@@ -31,6 +33,7 @@ public class m_barangbukti extends RealmObject {
     private String merkBbKva;
     private String taripBbKva;
     private String nopabrikBbKva;
+    private String tahunBbKva;
     private String faktormeterBbKva;
     private String ukuranxBbKva;
     private String ukuranyBbKva;
@@ -107,6 +110,14 @@ public class m_barangbukti extends RealmObject {
         this.faktormeterBbKwh = faktormeterBbKwh;
     }
 
+    public String getTahunBbKwh() {
+        return tahunBbKwh;
+    }
+
+    public void setTahunBbKwh(String tahunBbKwh) {
+        this.tahunBbKwh = tahunBbKwh;
+    }
+
     public String getUkuranxBbKwh() {
         return ukuranxBbKwh;
     }
@@ -161,6 +172,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setNopabrikBbKvarh(String nopabrikBbKvarh) {
         this.nopabrikBbKvarh = nopabrikBbKvarh;
+    }
+
+    public String getTahunBbKvarh() {
+        return tahunBbKvarh;
+    }
+
+    public void setTahunBbKvarh(String tahunBbKvarh) {
+        this.tahunBbKvarh = tahunBbKvarh;
     }
 
     public String getFaktormeterBbKvarh() {
@@ -225,6 +244,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setNopabrikBbKva(String nopabrikBbKva) {
         this.nopabrikBbKva = nopabrikBbKva;
+    }
+
+    public String getTahunBbKva() {
+        return tahunBbKva;
+    }
+
+    public void setTahunBbKva(String tahunBbKva) {
+        this.tahunBbKva = tahunBbKva;
     }
 
     public String getFaktormeterBbKva() {

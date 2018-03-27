@@ -122,7 +122,7 @@ public class Pelanggan extends AbstractStep  {
     public static final int MEDIA_TYPE_IMAGE = 1;
     double latitude;
     double longitude;
-    String terdaftar;
+    String terdaftar ;
 
 
 
@@ -134,7 +134,7 @@ public class Pelanggan extends AbstractStep  {
         final View rootView = inflater.inflate(R.layout.pelanggan, container, false);
         ButterKnife.bind(this, rootView);
 //        int selectedId = rdg_pelanggan.getCheckedRadioButtonId();
-
+        terdaftar="1";
         rd_pelanggan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
