@@ -216,8 +216,8 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getText().toString());
         mybarangbukti.setAmpereBbKva(ampereBbKva.getText().toString());
 
-        mybarangbukti.setLol(namaBbPembatas.getText().toString());
-        mybarangbukti.setTaripBbPembatas(tipeukuranBbPembatas.getText().toString());
+        mybarangbukti.setNamaBbPembatas(namaBbPembatas.getText().toString());
+        mybarangbukti.setTipeukuranBbPembatas(tipeukuranBbPembatas.getText().toString());
         mybarangbukti.setUkuranxBbPembatas(ukuranxBbPembatas.getText().toString());
         mybarangbukti.setUkuranyBbPembatas(ukuranyBbPembatas.getText().toString());
 
@@ -225,7 +225,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setNopabrikBbTrafo(nopabrikBbTrafo.getText().toString());
         mybarangbukti.setRatioBbTrafo(ratioBbTrafo.getText().toString());
 
-        mybarangbukti.setLol2(jeniskabelBbKabel.getText().toString());
+        mybarangbukti.setJeniskabelBbKabel(jeniskabelBbKabel.getText().toString());
         mybarangbukti.setDiameterxBbKabel(diameterxBbKabel.getText().toString());
         mybarangbukti.setDiameteryBbKabel(diameteryBbKabel.getText().toString());
         mybarangbukti.setPanjangBbKabel(panjangBbKabel.getText().toString());
