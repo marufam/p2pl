@@ -168,8 +168,9 @@ public class MapFragment extends Fragment {
                             Double lng = mRealm.allObjects(m_pelanggan.class).get(i).getLng();
                             final LatLng origin = new LatLng(myLat,myLng);
                             Double lat = mRealm.allObjects(m_pelanggan.class).get(i).getLat();
-                            Toast.makeText(getContext(), ""+SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng)), Toast.LENGTH_SHORT).show();
-                            if ((SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng))) < 150) {
+//                            Toast.makeText(getContext(), ""+myLat, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getContext(), ""+SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng)), Toast.LENGTH_SHORT).show();
+//                            if ((SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng))) < 150) {
 
                                     googleMap.addMarker(new MarkerOptions()
                                             .position(new LatLng(lat, lng))
@@ -207,7 +208,7 @@ public class MapFragment extends Fragment {
                                 }
                             }
 
-                       }
+//                       }
 
 
                 });
