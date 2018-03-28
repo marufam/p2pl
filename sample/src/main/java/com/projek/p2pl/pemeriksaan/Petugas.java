@@ -26,7 +26,9 @@ import com.projek.p2pl.model.m_pelanggan;
 import com.projek.p2pl.model.m_petugas;
 import com.projek.p2pl.model.m_polri;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import butterknife.Bind;
@@ -142,6 +144,7 @@ public class Petugas extends AbstractStep {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRealm = Realm.getInstance(getContext());
+
     }
 
     @Override
@@ -150,6 +153,8 @@ public class Petugas extends AbstractStep {
         ButterKnife.bind(this, rootView);
         mRealm = Realm.getInstance(getContext());
         loadspinner();
+        nomorsurat.setText("001/P2TL/RYN_ja/2018");
+        tanggalsurat.setText(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()));
 
         petugas1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

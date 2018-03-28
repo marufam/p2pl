@@ -126,6 +126,21 @@
                         android:orientation="vertical"
                         android:padding="10dp">
 
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_header"
+                                android:text="P2TL PLN" />
+                        </LinearLayout>
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -186,19 +201,6 @@
                                     android:layout_height="wrap_content"
                                     android:hint="Tanggal Surat Tugas" />
                             </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textStyle="bold"
-                                android:textSize="@dimen/text_header"
-                                android:text="P2TL PLN" />
                         </LinearLayout>
 
                         <LinearLayout

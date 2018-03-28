@@ -107,6 +107,8 @@ public class BarangBukti extends AbstractStep {
     EditText nopabrikBbTrafo;
     @Bind(R.id.ratio_bb_trafo)
     EditText ratioBbTrafo;
+    @Bind(R.id.tahun_bb_trafo)
+    EditText tahunBbTrafo;
 
     AutoCompleteTextView jenis_bb_kabel;
     @Bind(R.id.diameterx_bb_kabel)
@@ -317,6 +319,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKontaktor(merkBbKontaktor.getSelectedItem().toString());
         mybarangbukti.setTypeBbKontaktor(typeBbKontaktor.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbKontaktor(nopabrikBbKontaktor.getText().toString());
+        mybarangbukti.setTahunBbTrafo(tahunBbTrafo.getText().toString());
         mybarangbukti.setFasaBbTrafo(fasaBbTrafo.getSelectedItem().toString());
 
         mybarangbukti.setJenisBbFuse(jenisBbFuse.getText().toString());

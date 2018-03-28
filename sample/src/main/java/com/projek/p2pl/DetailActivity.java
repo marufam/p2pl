@@ -171,8 +171,12 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("wilayah", "Jateng" )
                         .addFormDataPart("tanggal", "2018-01-01" )
                         // petugas
-                        .addFormDataPart("nomor_surat", m_petugas.getNomorsurat() )
-                        .addFormDataPart("tanggal_nomorsurat", m_petugas.getTanggalsurat() )
+                        .addFormDataPart("nomor_surat", m_petugas.getNosurat() )
+                        .addFormDataPart("tanggal_nomorsurat", m_petugas.getTglsurat() )
+
+//                        .addFormDataPart("nomor_surat_tugas", m_petugas.getNomorsurat_tugas() )
+//                        .addFormDataPart("tanggal_nomorsurat_tugas", m_petugas.getTanggalsurat_tugas() )
+
                         .addFormDataPart("nama", m_petugas.getNama() )
                         .addFormDataPart("no_induk", m_petugas.getNoinduk() )
                         .addFormDataPart("jabatan", m_petugas.getJabatan() )

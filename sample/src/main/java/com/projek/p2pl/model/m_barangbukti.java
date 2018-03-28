@@ -50,6 +50,7 @@ public class m_barangbukti extends RealmObject {
     private String typeBbTrafo;
     private String merkBbTrafo;
     private String nopabrikBbTrafo;
+    private String tahunBbTrafo;
     private String ratioBbTrafo;
 
     private String jeniskabelBbKabel;
@@ -548,5 +549,13 @@ public class m_barangbukti extends RealmObject {
 
     public void setPelindungBb(String pelindungBb) {
         this.pelindungBb = pelindungBb;
+    }
+
+    public String getTahunBbTrafo() {
+        return tahunBbTrafo;
+    }
+
+    public void setTahunBbTrafo(String tahunBbTrafo) {
+        this.tahunBbTrafo = tahunBbTrafo;
     }
 }

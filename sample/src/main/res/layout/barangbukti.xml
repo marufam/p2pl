@@ -1061,7 +1061,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No.Pabrik/tahun"
+                                    android:text="No.Pabrik"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1072,10 +1072,38 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/tahun"
+                                    android:hint="No.Pabrik"
                                     android:id="@+id/nopabrik_bb_trafo"/>
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun "
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun"
+                                    android:id="@+id/tahun_bb_trafo"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
