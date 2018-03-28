@@ -153,7 +153,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No.Pabrik/Tahun"
+                                    android:text="No.Pabrik"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -164,7 +164,7 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/Tahun"
+                                    android:hint="No.Pabrik"
                                     android:id="@+id/nopabrik_bb_kwh"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -272,7 +272,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="Stand Meter kVARh Cabut"
+                                    android:text="Stand Meter kWh Cabut"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -283,12 +283,37 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Stand Meter kVARh Cabut"
+                                    android:hint="Stand Meter kWh"
                                     android:id="@+id/stand_bb_kWh"/>
                             </LinearLayout>
                         </LinearLayout>
-
-
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun kWh"
+                                    android:id="@+id/tahun_bb_kWh"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -424,7 +449,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No.Pabrik/Tahun"
+                                    android:text="No.Pabrik"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -435,10 +460,38 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/Tahun"
+                                    android:hint="No.Pabrik"
                                     android:id="@+id/nopabrik_bb_kvarh"/>
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun kVarh"
+                                    android:id="@+id/tahun_bb_kVarh"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -704,7 +757,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:gravity="bottom"
-                                    android:text="No.Pabrik/Tahun" />
+                                    android:text="No.Pabrik" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -716,7 +769,34 @@
                                     android:id="@+id/nopabrik_bb_kva"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/Tahun" />
+                                    android:hint="No.Pabrik" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun kva"
+                                    android:id="@+id/tahun_bb_kva"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -1380,7 +1460,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No.Pabrik/tahun"
+                                    android:text="No.Pabrik"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1391,10 +1471,38 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/tahun"
+                                    android:hint="No.Pabrik"
                                     android:id="@+id/nopabrik_bb_kontaktor"/>
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun kontaktor"
+                                    android:id="@+id/tahun_bb_kontaktor"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1566,7 +1674,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="No.Pabrik/tahun"
+                                    android:text="No.Pabrik"
                                     android:gravity="bottom"
                                     />
                             </LinearLayout>
@@ -1577,10 +1685,38 @@
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="No.Pabrik/tahun"
+                                    android:hint="No.Pabrik"
                                     android:id="@+id/nopabrik_bb_fuse"/>
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="4"
+                            android:layout_margin="@dimen/input_margin">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Tahun"
+                                    android:gravity="bottom"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tahun fuse"
+                                    android:id="@+id/tahun_bb_fuse"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>

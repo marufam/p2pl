@@ -237,6 +237,8 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                         .addFormDataPart("segel_pembatas", m_barangbukti.getPembatasBb() )
                         .addFormDataPart("segel_bantu", m_barangbukti.getBantupengukuranBb() )
                         .addFormDataPart("segel_pelindung", m_barangbukti.getPelindungBb() )
+
+                        .addFormDataPart("key", "123456789" )
                         // files
 //                        .addFormDataPart("file1","file1_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file1))
 //                        .addFormDataPart("file2","file2_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file2))
@@ -292,6 +294,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
             public void onClick(View v) {
                 Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
                 Log.d("P2TL - ID(Pel)",model_pelanggan.getId_pelanggan());
+                postData("http://192.168.43.126/p2tl_service/petugas", model_pelanggan.getId());
 //                Log.d("P2TL - Pelanggan",model_pelanggan.getNama());
 //                Log.d("P2TL - Alamat Pel",model_pelanggan.getAlamat());
 //                Log.d("P2TL - No.Gardu Pel",model_pelanggan.getNo_gardu());

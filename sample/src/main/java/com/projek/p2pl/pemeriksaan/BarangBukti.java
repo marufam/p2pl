@@ -44,6 +44,8 @@ public class BarangBukti extends AbstractStep {
     EditText taripBbKwh;
     @Bind(R.id.nopabrik_bb_kwh)
     EditText nopabrikBbKwh;
+    @Bind(R.id.tahun_bb_kWh)
+    EditText tahunBbKwh;
     @Bind(R.id.faktormeter_bb_kwh)
     EditText faktormeterBbKwh;
     @Bind(R.id.ukuranx_bb_kwh)
@@ -63,6 +65,8 @@ public class BarangBukti extends AbstractStep {
     EditText taripBbKvarh;
     @Bind(R.id.nopabrik_bb_kvarh)
     EditText nopabrikBbKvarh;
+    @Bind(R.id.tahun_bb_kVarh)
+    EditText tahunBbKvarh;
     @Bind(R.id.faktormeter_bb_kvarh)
     EditText faktormeterBbKvarh;
     @Bind(R.id.ukuranx_bb_kvarh)
@@ -82,6 +86,8 @@ public class BarangBukti extends AbstractStep {
     EditText taripBbKva;
     @Bind(R.id.nopabrik_bb_kva)
     EditText nopabrikBbKva;
+    @Bind(R.id.tahun_bb_kva)
+    EditText tahunBbKva;
     @Bind(R.id.faktormeter_bb_kva)
     EditText faktormeterBbKva;
     @Bind(R.id.ukuranx_bb_kva)
@@ -124,6 +130,8 @@ public class BarangBukti extends AbstractStep {
     Spinner typeBbKontaktor;
     @Bind(R.id.nopabrik_bb_kontaktor)
     EditText nopabrikBbKontaktor;
+    @Bind(R.id.tahun_bb_kontaktor)
+    EditText tahunBbKontaktor;
     @Bind(R.id.fasa_bb_trafo)
     Spinner fasaBbTrafo;
 
@@ -135,6 +143,8 @@ public class BarangBukti extends AbstractStep {
     Spinner typeBbFuse;
     @Bind(R.id.nopabrik_bb_fuse)
     EditText nopabrikBbFuse;
+    @Bind(R.id.tahun_bb_fuse)
+    EditText tahunBbFuse;
 
     @Bind(R.id.ukuran_bb_gembok)
     Spinner ukuranBbGembok;
@@ -231,7 +241,7 @@ public class BarangBukti extends AbstractStep {
 
     @Override
     public boolean nextIf() {
-        /*
+
         SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode
         Toast.makeText(mStepper, "Complete", Toast.LENGTH_SHORT).show();
         Log.d("preference coba",pemeriksaan.getAll().toString());
@@ -245,7 +255,7 @@ public class BarangBukti extends AbstractStep {
         myperiksa.clear();
 
         getActivity().finish();
-        */
+
 //        Log.d("Pemeriksaan","kwh meter 1a : " + pemeriksaan.getString("kwh_meter_1a",null));
 //        Log.d("Pemeriksaan","kondisi visual 1a : " + pemeriksaan.getString("kondisi_visual_1a",null));
 //        Log.d("Pemeriksaan","jenis 1b : " + pemeriksaan.getString("jenis_1b",null));
@@ -281,11 +291,13 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setUkuranyBbKwh(ukuranyBbKwh.getSelectedItem().toString());
         mybarangbukti.setAmpereBbKwh(ampereBbKwh.getText().toString());
         mybarangbukti.setStandBbKWh(standBbKWh.getText().toString());
+        mybarangbukti.setTahunBbKwh(tahunBbKwh.getText().toString());
 
         mybarangbukti.setTypeBbKvarh(typeBbKvarh.getSelectedItem().toString());
         mybarangbukti.setMerkBbKvarh(merkBbKvarh.getSelectedItem().toString());
         mybarangbukti.setTaripBbKvarh(taripBbKvarh.getText().toString());
         mybarangbukti.setNopabrikBbKvarh(nopabrikBbKvarh.getText().toString());
+        mybarangbukti.setTahunBbKvarh(tahunBbKvarh.getText().toString());
         mybarangbukti.setFaktormeterBbKvarh(faktormeterBbKvarh.getText().toString());
         mybarangbukti.setUkuranxBbKvarh(ukuranxBbKvarh.getSelectedItem().toString());
         mybarangbukti.setUkuranyBbKvarh(ukuranyBbKvarh.getSelectedItem().toString());
@@ -296,6 +308,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKva(merkBbKva.getSelectedItem().toString());
         mybarangbukti.setTaripBbKva(taripBbKva.getText().toString());
         mybarangbukti.setNopabrikBbKva(nopabrikBbKva.getText().toString());
+        mybarangbukti.setTahunBbKva(tahunBbKva.getText().toString());
         mybarangbukti.setFaktormeterBbKva(faktormeterBbKva.getText().toString());
         mybarangbukti.setUkuranxBbKva(ukuranxBbKva.getSelectedItem().toString());
         mybarangbukti.setUkuranyBbKva(ukuranyBbKva.getSelectedItem().toString());
@@ -309,6 +322,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbTrafo(merkBbTrafo.getSelectedItem().toString());
         mybarangbukti.setTypeBbTrafo(typeBbTrafo.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbTrafo(nopabrikBbTrafo.getText().toString());
+        mybarangbukti.setTahunBbTrafo(tahunBbTrafo.getText().toString());
         mybarangbukti.setRatioBbTrafo(ratioBbTrafo.getText().toString());
 
         mybarangbukti.setJeniskabelBbKabel(jenis_bb_kabel.getText().toString());
@@ -319,6 +333,8 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbKontaktor(merkBbKontaktor.getSelectedItem().toString());
         mybarangbukti.setTypeBbKontaktor(typeBbKontaktor.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbKontaktor(nopabrikBbKontaktor.getText().toString());
+        mybarangbukti.setTahunBbKontaktor(tahunBbKontaktor.getText().toString());
+
         mybarangbukti.setTahunBbTrafo(tahunBbTrafo.getText().toString());
         mybarangbukti.setFasaBbTrafo(fasaBbTrafo.getSelectedItem().toString());
 
@@ -326,6 +342,7 @@ public class BarangBukti extends AbstractStep {
         mybarangbukti.setMerkBbFuse(merkBbFuse.getSelectedItem().toString());
         mybarangbukti.setTypeBbFuse(typeBbFuse.getSelectedItem().toString());
         mybarangbukti.setNopabrikBbFuse(nopabrikBbFuse.getText().toString());
+        mybarangbukti.setTahunBbFuse(tahunBbFuse.getText().toString());
 
         mybarangbukti.setUkuranBbGembok(ukuranBbGembok.getSelectedItem().toString());
 
@@ -386,6 +403,7 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setNo_gardu(pemeriksaan.getString("no_gardu",null));
         mypelanggan.setTrafo(pemeriksaan.getString("trafo",null));
         mypelanggan.setTarif(pemeriksaan.getString("tarif",null));
+        mypelanggan.setPeruntukan(pemeriksaan.getString("peruntukan",null));
         mypelanggan.setNama_penghuni(pemeriksaan.getString("nama_penghuni",null));
         mypelanggan.setAlamat_penghuni(pemeriksaan.getString("alamat_penghuni",null));
         mypelanggan.setNomor_identitas(pemeriksaan.getString("nomor_identitas",null));
@@ -412,24 +430,24 @@ public class BarangBukti extends AbstractStep {
         mypetugas.setTglsurat(pemeriksaan.getString("tanggalsurat", null));
 
         mypetugas.setNomorsurat_tugas(pemeriksaan.getString("nomorsurat_tugas", null));
-        mypetugas.setTanggalsurat_tugas(pemeriksaan.getString("tanggalsurat_tugas", null));
+        mypetugas.setTanggalsurat_tugas(pemeriksaan.getString("tanggal_nomorsurat_tugas", null));
 
-        mypetugas.setNama(pemeriksaan.getString("nama_petugas", null));
-        mypetugas.setNoinduk(pemeriksaan.getString("noinduk_petugas", null));
-        mypetugas.setJabatan(pemeriksaan.getString("jabatan_petugas", null));
-        mypetugas.setNama_vendor(pemeriksaan.getString("namavendor", null));
-        mypetugas.setNoinduk_vendor(pemeriksaan.getString("noindukvendor", null));
-        mypetugas.setJabatan_vendor(pemeriksaan.getString("jabatanvendor", null));
-        mypetugas.setNomor_surat_porli(pemeriksaan.getString("nomorsuratpolri", null));
-        mypetugas.setTanggal_suratpolri(pemeriksaan.getString("tanggal_nsp", null));
+        mypetugas.setNama(pemeriksaan.getString("nama", null));
+        mypetugas.setNoinduk(pemeriksaan.getString("no_induk", null));
+        mypetugas.setJabatan(pemeriksaan.getString("jabatan", null));
+        mypetugas.setNama_vendor(pemeriksaan.getString("nama_vendor", null));
+        mypetugas.setNoinduk_vendor(pemeriksaan.getString("no_induk_vendor", null));
+        mypetugas.setJabatan_vendor(pemeriksaan.getString("jabatan_vendor", null));
+        mypetugas.setNomor_surat_porli(pemeriksaan.getString("nomor_surat_polri", null));
+        mypetugas.setTanggal_suratpolri(pemeriksaan.getString("tanggal_suratpolri", null));
 
-        mypetugas.setPetugas1(pemeriksaan.getString("petugas1", null));
-        mypetugas.setNippetugas1(pemeriksaan.getString("nippetugas1", null));
-        mypetugas.setJabatanpetugas1(pemeriksaan.getString("jabatanpetugas1", null));
+        mypetugas.setPetugas1(pemeriksaan.getString("nama_polri1", null));
+        mypetugas.setNippetugas1(pemeriksaan.getString("nip_polri1", null));
+        mypetugas.setJabatanpetugas1(pemeriksaan.getString("jabatan_polri1", null));
 
-        mypetugas.setPetugas2(pemeriksaan.getString("petugas2", null));
-        mypetugas.setNippetugas2(pemeriksaan.getString("nippetugas2", null));
-        mypetugas.setJabatanpetugas2(pemeriksaan.getString("jabatanpetugas2", null));
+        mypetugas.setPetugas2(pemeriksaan.getString("nama_polri2", null));
+        mypetugas.setNippetugas2(pemeriksaan.getString("nip_polri2", null));
+        mypetugas.setJabatanpetugas2(pemeriksaan.getString("jabatan_polri2", null));
         mRealm.commitTransaction();
     }
 
