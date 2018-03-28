@@ -399,15 +399,15 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setId(pemeriksaan.getString("id",null));
         mypelanggan.setTerdaftar(pemeriksaan.getString("terdaftar",null));
         mypelanggan.setId_pelanggan(pemeriksaan.getString("id_pelanggan",null));
-        mypelanggan.setNama(pemeriksaan.getString("nama",null));
-        mypelanggan.setAlamat(pemeriksaan.getString("alamat",null));
+        mypelanggan.setNama(pemeriksaan.getString("nama_pelanggan",null));
+        mypelanggan.setAlamat(pemeriksaan.getString("alamat_pelanggan",null));
         mypelanggan.setNo_gardu(pemeriksaan.getString("no_gardu",null));
         mypelanggan.setTrafo(pemeriksaan.getString("trafo",null));
         mypelanggan.setTarif(pemeriksaan.getString("tarif",null));
         mypelanggan.setPeruntukan(pemeriksaan.getString("peruntukan",null));
         mypelanggan.setNama_penghuni(pemeriksaan.getString("nama_penghuni",null));
         mypelanggan.setAlamat_penghuni(pemeriksaan.getString("alamat_penghuni",null));
-        mypelanggan.setNomor_identitas(pemeriksaan.getString("nomor_identitas",null));
+        mypelanggan.setNomor_identitas(pemeriksaan.getString("noktp_penghuni",null));
         mypelanggan.setPekerjaan_penghuni(pemeriksaan.getString("pekerjaan_penghuni",null));
         mypelanggan.setNoktp_saksi1(pemeriksaan.getString("noktp_saksi1",null));
         mypelanggan.setNama_saksi1(pemeriksaan.getString("nama_saksi1",null));
