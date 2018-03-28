@@ -154,7 +154,7 @@ public class Petugas extends AbstractStep {
         mRealm = Realm.getInstance(getContext());
         loadspinner();
         nomorsurat.setText("001/P2TL/RYN_ja/2018");
-        tanggalsurat.setText(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()));
+        tanggalsurat.setText(new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime()));
 
         petugas1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
