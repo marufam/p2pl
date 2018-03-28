@@ -1,6 +1,7 @@
 package com.projek.p2pl;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -68,6 +69,30 @@ public class MapFragment extends Fragment {
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
+        LocationManager locManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+
+        boolean network_enabled = locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        Location location;
+
+        if (network_enabled) {
+
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                return rootView;
+            }
+            location = locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if(location!=null){
+                myLng = location.getLongitude();
+                myLat = location.getLatitude();
+                Toast.makeText(getContext(), "Location "+String.valueOf(myLng)+","+String.valueOf(myLat), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+//                lokasi.setText(String.valueOf(myLng)+","+String.valueOf(myLat));
+
+            }
+        }
+
 
 //        Toast.makeText(getContext(), "jarak tempuh saat ini : "+spbu.getString("jarak_tempuh",null), Toast.LENGTH_SHORT).show();
         prepareallmap();
@@ -95,7 +120,7 @@ public class MapFragment extends Fragment {
 
                     mapCircle = googleMap.addCircle(new CircleOptions()
                             .center(new LatLng(myLat, myLng))
-                            .radius(150) //1km=+-10000
+                            .radius(300) //1km=+-10000
                             .strokeColor(Color.argb(90, 255, 189, 31))
                             .fillColor(Color.argb(60, 255, 189, 31))
                             .strokeWidth((float) 2));
@@ -170,7 +195,7 @@ public class MapFragment extends Fragment {
                             Double lat = mRealm.allObjects(m_pelanggan.class).get(i).getLat();
 //                            Toast.makeText(getContext(), ""+myLat, Toast.LENGTH_SHORT).show();
 //                            Toast.makeText(getContext(), ""+SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng)), Toast.LENGTH_SHORT).show();
-//                            if ((SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng))) < 150) {
+                            if ((SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng))) < 300) {
 
                                     googleMap.addMarker(new MarkerOptions()
                                             .position(new LatLng(lat, lng))
@@ -208,7 +233,7 @@ public class MapFragment extends Fragment {
                                 }
                             }
 
-//                       }
+                       }
 
 
                 });
