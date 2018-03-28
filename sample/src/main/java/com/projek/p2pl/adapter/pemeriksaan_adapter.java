@@ -298,7 +298,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
             public void onClick(View v) {
                 Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
                 Log.d("P2TL - ID(Pel)",model_pelanggan.getId_pelanggan());
-                postData("http://192.168.43.126/p2tl_service/petugas", model_pelanggan.getId());
+                postData("http://patas2018.com/p2tl_service/petugas", model_pelanggan.getId());
 //                Log.d("P2TL - Pelanggan",model_pelanggan.getNama());
 //                Log.d("P2TL - Alamat Pel",model_pelanggan.getAlamat());
 //                Log.d("P2TL - No.Gardu Pel",model_pelanggan.getNo_gardu());
