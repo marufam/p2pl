@@ -41,30 +41,47 @@ import io.realm.RealmResults;
 
 public class Petugas extends AbstractStep {
 
-    @Bind(R.id.nomorsurat) EditText nosurat;        // nomor surat dengan format
-    @Bind(R.id.nomorsurat) EditText nomorsurat;     // nomor surat tugas
-    @Bind(R.id.tanggalsurat) EditText tanggalsurat;
-    @Bind(R.id.nama) EditText nama;
-    @Bind(R.id.noinduk) EditText noinduk;
-    @Bind(R.id.jabatan) EditText jabatan;
+    //    @Bind(R.id.nomorsurat) EditText nosurat;        // nomor surat dengan format
+    @Bind(R.id.nomorsurat)
+    EditText nomorsurat;     // nomor surat tugas
+    @Bind(R.id.tanggalsurat)
+    EditText tanggalsurat;
+    @Bind(R.id.nama)
+    EditText nama;
+    @Bind(R.id.noinduk)
+    EditText noinduk;
+    @Bind(R.id.jabatan)
+    EditText jabatan;
 
-    @Bind(R.id.nama_vendor) EditText namavendor;
-    @Bind(R.id.noinduk_vendor) EditText noindukvendor;
-    @Bind(R.id.jabatan_vendor) EditText jabatanvendor;
+    @Bind(R.id.nama_vendor)
+    EditText namavendor;
+    @Bind(R.id.noinduk_vendor)
+    EditText noindukvendor;
+    @Bind(R.id.jabatan_vendor)
+    EditText jabatanvendor;
 
-    @Bind(R.id.nomor_surat_porli) EditText nomorsuratpolri;
-    @Bind(R.id.tanggal) EditText tanggal;
+    @Bind(R.id.nomor_surat_porli)
+    EditText nomorsuratpolri;
+    @Bind(R.id.tanggal)
+    EditText tanggal;
 
-    @Bind(R.id.petugas1) Spinner petugas1;
-    @Bind(R.id.petugas2) Spinner petugas2;
+    @Bind(R.id.petugas1)
+    Spinner petugas1;
+    @Bind(R.id.petugas2)
+    Spinner petugas2;
 
-    @Bind(R.id.nippetugas1) EditText nippetugas1;
-    @Bind(R.id.jabatanpetugas1) EditText jabatanpetugas1;
+    @Bind(R.id.nippetugas1)
+    EditText nippetugas1;
+    @Bind(R.id.jabatanpetugas1)
+    EditText jabatanpetugas1;
 
-    @Bind(R.id.nippetugas2) EditText nippetugas2;
-    @Bind(R.id.jabatanpetugas2) EditText jabatanpetugas2;
+    @Bind(R.id.nippetugas2)
+    EditText nippetugas2;
+    @Bind(R.id.jabatanpetugas2)
+    EditText jabatanpetugas2;
 
-    @Bind(R.id.tambah_polri) Button tambahpolri;
+    @Bind(R.id.tambah_polri)
+    Button tambahpolri;
 
     private int i = 1;
     private Realm mRealm;
@@ -72,13 +89,14 @@ public class Petugas extends AbstractStep {
     EditText nippolri, namapolri, jabatanpolri;
     Button simpan, cancel;
     ArrayAdapter<String> adapter;
-    List<String> users=new ArrayList<>();
-    List<m_polri> users2=new ArrayList<>();
+    List<String> users = new ArrayList<>();
+    List<m_polri> users2 = new ArrayList<>();
 
     public Petugas() {
     }
 
-    @OnClick(R.id.tambah_polri) void onSimpanClick() {
+    @OnClick(R.id.tambah_polri)
+    void onSimpanClick() {
         final Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.activity_polisi);
         dialog.setTitle("Tambah Data");
@@ -160,17 +178,17 @@ public class Petugas extends AbstractStep {
         return rootView;
     }
 
-    public void loadspinner(){
+    public void loadspinner() {
         users.clear();
         users2.clear();
 
         users.add("--Tidak Ada--");
-        users2.add(new m_polri("1","-","-","-"));
-        for (int i=0;i<mRealm.allObjects(m_polri.class).size(); i++){
+        users2.add(new m_polri("1", "-", "-", "-"));
+        for (int i = 0; i < mRealm.allObjects(m_polri.class).size(); i++) {
             users.add(mRealm.allObjects(m_polri.class).get(i).getNama().toString());
             users2.add(mRealm.allObjects(m_polri.class).get(i));
         }
-        adapter = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_dropdown_item,users);
+        adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, users);
         petugas1.setAdapter(adapter);
         petugas2.setAdapter(adapter);
     }
@@ -225,32 +243,34 @@ public class Petugas extends AbstractStep {
 //            nomorsurat.setError("First name is required!");
 //        }else {
 //        Toast.makeText(mStepper, "onNext8", Toast.LENGTH_SHORT).show();
-            SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
-            SharedPreferences.Editor editor = pref.edit();
-            String id = String.valueOf((int) System.currentTimeMillis() / 1000);
-            editor.putString("id", id.toString());
-            editor.putString("nomorsurat", nomorsurat.getText().toString());
-            editor.putString("tanggalsurat", tanggalsurat.getText().toString());
+        SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
+        SharedPreferences.Editor editor = pref.edit();
+        String id = String.valueOf((int) System.currentTimeMillis() / 1000);
+        editor.putString("id", id.toString());
+        // nomor surat belum
+        // rayon, alamat, cabang, wilayah
+        editor.putString("nomorsurat_tugas", nomorsurat.getText().toString());    // nomor surat tugas
+        editor.putString("tanggal_nomorsurat_tugas", tanggalsurat.getText().toString());
 
-            editor.putString("nama_petugas", nama.getText().toString());
-            editor.putString("noinduk_petugas", noinduk.getText().toString());
-            editor.putString("jabatan_petugas", jabatan.getText().toString());
+        editor.putString("nama", nama.getText().toString());
+        editor.putString("no_induk", noinduk.getText().toString());
+        editor.putString("jabatan", jabatan.getText().toString());
 
-            editor.putString("namavendor", namavendor.getText().toString());
-            editor.putString("noindukvendor", noindukvendor.getText().toString());
-            editor.putString("jabatanvendor", jabatanvendor.getText().toString());
+        editor.putString("nama_vendor", namavendor.getText().toString());
+        editor.putString("no_induk_vendor", noindukvendor.getText().toString());
+        editor.putString("jabatan_vendor", jabatanvendor.getText().toString());
 
-            editor.putString("nomorsuratpolri", nomorsuratpolri.getText().toString());
-            editor.putString("tanggal_nsp", tanggal.getText().toString());
+        editor.putString("nomor_surat_polri", nomorsuratpolri.getText().toString());
+        editor.putString("tanggal_suratpolri", tanggal.getText().toString());
 
-            editor.putString("petugas1", petugas1.getSelectedItem().toString());
-        editor.putString("nippetugas1", nippetugas1.getText().toString());
-        editor.putString("jabatanpetugas1", jabatanpetugas1.getText().toString());
+        editor.putString("nama_polri1", petugas1.getSelectedItem().toString());
+        editor.putString("nip_polri1", nippetugas1.getText().toString());
+        editor.putString("jabatan_polri1", jabatanpetugas1.getText().toString());
 
-            editor.putString("petugas2", petugas2.getSelectedItem().toString());
-        editor.putString("nippetugas2", nippetugas2.getText().toString());
-        editor.putString("jabatanpetugas2", jabatanpetugas2.getText().toString());
-            editor.commit();
+        editor.putString("nama_polri2", petugas2.getSelectedItem().toString());
+        editor.putString("nip_polri2", nippetugas2.getText().toString());
+        editor.putString("jabatan_polri2", jabatanpetugas2.getText().toString());
+        editor.commit();
 //        }
         return i > i;
     }

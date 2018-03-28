@@ -12,6 +12,7 @@ import io.realm.annotations.Required;
 public class m_pelanggan extends RealmObject {
     @PrimaryKey
     private String id;
+    private String terdaftar; // true false
     private String id_pelanggan;
     private String nama;
     private String alamat;
@@ -23,7 +24,6 @@ public class m_pelanggan extends RealmObject {
     private String alamat_penghuni;
     private String nomor_identitas;
     private String pekerjaan_penghuni;
-    private String terdaftar; // true false
     private String nama_saksi1;
     private String noktp_saksi1;
     private String nama_saksi2;

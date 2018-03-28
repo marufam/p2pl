@@ -10,16 +10,18 @@ import io.realm.annotations.PrimaryKey;
 public class m_barangbukti extends RealmObject {
     @PrimaryKey
     private String id;
+    private String typeBbKwh;
     private String merkBbKwh;
     private String taripBbKwh;
     private String nopabrikBbKwh;
-    private String faktormeterBbKwh;
     private String tahunBbKwh; //
+    private String faktormeterBbKwh;
     private String ukuranxBbKwh;
     private String ukuranyBbKwh;
     private String ampereBbKwh;
     private String standBbKWh;
 
+    private String typeBbKvarh;
     private String merkBbKvarh;
     private String taripBbKvarh;
     private String nopabrikBbKvarh;
@@ -30,6 +32,7 @@ public class m_barangbukti extends RealmObject {
     private String ampereBbKvarh;
     private String standBbKvarh;
 
+    private String typeBbKva;
     private String merkBbKva;
     private String taripBbKva;
     private String nopabrikBbKva;
@@ -44,6 +47,7 @@ public class m_barangbukti extends RealmObject {
     private String ukuranxBbPembatas;
     private String ukuranyBbPembatas;
 
+    private String typeBbTrafo;
     private String merkBbTrafo;
     private String nopabrikBbTrafo;
     private String ratioBbTrafo;
@@ -53,13 +57,17 @@ public class m_barangbukti extends RealmObject {
     private String diameteryBbKabel;
     private String panjangBbKabel;
 
+    private String typeBbKontaktor;
     private String merkBbKontaktor;
     private String nopabrikBbKontaktor;
+    private String tahunBbKontaktor;
     private String fasaBbTrafo;
 
     private String jenisBbFuse;
+    private String typeBbFuse;
     private String merkBbFuse;
     private String nopabrikBbFuse;
+    private String tahunBbFuse;
 
     private String ukuranBbGembok;
 
@@ -76,6 +84,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTypeBbKwh() {
+        return typeBbKwh;
+    }
+
+    public void setTypeBbKwh(String typeBbKwh) {
+        this.typeBbKwh = typeBbKwh;
     }
 
     public String getMerkBbKwh() {
@@ -102,20 +118,20 @@ public class m_barangbukti extends RealmObject {
         this.nopabrikBbKwh = nopabrikBbKwh;
     }
 
-    public String getFaktormeterBbKwh() {
-        return faktormeterBbKwh;
-    }
-
-    public void setFaktormeterBbKwh(String faktormeterBbKwh) {
-        this.faktormeterBbKwh = faktormeterBbKwh;
-    }
-
     public String getTahunBbKwh() {
         return tahunBbKwh;
     }
 
     public void setTahunBbKwh(String tahunBbKwh) {
         this.tahunBbKwh = tahunBbKwh;
+    }
+
+    public String getFaktormeterBbKwh() {
+        return faktormeterBbKwh;
+    }
+
+    public void setFaktormeterBbKwh(String faktormeterBbKwh) {
+        this.faktormeterBbKwh = faktormeterBbKwh;
     }
 
     public String getUkuranxBbKwh() {
@@ -148,6 +164,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setStandBbKWh(String standBbKWh) {
         this.standBbKWh = standBbKWh;
+    }
+
+    public String getTypeBbKvarh() {
+        return typeBbKvarh;
+    }
+
+    public void setTypeBbKvarh(String typeBbKvarh) {
+        this.typeBbKvarh = typeBbKvarh;
     }
 
     public String getMerkBbKvarh() {
@@ -220,6 +244,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setStandBbKvarh(String standBbKvarh) {
         this.standBbKvarh = standBbKvarh;
+    }
+
+    public String getTypeBbKva() {
+        return typeBbKva;
+    }
+
+    public void setTypeBbKva(String typeBbKva) {
+        this.typeBbKva = typeBbKva;
     }
 
     public String getMerkBbKva() {
@@ -318,6 +350,14 @@ public class m_barangbukti extends RealmObject {
         this.ukuranyBbPembatas = ukuranyBbPembatas;
     }
 
+    public String getTypeBbTrafo() {
+        return typeBbTrafo;
+    }
+
+    public void setTypeBbTrafo(String typeBbTrafo) {
+        this.typeBbTrafo = typeBbTrafo;
+    }
+
     public String getMerkBbTrafo() {
         return merkBbTrafo;
     }
@@ -374,6 +414,14 @@ public class m_barangbukti extends RealmObject {
         this.panjangBbKabel = panjangBbKabel;
     }
 
+    public String getTypeBbKontaktor() {
+        return typeBbKontaktor;
+    }
+
+    public void setTypeBbKontaktor(String typeBbKontaktor) {
+        this.typeBbKontaktor = typeBbKontaktor;
+    }
+
     public String getMerkBbKontaktor() {
         return merkBbKontaktor;
     }
@@ -388,6 +436,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setNopabrikBbKontaktor(String nopabrikBbKontaktor) {
         this.nopabrikBbKontaktor = nopabrikBbKontaktor;
+    }
+
+    public String getTahunBbKontaktor() {
+        return tahunBbKontaktor;
+    }
+
+    public void setTahunBbKontaktor(String tahunBbKontaktor) {
+        this.tahunBbKontaktor = tahunBbKontaktor;
     }
 
     public String getFasaBbTrafo() {
@@ -406,6 +462,14 @@ public class m_barangbukti extends RealmObject {
         this.jenisBbFuse = jenisBbFuse;
     }
 
+    public String getTypeBbFuse() {
+        return typeBbFuse;
+    }
+
+    public void setTypeBbFuse(String typeBbFuse) {
+        this.typeBbFuse = typeBbFuse;
+    }
+
     public String getMerkBbFuse() {
         return merkBbFuse;
     }
@@ -420,6 +484,14 @@ public class m_barangbukti extends RealmObject {
 
     public void setNopabrikBbFuse(String nopabrikBbFuse) {
         this.nopabrikBbFuse = nopabrikBbFuse;
+    }
+
+    public String getTahunBbFuse() {
+        return tahunBbFuse;
+    }
+
+    public void setTahunBbFuse(String tahunBbFuse) {
+        this.tahunBbFuse = tahunBbFuse;
     }
 
     public String getUkuranBbGembok() {

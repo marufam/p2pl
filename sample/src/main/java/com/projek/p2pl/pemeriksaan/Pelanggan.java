@@ -86,8 +86,11 @@ public class Pelanggan extends AbstractStep  {
     private Marker myMarker;
     //    ApiInterface mApiInterface;
     private LocationListener listener;
+
     @Bind(R.id.lokasi)
     TextView lokasi;
+    @Bind(R.id.rd_pelanggan) RadioButton rd_pelanggan;
+    @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
 
     @Bind(R.id.id_pelanggan) EditText id_pelanggan;
     @Bind(R.id.nama) EditText nama;
@@ -102,8 +105,7 @@ public class Pelanggan extends AbstractStep  {
     @Bind(R.id.nomor_identitas) EditText nomor_identitas;
     @Bind(R.id.pekerjaan_penghuni) EditText pekerjaan_penghuni;
 
-    @Bind(R.id.rd_pelanggan) RadioButton rd_pelanggan;
-    @Bind(R.id.rd_nonpelanggan) RadioButton rd_nonpelanggan;
+
 //    @Bind(R.id.rdg_pelanggan)
 //    RadioGroup rdg_pelanggan;
     @Bind(R.id.btn_pelanggan) Button btn_pelanggan;
@@ -408,9 +410,10 @@ public class Pelanggan extends AbstractStep  {
     public boolean nextIf() {
         SharedPreferences pref = getContext().getSharedPreferences("pemeriksaan", 0); // 0 - for private mode where the created file can only be accessed by the calling application
         SharedPreferences.Editor editor = pref.edit();
+        editor.putString("terdaftar", terdaftar.toString());
         editor.putString("id_pelanggan", id_pelanggan.getText().toString());
-        editor.putString("nama", nama.getText().toString());
-        editor.putString("alamat", alamat.getText().toString());
+        editor.putString("nama_pelanggan", nama.getText().toString());
+        editor.putString("alamat_pelanggan", alamat.getText().toString());
         editor.putString("no_gardu", no_gardu.getText().toString());
         editor.putString("trafo", trafo.getText().toString());
         editor.putString("tarif", tarif.getText().toString());
@@ -418,10 +421,8 @@ public class Pelanggan extends AbstractStep  {
 
         editor.putString("nama_penghuni", nama_penghuni.getText().toString());
         editor.putString("alamat_penghuni", alamat_penghuni.getText().toString());
-        editor.putString("nomor_identitas", nomor_identitas.getText().toString());
+        editor.putString("noktp_penghuni", nomor_identitas.getText().toString());
         editor.putString("pekerjaan_penghuni", pekerjaan_penghuni.getText().toString());
-
-        editor.putString("terdaftar", terdaftar.toString());
 
         editor.putString("noktp_saksi1", noktp_saksi1.getText().toString());
         editor.putString("nama_saksi1", nama_saksi1.getText().toString());
@@ -429,7 +430,7 @@ public class Pelanggan extends AbstractStep  {
         editor.putString("nama_saksi2", nama_saksi2.getText().toString());
 //        Toast.makeText(mStepper, ""+file1.getPath().toString(), Toast.LENGTH_SHORT).show();
         editor.putString("foto", "foto1,foto,foto,foto1,foto,foto");
-        editor.putString("status","merah");
+        editor.putString("status","aman");
         editor.putString("lat",String.valueOf(myLat));
         editor.putString("lng",String.valueOf(myLng));
         editor.commit();
