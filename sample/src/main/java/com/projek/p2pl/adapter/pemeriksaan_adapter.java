@@ -92,7 +92,10 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
                 OkHttpClient client = new OkHttpClient();
 //                String url = "http://192.168.1.69:81/p2tl_service/petugas";
-
+                String terdaftar = "";
+                if(m_pelanggan.getTerdaftar() == null){
+                    terdaftar =  "1";
+                }
                 RequestBody body = new MultipartBody.Builder()
                         .setType(MultipartBody.FORM)
                         // petugas
@@ -122,7 +125,8 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 //                        .addFormDataPart("tanggal", "2018-01-01" )
 
                         // pelanggan
-                        .addFormDataPart("terdaftar", m_pelanggan.getTerdaftar() )
+
+                        .addFormDataPart("terdaftar", terdaftar.toString() )
                         .addFormDataPart("id_pelanggan", m_pelanggan.getId_pelanggan() )
                         .addFormDataPart("nama_pelanggan", m_pelanggan.getNama() )
                         .addFormDataPart("alamat_pelanggan", m_pelanggan.getAlamat() )

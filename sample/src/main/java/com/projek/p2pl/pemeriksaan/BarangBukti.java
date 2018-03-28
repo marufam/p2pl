@@ -397,6 +397,7 @@ public class BarangBukti extends AbstractStep {
         mRealm.beginTransaction();
         m_pelanggan mypelanggan = mRealm.createObject(m_pelanggan.class);
         mypelanggan.setId(pemeriksaan.getString("id",null));
+        mypelanggan.setTerdaftar(pemeriksaan.getString("terdaftar",null));
         mypelanggan.setId_pelanggan(pemeriksaan.getString("id_pelanggan",null));
         mypelanggan.setNama(pemeriksaan.getString("nama",null));
         mypelanggan.setAlamat(pemeriksaan.getString("alamat",null));
