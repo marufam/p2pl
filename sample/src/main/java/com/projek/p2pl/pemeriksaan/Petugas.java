@@ -46,6 +46,11 @@ public class Petugas extends AbstractStep {
     EditText nomorsurat;     // nomor surat tugas
     @Bind(R.id.tanggalsurat)
     EditText tanggalsurat;
+
+    @Bind(R.id.nomorsurat_tugas)
+    EditText nomorsurat_tugas;     // nomor surat tugas
+    @Bind(R.id.tanggalsurat_tugas)
+    EditText tanggalsurat_tugas;
     @Bind(R.id.nama)
     EditText nama;
     @Bind(R.id.noinduk)
@@ -249,8 +254,11 @@ public class Petugas extends AbstractStep {
         editor.putString("id", id.toString());
         // nomor surat belum
         // rayon, alamat, cabang, wilayah
-        editor.putString("nomorsurat_tugas", nomorsurat.getText().toString());    // nomor surat tugas
-        editor.putString("tanggal_nomorsurat_tugas", tanggalsurat.getText().toString());
+        editor.putString("nomorsurat", nomorsurat.getText().toString());    // nomor surat tugas
+        editor.putString("tanggalsurat", tanggalsurat.getText().toString());
+
+        editor.putString("nomorsurat_tugas", nomorsurat_tugas.getText().toString());    // nomor surat tugas
+        editor.putString("tanggal_nomorsurat_tugas", tanggalsurat_tugas.getText().toString());
 
         editor.putString("nama", nama.getText().toString());
         editor.putString("no_induk", noinduk.getText().toString());

@@ -13,8 +13,10 @@ public class m_petugas extends RealmObject {
     @PrimaryKey
     private String id;
     private String nosurat;     // nomor surat dengan format : 001/P2TL/RYN_PDN/TAHUN
-    private String nomorsurat;  // nomor surat tugas
-    private String tanggalsurat;    // tanggal surat tugas
+    private String tglsurat;
+
+    private String nomorsurat_tugas;  // nomor surat tugas
+    private String tanggalsurat_tugas;    // tanggal surat tugas
     private String nama;
     private String noinduk;
     private String jabatan;
@@ -39,14 +41,6 @@ public class m_petugas extends RealmObject {
     private String nippetugas2;
     private String jabatanpetugas2;
 
-    public String getNosurat() {
-        return nosurat;
-    }
-
-    public void setNosurat(String nosurat) {
-        this.nosurat = nosurat;
-    }
-
     public String getId() {
         return id;
     }
@@ -55,20 +49,36 @@ public class m_petugas extends RealmObject {
         this.id = id;
     }
 
-    public String getNomorsurat() {
-        return nomorsurat;
+    public String getNosurat() {
+        return nosurat;
     }
 
-    public void setNomorsurat(String nomorsurat) {
-        this.nomorsurat = nomorsurat;
+    public void setNosurat(String nosurat) {
+        this.nosurat = nosurat;
     }
 
-    public String getTanggalsurat() {
-        return tanggalsurat;
+    public String getTglsurat() {
+        return tglsurat;
     }
 
-    public void setTanggalsurat(String tanggalsurat) {
-        this.tanggalsurat = tanggalsurat;
+    public void setTglsurat(String tglsurat) {
+        this.tglsurat = tglsurat;
+    }
+
+    public String getNomorsurat_tugas() {
+        return nomorsurat_tugas;
+    }
+
+    public void setNomorsurat_tugas(String nomorsurat_tugas) {
+        this.nomorsurat_tugas = nomorsurat_tugas;
+    }
+
+    public String getTanggalsurat_tugas() {
+        return tanggalsurat_tugas;
+    }
+
+    public void setTanggalsurat_tugas(String tanggalsurat_tugas) {
+        this.tanggalsurat_tugas = tanggalsurat_tugas;
     }
 
     public String getNama() {

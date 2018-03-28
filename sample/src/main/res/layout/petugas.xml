@@ -62,7 +62,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:gravity="bottom"
-                                    android:text="Nomor Surat Tugas" />
+                                    android:text="Nomor Surat" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -93,7 +93,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
                                     android:gravity="bottom"
-                                    android:text="Tanggal Surat Tugas" />
+                                    android:text="Tanggal Surat" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -125,6 +125,68 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Nomor Surat Tugas" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/nomorsurat_tugas"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nomor Surat Tugas" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/input_margin"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="bottom"
+                                    android:text="Tanggal Surat Tugas" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/tanggalsurat_tugas"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Tanggal Surat Tugas" />
+                            </LinearLayout>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
