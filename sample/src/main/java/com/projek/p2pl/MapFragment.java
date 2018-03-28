@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.SphericalUtil;
 import com.projek.p2pl.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -94,7 +95,7 @@ public class MapFragment extends Fragment {
 
                     mapCircle = googleMap.addCircle(new CircleOptions()
                             .center(new LatLng(myLat, myLng))
-                            .radius(300) //1km=+-10000
+                            .radius(150) //1km=+-10000
                             .strokeColor(Color.argb(90, 255, 189, 31))
                             .fillColor(Color.argb(60, 255, 189, 31))
                             .strokeWidth((float) 2));
@@ -167,6 +168,8 @@ public class MapFragment extends Fragment {
                             Double lng = mRealm.allObjects(m_pelanggan.class).get(i).getLng();
                             final LatLng origin = new LatLng(myLat,myLng);
                             Double lat = mRealm.allObjects(m_pelanggan.class).get(i).getLat();
+                            Toast.makeText(getContext(), ""+SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng)), Toast.LENGTH_SHORT).show();
+                            if ((SphericalUtil.computeDistanceBetween(new LatLng(myLat, myLng), new LatLng(lat, lng))) < 150) {
 
                                     googleMap.addMarker(new MarkerOptions()
                                             .position(new LatLng(lat, lng))
@@ -204,7 +207,7 @@ public class MapFragment extends Fragment {
                                 }
                             }
 
-//                        }
+                       }
 
 
                 });
