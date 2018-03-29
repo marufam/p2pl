@@ -618,7 +618,6 @@ public class Pelanggan extends AbstractStep  {
 
             @Override
             public void run() {
-                Toast.makeText(mStepper, idpel, Toast.LENGTH_SHORT).show();
                 Log.d("tew", "https://smartconnect.plnjateng.co.id/mappro/app/function/web_service.php?API=11223344&idpel=" + idpel);
                 OkHttpClient client = new OkHttpClient();
                 // code request code here

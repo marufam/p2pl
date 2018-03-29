@@ -236,7 +236,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                         .addFormDataPart("ukuran_gembok", m_barangbukti.getUkuranBbGembok() )
 
                         .addFormDataPart("segel_gardu", m_barangbukti.getGarduBb() )
-                        .addFormDataPart("segel_kontakapp", m_barangbukti.getKotakappBb() )
+                        .addFormDataPart("segel_kotakapp", m_barangbukti.getKotakappBb() )
                         .addFormDataPart("segel_pengukur", m_barangbukti.getPengukurBb() )
                         .addFormDataPart("segel_pembatas", m_barangbukti.getPembatasBb() )
                         .addFormDataPart("segel_bantu", m_barangbukti.getBantupengukuranBb() )
