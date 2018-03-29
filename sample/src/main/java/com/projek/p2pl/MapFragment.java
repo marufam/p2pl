@@ -1,7 +1,6 @@
 package com.projek.p2pl;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -40,7 +39,6 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.projek.p2pl.model.m_pelanggan;
-import com.projek.p2pl.model.m_polri;
 
 import io.realm.Realm;
 
@@ -56,7 +54,7 @@ public class MapFragment extends Fragment {
     String mprovider;
     Circle mapCircle;
     private Marker myMarker;
-//    ApiInterface mApiInterface;
+    //    ApiInterface mApiInterface;
     private LocationListener listener;
     private Realm mRealm;
 
@@ -65,35 +63,10 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.map_fragment, container, false);
-        mRealm = Realm.getInstance(getContext());
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
-        LocationManager locManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
-
-        boolean network_enabled = locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
-        Location location;
-
-        if (network_enabled) {
-
-            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                return rootView;
-            }
-            location = locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
-            if(location!=null){
-                myLng = location.getLongitude();
-                myLat = location.getLatitude();
-                Toast.makeText(getContext(), "Location "+String.valueOf(myLng)+","+String.valueOf(myLat), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
-//                lokasi.setText(String.valueOf(myLng)+","+String.valueOf(myLat));
-
-            }
-        }
-
-
+        mRealm = Realm.getInstance(getContext());
 //        Toast.makeText(getContext(), "jarak tempuh saat ini : "+spbu.getString("jarak_tempuh",null), Toast.LENGTH_SHORT).show();
         prepareallmap();
         locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
@@ -113,9 +86,9 @@ public class MapFragment extends Fragment {
                 if (mapCircle != null) {
                     mapCircle.remove();
                 }
-
+                Toast.makeText(getContext(), ""+myLat+"|"+myLng, Toast.LENGTH_SHORT).show();
 //                googleMap.clear();
-                if (myLat > 0 && myLng > 0) {
+//                if (myLat > 0 && myLng > 0) {
 
 
                     mapCircle = googleMap.addCircle(new CircleOptions()
@@ -124,7 +97,7 @@ public class MapFragment extends Fragment {
                             .strokeColor(Color.argb(90, 255, 189, 31))
                             .fillColor(Color.argb(60, 255, 189, 31))
                             .strokeWidth((float) 2));
-                }
+//                }
 
             }
 
@@ -189,6 +162,8 @@ public class MapFragment extends Fragment {
                     }
                 });
 
+
+
                         for (int i = 0; i < mRealm.allObjects(m_pelanggan.class).size(); i++) {
                             Double lng = mRealm.allObjects(m_pelanggan.class).get(i).getLng();
                             final LatLng origin = new LatLng(myLat,myLng);
@@ -233,12 +208,10 @@ public class MapFragment extends Fragment {
                                 }
                             }
 
-                       }
-
-
-                });
 
             }
+        });
+    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
