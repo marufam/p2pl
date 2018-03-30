@@ -417,6 +417,13 @@ public class BarangBukti extends AbstractStep {
         mypelanggan.setStatus(pemeriksaan.getString("status",null));
         mypelanggan.setLat(Double.parseDouble(pemeriksaan.getString("lat",null)));
         mypelanggan.setLng(Double.parseDouble(pemeriksaan.getString("lng",null)));
+
+        mypelanggan.setFile1(pemeriksaan.getString("file1",null));
+        mypelanggan.setFile2(pemeriksaan.getString("file2",null));
+        mypelanggan.setFile3(pemeriksaan.getString("file3",null));
+        mypelanggan.setFile4(pemeriksaan.getString("file4",null));
+        mypelanggan.setFile5(pemeriksaan.getString("file5",null));
+        mypelanggan.setFile6(pemeriksaan.getString("file6",null));
         mRealm.commitTransaction();
 
     }

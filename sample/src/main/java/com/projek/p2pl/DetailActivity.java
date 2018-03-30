@@ -1,6 +1,7 @@
 package com.projek.p2pl;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -89,28 +90,58 @@ public class DetailActivity extends AppCompatActivity {
         pengambilan = (Button) findViewById(R.id.btnpengambilan);
         penitipan = (Button) findViewById(R.id.btnpenitipan);
 
+        final String url_print = "http://10.3.141.1/digitalisasi_rest/index.php/api/";
         pemeriksaan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postData("http://192.168.1.65/digitalisasi_rest/index.php/api/RestPemeriksaan", s_id);
+                if (checkIpRaspy()){
+                    Toast.makeText(DetailActivity.this, "Tersambung dengan printer", Toast.LENGTH_SHORT).show();
+                    pemeriksaan.setEnabled(false);
+                    pemeriksaan.setBackgroundColor(Color.RED);
+                    postData(url_print + "RestPemeriksaan", s_id);
+                }
+                else
+                    Toast.makeText(DetailActivity.this, "Tidak tersambung ke printer", Toast.LENGTH_SHORT).show();
             }
         });
         penangguhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postData("http://192.168.1.65/digitalisasi_rest/index.php/api/RestPenangguhan", s_id);
+                if (checkIpRaspy()){
+                    Toast.makeText(DetailActivity.this, "Tersambung dengan printer", Toast.LENGTH_SHORT).show();
+                    pemeriksaan.setEnabled(false);
+                    pemeriksaan.setBackgroundColor(Color.RED);
+                    postData(url_print + "RestPenangguhan", s_id);
+                }
+                else
+                    Toast.makeText(DetailActivity.this, "Tidak tersambung ke printer", Toast.LENGTH_SHORT).show();
+
             }
         });
         pengambilan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postData("http://192.168.1.65/digitalisasi_rest/index.php/api/RestPengambilanBB", s_id);
+                if (checkIpRaspy()){
+                    Toast.makeText(DetailActivity.this, "Tersambung dengan printer", Toast.LENGTH_SHORT).show();
+                    pemeriksaan.setEnabled(false);
+                    pemeriksaan.setBackgroundColor(Color.RED);
+                    postData(url_print + "RestRestPengambilanBB", s_id);
+                }
+                else
+                    Toast.makeText(DetailActivity.this, "Tidak tersambung ke printer", Toast.LENGTH_SHORT).show();
             }
         });
         penitipan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postData("http://192.168.1.65/digitalisasi_rest/index.php/api/RestPenitipanBB", s_id);
+                if (checkIpRaspy()){
+                    Toast.makeText(DetailActivity.this, "Tersambung dengan printer", Toast.LENGTH_SHORT).show();
+                    pemeriksaan.setEnabled(false);
+                    pemeriksaan.setBackgroundColor(Color.RED);
+                    postData(url_print + "RestPenitipanBB", s_id);
+                }
+                else
+                    Toast.makeText(DetailActivity.this, "Tidak tersambung ke printer", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -143,6 +174,32 @@ public class DetailActivity extends AppCompatActivity {
 //        return true;
 //    }
 
+    private boolean checkIpRaspy(){
+        System.out.println("executeCommand");
+        Runtime runtime = Runtime.getRuntime();
+        try
+        {
+            Process  mIpAddrProcess = runtime.exec("/system/bin/ping -c 1 10.3.141.1");
+            int mExitValue = mIpAddrProcess.waitFor();
+            System.out.println(" mExitValue "+mExitValue);
+            if(mExitValue==0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        catch (InterruptedException ignore)
+        {
+            ignore.printStackTrace();
+            System.out.println(" Exception:"+ignore);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(" Exception:"+e);
+        }
+        return false;
+    }
 
 
     private void postData(final String url, final String s_id){

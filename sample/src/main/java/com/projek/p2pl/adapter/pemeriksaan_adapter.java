@@ -1,5 +1,6 @@
 package com.projek.p2pl.adapter;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,11 +20,13 @@ import com.projek.p2pl.model.m_pelanggan;
 import com.projek.p2pl.model.m_periksa;
 import com.projek.p2pl.model.m_petugas;
 
+import java.io.File;
 import java.io.IOException;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -55,6 +59,11 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
     private void postData(final String url, final String s_id){
 //        final SharedPreferences pemeriksaan = getContext().getSharedPreferences("pemeriksaan", 0);
+
+        final ProgressDialog progressDialog = new ProgressDialog(a);
+        progressDialog.setTitle("Mengirim data");
+        progressDialog.setMessage("Silahkan tunggu...");
+        progressDialog.show();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -81,14 +90,21 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                 mRealm.beginTransaction();
                 mRealm.commitTransaction();
 
-//                File file1 = new File(pemeriksaan.getString("file1",null));
-//                File file2 = new File(pemeriksaan.getString("file2",null));
-//                File file3 = new File(pemeriksaan.getString("file3",null));
-//                File file4 = new File(pemeriksaan.getString("file4",null));
-//                File file5 = new File(pemeriksaan.getString("file5",null));
-//                File file6 = new File(pemeriksaan.getString("file6",null));
+                File file1 = new File(m_pelanggan.getFile1());
+                File file2 = new File(m_pelanggan.getFile2());
+                File file3 = new File(m_pelanggan.getFile3());
+                File file4 = new File(m_pelanggan.getFile4());
+                File file5 = new File(m_pelanggan.getFile5());
+                File file6 = new File(m_pelanggan.getFile6());
 
-//                String content_type = getMimeType(file1.getPath());
+//                Log.d("files1", file1.getAbsolutePath());
+//                Log.d("files2", file2.getAbsolutePath());
+//                Log.d("files3", file3.getAbsolutePath());
+//                Log.d("files4", file4.getAbsolutePath());
+//                Log.d("files5", file5.getAbsolutePath());
+//                Log.d("files6", file6.getAbsolutePath());
+
+                String content_type = getMimeType(file1.getPath());
 
                 OkHttpClient client = new OkHttpClient();
 //                String url = "http://192.168.1.69:81/p2tl_service/petugas";
@@ -244,12 +260,12 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
                         .addFormDataPart("key", "123456789" )
                         // files
-//                        .addFormDataPart("file1","file1_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file1))
-//                        .addFormDataPart("file2","file2_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file2))
-//                        .addFormDataPart("file3","file3_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file3))
-//                        .addFormDataPart("file4","file4_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file4))
-//                        .addFormDataPart("file5","file5_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file5))
-//                        .addFormDataPart("file6","file6_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file6))
+                        .addFormDataPart("file1","file1_" + file1.getName(), RequestBody.create(MediaType.parse(content_type), file1))
+                        .addFormDataPart("file2","file2_" + file2.getName(), RequestBody.create(MediaType.parse(content_type), file2))
+                        .addFormDataPart("file3","file3_" + file3.getName(), RequestBody.create(MediaType.parse(content_type), file3))
+                        .addFormDataPart("file4","file4_" + file4.getName(), RequestBody.create(MediaType.parse(content_type), file4))
+                        .addFormDataPart("file5","file5_" + file5.getName(), RequestBody.create(MediaType.parse(content_type), file5))
+                        .addFormDataPart("file6","file6_" + file6.getName(), RequestBody.create(MediaType.parse(content_type), file6))
                         .build();
 
 
@@ -263,6 +279,7 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                     String jsonData = response.body().string();
 
                     Log.d("tesa", jsonData);
+                    progressDialog.hide();
 
 //                    progressDialog.dismiss();
                 } catch (IOException e) {
@@ -274,6 +291,15 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
         });
 
         t.start();
+    }
+
+    public static String getMimeType(String url) {
+        String type = null;
+        String extension = MimeTypeMap.getFileExtensionFromUrl(url);
+        if (extension != null) {
+            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+        }
+        return type;
     }
 
     @Override
@@ -298,7 +324,10 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
             public void onClick(View v) {
                 Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
                 Log.d("P2TL - ID(Pel)",model_pelanggan.getId_pelanggan());
-                postData("http://patas2018.com/p2tl_service/petugas", model_pelanggan.getId());
+
+//                postData("http://patas2018.com/p2tl_service/petugas", model_pelanggan.getId());
+                postData("http://192.168.1.65/p2tl_service/petugas", model_pelanggan.getId());
+
 //                Log.d("P2TL - Pelanggan",model_pelanggan.getNama());
 //                Log.d("P2TL - Alamat Pel",model_pelanggan.getAlamat());
 //                Log.d("P2TL - No.Gardu Pel",model_pelanggan.getNo_gardu());

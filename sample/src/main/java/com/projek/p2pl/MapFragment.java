@@ -8,26 +8,18 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.SphericalUtil;
-import com.projek.p2pl.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -38,6 +30,8 @@ import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.SphericalUtil;
 import com.projek.p2pl.model.m_pelanggan;
 
 import io.realm.Realm;
@@ -86,7 +80,7 @@ public class MapFragment extends Fragment {
                 if (mapCircle != null) {
                     mapCircle.remove();
                 }
-                Toast.makeText(getContext(), ""+myLat+"|"+myLng, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), ""+myLat+"|"+myLng, Toast.LENGTH_SHORT).show();
 //                googleMap.clear();
 //                if (myLat > 0 && myLng > 0) {
 
@@ -124,7 +118,6 @@ public class MapFragment extends Fragment {
 
         return rootView;
     }
-
 
 
 
