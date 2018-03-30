@@ -22,6 +22,7 @@ import com.projek.p2pl.model.m_petugas;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
@@ -106,7 +107,13 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
 
                 String content_type = getMimeType(file1.getPath());
 
-                OkHttpClient client = new OkHttpClient();
+                OkHttpClient client = new OkHttpClient.Builder()
+                        .connectTimeout(10, TimeUnit.SECONDS)
+                        .writeTimeout(10, TimeUnit.SECONDS)
+                        .readTimeout(30, TimeUnit.SECONDS)
+                        .build();
+
+
 //                String url = "http://192.168.1.69:81/p2tl_service/petugas";
                 String terdaftar = "";
                 if(m_pelanggan.getTerdaftar() == null){
@@ -325,8 +332,8 @@ public class pemeriksaan_adapter extends RecyclerView.Adapter<pemeriksaan_adapte
                 Toast.makeText(a, "Syncronyse", Toast.LENGTH_SHORT).show();
                 Log.d("P2TL - ID(Pel)",model_pelanggan.getId_pelanggan());
 
-//                postData("http://patas2018.com/p2tl_service/petugas", model_pelanggan.getId());
-                postData("http://192.168.1.65/p2tl_service/petugas", model_pelanggan.getId());
+                postData("http://patas2018.com/p2tl_service/petugas", model_pelanggan.getId());
+//                postData("http://192.168.1.65/p2tl_service/petugas", model_pelanggan.getId());
 
 //                Log.d("P2TL - Pelanggan",model_pelanggan.getNama());
 //                Log.d("P2TL - Alamat Pel",model_pelanggan.getAlamat());
