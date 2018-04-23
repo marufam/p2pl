@@ -3,7 +3,10 @@ package com.projek.p2pl;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -20,6 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,8 +35,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okio.BufferedSink;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -64,10 +81,13 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
 
+//    final Activity activity = getParent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         // Set up the login form.
         mUsernameView = (EditText) findViewById(R.id.username);
 
@@ -145,16 +165,8 @@ public class LoginActivity extends AppCompatActivity {
             String pwd = mPasswordView.getText().toString();
 //            Toast.makeText(this, usr + " - " + pwd, Toast.LENGTH_SHORT).show();
 
-            if (usr.equals("tulung") && pwd.equals("rayontulung")){
-                showProgress(true);
-                Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-                startActivity(intent);
-                finish();
-            } else{
-                Toast.makeText(this, "Login gagal. Username atau password salah", Toast.LENGTH_SHORT).show();
-            }
+//            login_service(usr, pwd);
+            login_service(usr, pwd);
 
 //            mAuthTask = new UserLoginTask(email, password);
 //            mAuthTask.execute((Void) null);
@@ -268,6 +280,100 @@ public class LoginActivity extends AppCompatActivity {
             mAuthTask = null;
             showProgress(false);
         }
+    }
+
+    public void login_service(final String username, final String password){
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+//                Log.d("tew", "http://192.168.56.1/p2tl/login_service.php?API=11223344");
+                OkHttpClient client = new OkHttpClient();
+                // code request code here
+
+                RequestBody formBody = new FormBody.Builder()
+                        .add("username", username)
+                        .add("password", password)
+                        .build();
+
+                Request request = new Request.Builder()
+                        .url("http://192.168.56.1/p2tl/login_service.php?API=11223344")
+                        .post(formBody)
+                        .build();
+
+                try {
+                    Response response = client.newCall(request).execute();
+                    String result = response.body().string();
+
+                    JSONObject jsonObject = new JSONObject(result);
+                    JSONArray login = jsonObject.getJSONArray("login");
+                    JSONObject data = login.getJSONObject(0);
+//                    JSONObject data = jsonArray.getJSONObject(0);
+//
+//                    final String namapel = data.isNull("nama") ? "-" : data.getString("nama") ;
+//                    final String alamatpel = data.isNull("alamat") ? "-" : data.getString("alamat") ;
+//                    final String no_gardupel = data.isNull("kdgardu") ? "-" : data.getString("kdgardu") ;
+//                    final String tarifpel = data.isNull("tarif") ? "-" : data.getString("tarif") ;
+//
+                    if (data.getString("result").equals("USERNAME DAN PASSWORD DITERIMA")){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("nama", data.getString("nama"));
+                        editor.putString("kode_rayon", data.getString("kode_rayon"));
+                        editor.putString("nama_rayon", data.getString("nama_rayon"));
+                        editor.putString("nama_area", data.getString("nama_area"));
+                        editor.putString("nama_distribusi", data.getString("nama_distribusi"));
+                        editor.putString("alamat_rayon", data.getString("alamat_rayon"));
+                        editor.putString("kode_rayon", data.getString("kode_rayon"));
+
+                        LoginActivity.this.runOnUiThread(new Runnable() {
+                            public void run() {
+                                Toast.makeText(LoginActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+                    } else{
+                        LoginActivity.this.runOnUiThread(new Runnable() {
+                            public void run() {
+                                Toast.makeText(LoginActivity.this, "Login gagal. Cek username dan password", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+//                    Log.d("tesa1", result);
+//                    Log.d("tesa2", jsonObject.toString());
+//                    Log.d("tesa3", login.toString());
+//                    Log.d("tesa4", data.toString());
+//
+//                    Log.d("hasil1", data.getString("result"));
+//                    Log.d("tesa4", data.toString());
+//                    Log.d("tesa5", data.getString("result"));
+//                    Log.d("tesa6", nama_pel);
+
+
+
+                } catch (IOException e) {
+                    LoginActivity.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(LoginActivity.this, "Login gagal. Cek username dan password", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    LoginActivity.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(LoginActivity.this, "Login gagal. Cek username dan password", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    e.printStackTrace();
+                }
+//        return response.body().string();
+            }
+        }).start();
     }
 }
 

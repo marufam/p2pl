@@ -116,6 +116,10 @@ public class Main2Activity extends AppCompatActivity
         }else if (id == R.id.tambah_pemeriksaan) {
             Intent i = new Intent(getApplicationContext(),StepActivity.class);
             startActivity(i);
+        }else if(id == R.id.ic_logout){
+            finish();
+            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,6 +1,7 @@
 package com.projek.p2pl;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -58,6 +59,8 @@ public class DetailActivity extends AppCompatActivity {
     Button pemeriksaan, penangguhan, pengambilan, penitipan;
 
     String s_id, s_nama, s_alamat, s_nogardu, s_tarif, s_deskripsi, s_tindakan, s_namapetugas;
+
+    SharedPreferences login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +68,8 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+        login = getApplicationContext().getSharedPreferences("login", 0);
 
 
         Intent i = getIntent();
@@ -255,10 +260,10 @@ public class DetailActivity extends AppCompatActivity {
                         .addFormDataPart("nama", m_petugas.getNama() )
                         .addFormDataPart("no_induk", m_petugas.getNoinduk() )
                         .addFormDataPart("jabatan", m_petugas.getJabatan() )
-                        .addFormDataPart("rayon", "Tulung" )
-                        .addFormDataPart("alamat", "Jl. Klaten" )
-                        .addFormDataPart("cabang", "Klaten" )
-                        .addFormDataPart("wilayah", "Jateng" )
+                        .addFormDataPart("rayon", login.getString("nama_rayon", null) )
+                        .addFormDataPart("alamat",login.getString("alamat_rayon", null) )
+                        .addFormDataPart("cabang", login.getString("nama_area", null) )
+                        .addFormDataPart("wilayah", login.getString("nama_distribusi", null)  )
                         .addFormDataPart("nama_vendor", m_petugas.getNama_vendor() )
                         .addFormDataPart("no_induk_vendor", m_petugas.getNoinduk_vendor() )
                         .addFormDataPart("jabatan_vendor", m_petugas.getJabatan_vendor() )
